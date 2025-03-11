@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# change user Configs
+AUTH_USER_MODEL = 'userauths.User'
+
+
 INSTALLED_APPS = [
     # Custom Django Admin
     'jazzmin',
