@@ -8,4 +8,16 @@ from .forms import UserRegisterForm
 
 
 def register(request):
-    return render(request,'userauths/sign-up.html')
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # return redirect('login')
+    else:
+        form = UserRegisterForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request,'userauths/sign-up.html', context)
