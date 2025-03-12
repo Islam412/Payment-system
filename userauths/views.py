@@ -30,6 +30,8 @@ def register_view(request):
         return redirect('core:home')
 
     else:
+        # messages.warning(request, "Account created, but automatic login failed. Please log in again.")
+        
         form = UserRegisterForm()
 
     context = {
@@ -40,10 +42,28 @@ def register_view(request):
 
 
 def login_view(request):
-    pass
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = authenticate(email=email, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, f'Welcome back, {request.user.username}!')
+            return redirect('core:home')
+        else:
+            messages.error(request, 'Invalid username or password')
+
+    if request.user.is_authenticated:
+        messages.success(request, 'You are already logged in')
+        return redirect('core:home')
+
+    else:
+        return render(request, 'userauths/sign-in.html')
 
 
 def logout_view(request):
     logout(request)
     messages.success(request, 'You have been logged out')
-    return redirect('userauths:sign-up')
+    return redirect('userauths:sign-in')
