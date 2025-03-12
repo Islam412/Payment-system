@@ -24,6 +24,10 @@ def register(request):
 
             login(request, new_user)
             return redirect('core:home')
+        
+    if request.user.is_authenticated:
+        messages.success(request, 'You are now logged in')
+        return redirect('core:home')
 
     else:
         form = UserRegisterForm()
