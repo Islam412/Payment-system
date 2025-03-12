@@ -8,7 +8,7 @@ from .forms import UserRegisterForm
 # Create your views here.
 
 
-def register(request):
+def register_view(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -37,3 +37,13 @@ def register(request):
     }
 
     return render(request,'userauths/sign-up.html', context)
+
+
+def login_view(request):
+    pass
+
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'You have been logged out')
+    return redirect('userauths:sign-up')
