@@ -49,7 +49,10 @@ INSTALLED_APPS = [
     # Custom apps
     'account',
     'core',
-    'userauths'
+    'userauths',
+
+    # Third-party apps
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
