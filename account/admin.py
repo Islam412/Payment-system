@@ -15,7 +15,7 @@ class AccountAdminModel(ImportExportModelAdmin):
 
 
 class KYCAdmin(ImportExportModelAdmin):
-    search_fields = ["full_name"]
+    search_fields = ["full_name" , "account"]
     list_display = ['user', 'full_name', 'gender', 'identity_type', 'date_of_birth'] 
 
 
