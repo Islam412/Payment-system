@@ -10,6 +10,7 @@ class AccountAdminModel(ImportExportModelAdmin):
     list_editable = ['account_status', 'account_balance', 'kyc_submitted', 'kyc_confirmed'] 
     list_display = ['user', 'account_number' ,'account_status', 'account_balance', 'kyc_submitted', 'kyc_confirmed'] 
     list_filter = ['account_status']
+    search_fields = ['user__username', 'user__email', 'account_number']
 
 
 
