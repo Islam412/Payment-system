@@ -150,9 +150,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     'site_header': "Paylio",
     'site_brand': "Payment System...",
-    'site_logo': "",
+    'site_logo': "assets/images/logo.png",
     'copyright':  "All Right Reserved 2025",
-    "welcome_sign": "Welcome to Payment Admin, Login Now.",
+    "welcome_sign": "Welcome to PAYLIO Payment Admin, Login Now.",
     "topmenu_links": [
         
     ],
