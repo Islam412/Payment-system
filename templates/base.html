@@ -94,7 +94,9 @@
                                     </li>
                                 </ul>
                                 <div class="right-area header-action d-flex align-items-center max-un">
-                                    <a href="/admin" class="login cmdn-btn">Admin</a>
+                                    {% if request.user.is_staff and request.user.is_superuser %}
+                                        <a href="/admin" class="login cmdn-btn">Admin</a>
+                                    {% endif %}
                                     <a href="{% url 'userauths:sign-out' %}" class="login cmn-btn">Sign Out</a>
                                     {% elif request.path == '/user/sign-up/' %}
                                     <a href="{% url 'userauths:sign-in' %}" class="cmn-btn">Login <i class="fas fa-caret-right"></i></a>
