@@ -1,10 +1,7 @@
 
-{% extends "auth_base.html" %}
+{% extends "base.html" %}
 {% load static %}
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
+{
 {% block content %}
     <!-- Login Reg start -->
     <section class="login-reg">
@@ -42,11 +39,11 @@
                                     <div class="single-input">
                                         <input type="text" required name="email" id="logemail" placeholder="Enter Your Email">
                                     </div>
-                                    <br>
+                                    
                                     <div class="single-input">
                                         <input type="password" required name="password" id="logemail" placeholder="Enter Your Password">
                                     </div>
-                                    <br>
+                                    
                                     <button class="cmn-btn w-100" type="submit">Login</button>
                                 </div>
                             </div>

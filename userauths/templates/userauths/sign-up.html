@@ -1,9 +1,6 @@
 
-{% extends "auth_base.html" %}
+{% extends "base.html" %}
 {% load static %}
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
 
 {% block content %}
     <!-- Login Reg start -->
@@ -51,19 +48,19 @@
                                     <div class="single-input">
                                         {{form.username}}
                                     </div>
-                                    <br>
+                                    
                                     <div class="single-input">
                                         {{form.email}}
                                     </div>
-                                    <br>
+                                    
                                     <div class="single-input">
                                         {{form.password1}}
                                     </div>
-                                    <br>
+                                    
                                     <div class="single-input">
                                         {{form.password2}}
                                     </div>
-                                    <br>
+                                    
                                     <button class="cmn-btn w-100" type="submit">Sign Up</button>
                                 </div>
                             </div>
