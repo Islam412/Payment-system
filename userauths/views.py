@@ -25,12 +25,8 @@ def register_view(request):
             login(request, new_user)
             return redirect('core:home')
         
-    if request.user.is_authenticated:
-        messages.success(request, 'You are now logged in')
-        return redirect('core:home')
 
     else:
-        # messages.warning(request, "Account created, but automatic login failed. Please log in again.")
         
         form = UserRegisterForm()
 
@@ -48,12 +44,19 @@ def login_view(request):
 
         user = authenticate(email=email, password=password)
 
-        if user is not None:
-            login(request, user)
-            messages.success(request, f'Welcome back, {request.user.username}!')
-            return redirect('core:home')
-        else:
-            messages.error(request, 'Invalid username or password')
+        try:
+            user = User.objects.get(email=email)
+            user = authenticate(request, email=email, password=password)
+
+            if user is not None: # if there is a user
+                login(request, user)
+                messages.success(request, "You are logged.")
+                return redirect("account:account")
+            else:
+                messages.warning(request, "Username or password does not exist")
+                return redirect("userauths:sign-in")
+        except:
+            messages.warning(request, "User does not exist")
 
     if request.user.is_authenticated:
         messages.success(request, 'You are already logged in')
