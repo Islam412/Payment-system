@@ -38,6 +38,7 @@ def kyc_registration(request):
     return render(request, "account/kyc-form.html", context)
 
 
+
 @login_required
 def account(request):
     if request.user.is_authenticated:
