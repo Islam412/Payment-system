@@ -247,6 +247,23 @@
                 </div>
             </div>
         </div>
+        <!-- alert start -->
+        
+        {% if messages %}
+            {% for sim in messages %}
+            <div class="alert alert-{{sim.tags}}">
+                <strong>{{sim}}</strong>
+            </div>
+            {% endfor %}
+        {% endif %}
+        <script>
+            setTimeout (() => {
+                $(".alert").alert("close");
+            }, 4000)
+        </script>
+        
+        <!-- alert end -->
+
     </header>
     <!-- header-section end -->
 

@@ -31,8 +31,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
 # change user Configs
 AUTH_USER_MODEL = 'userauths.User'
+LOGIN_URL = "userauths:sign-in"
+LOGOUT_REDIRECT_URL = "userauths:sign-in"
 
 
 INSTALLED_APPS = [
