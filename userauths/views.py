@@ -9,7 +9,9 @@ from .forms import UserRegisterForm
 
 
 def register_view(request):
-
+    if request.user.is_authenticated:
+        messages.warning(request, f"You are already logged in.")
+        return redirect("account:account")
 
     
     if request.method == 'POST':
