@@ -12,7 +12,11 @@
                         <div class="owner-details">
                             <div class="profile-area">
                                 <div class="profile-img">
-                                    <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" src="{{ kyc.image.url }}" alt="image">
+                                    {% if kyc.image %}
+                                        <img src="{{user.kyc.image.url}}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" alt="image">
+                                    {% else %}
+                                        <img src="{% static 'assets1/images/default.jpg' %}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" alt="image">
+                                    {% endif %}
                                 </div>
                                 <div class="name-area">
                                     <h6>{{kyc.full_name|title}}</h6>
@@ -92,8 +96,11 @@
                                     <div class="upload-avatar">
                                         <div class="avatar-left d-flex align-items-center">
                                             <div class="profile-img">
-                                                <!-- <img src="{% static 'assets1/images/owner-profile-2.png' %}" alt="image"> -->
-                                                <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" src="{{ kyc.image.url }}" alt="image">
+                                                {% if kyc.image %}
+                                                    <img src="{{user.kyc.image.url}}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" alt="image">
+                                                {% else %}
+                                                    <img src="{% static 'assets1/images/default.jpg' %}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" alt="image">
+                                                {% endif %}
                                             </div>
                                             <div class="instraction">
                                                 <h6>Your Avatar</h6>
@@ -192,7 +199,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="btn-border">
-                                                    <button class="cmn-btn">Edit KYC</button>
+                                                    <a href="{% url 'account:kyc-registration' %}" class="cmn-btn">Edit KYC</a>
                                                 </div>
                                             </div>
                                         </div>
