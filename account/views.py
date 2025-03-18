@@ -40,4 +40,4 @@ def kyc_registration(request):
 
 
 def account(request):
-    return render(request, "account/account.html
+    return render(request, "account/account.html")
