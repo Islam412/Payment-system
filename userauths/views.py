@@ -28,7 +28,7 @@ def register_view(request):
             )
 
             login(request, new_user)
-            return redirect('core:home')
+            return redirect("account:account")
         
 
     else:
