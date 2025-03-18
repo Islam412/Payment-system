@@ -65,10 +65,9 @@ def login_view(request):
 
     if request.user.is_authenticated:
         messages.success(request, 'You are already logged in')
-        return redirect('core:home')
+        return redirect("account:account")
 
-    else:
-        return render(request, 'userauths/sign-in.html')
+    return render(request, 'userauths/sign-in.html')
 
 
 def logout_view(request):
