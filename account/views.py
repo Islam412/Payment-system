@@ -46,7 +46,7 @@ def account(request):
             kyc = KYC.objects.get(user=request.user)
         except:
             messages.warning(request, "You need to submit your kyc")
-            return redirect("account:kyc-reg")
+            return redirect("account:kyc-registration")
         
         account = Account.objects.get(user=request.user)
     else:
