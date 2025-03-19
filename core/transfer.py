@@ -8,5 +8,19 @@ from decimal import Decimal
 from account.models import Account
 
 
+@login_required
 def search_users_account_number(request):
-    return render(request, 'core/search_users_account_number.html')
+    account = Account.objects.all()
+    query = request.POST.get("account_number")
+
+    if query:
+        account = account.filter(
+            Q(account_number=query)|
+            Q(account_id=query)
+        ).distinct()
+
+    context = {
+        "account": account,
+        "query": query,
+    }
+    return render(request, 'core/search-user-by-account-number.html',context)

@@ -9,5 +9,7 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('search-account', transfer.search_users_account_number, name='search-account'),
+
+    # transfer
+    path('search-account/', transfer.search_users_account_number, name='search-account'),
 ]
