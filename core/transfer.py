@@ -29,4 +29,9 @@ def search_users_account_number(request):
 
 
 def amount_transfer(request, account_number):
-    return render(request, "transfer/amount_transfer.html") 
+    account = Account.objects.get(account_number=account_number)
+    
+    context = {
+        "account": account,
+    }
+    return render(request, "transfer/amount_transfer.html", context) 
