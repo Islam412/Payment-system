@@ -29,7 +29,11 @@ def search_users_account_number(request):
 
 
 def amount_transfer(request, account_number):
-    account = Account.objects.get(account_number=account_number)
+    try:
+        account = Account.objects.get(account_number=account_number)
+    except:
+        messages.warning(request, "Account dosen't exist")
+        return redirect("core:search-account")
     
     context = {
         "account": account,
