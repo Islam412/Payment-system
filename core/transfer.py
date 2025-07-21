@@ -24,3 +24,9 @@ def search_users_account_number(request):
         "query": query,
     }
     return render(request, 'core/search-user-by-account-number.html',context)
+
+
+
+
+def amount_transfer(request, account_number):
+    return render(request, "transfer/amount_transfer.html") 
