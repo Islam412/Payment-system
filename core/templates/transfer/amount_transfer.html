@@ -1,5 +1,6 @@
 {% extends "auth_base.html" %}
 {% load static %}
+{% load humanize %}
 {% block content %}
 
     <!-- Dashboard Section start -->
@@ -46,7 +47,7 @@
                         <div class="send-banance">
                             <span class="mdr">You Send</span>
                             <div class="input-area">
-                                <input class="xxlr" onkeyup="CalculateBalance()" placeholder="{{request.user.account.account_balance}}" type="number" id="amount_send">
+                                <input class="xxlr" onkeyup="CalculateBalance()" placeholder="{{ request.user.account.account_balance|intcomma }}" type="number" id="amount_send">
                                 <select>
                                     <option value="1">USD</option>
                                     <option value="2">USD</option>
