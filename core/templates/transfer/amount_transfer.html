@@ -54,7 +54,7 @@
                                     <option value="3">USD</option>
                                 </select>
                             </div>
-                            <p>Available Balance<b>$30,700.00</b></p>
+                            <p>Available Balance<b>${{ request.user.account.account_balance }}</b></p>
                             <b id="new_balance"></b>
                             <b class="text-danger" id="error-div"></b>
                         </div>
@@ -72,6 +72,8 @@
 
                                 calc = available_balance - sendAmount
                                 console.log(calc);
+
+                                new_balance.innerHTML = `New Balance ${calc}`;
                             }
                         </script>
                         <ul class="total-fees">
