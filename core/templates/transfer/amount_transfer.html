@@ -54,7 +54,7 @@
                                     <option value="3">USD</option>
                                 </select>
                             </div>
-                            <p>Available Balance<b>${{ request.user.account.account_balance }}</b></p>
+                            <p>Available Balance<b>${{ request.user.account.account_balance|intcomma }}</b></p>
                             <b id="new_balance"></b>
                             <b class="text-danger" id="error-div"></b>
                         </div>
@@ -70,10 +70,12 @@
 
                                 let errors = []
 
-                                calc = available_balance - sendAmount
-                                console.log(calc);
+                                new_bal = available_balance - sendAmount
+                                console.log(new_bal);
 
-                                new_balance.innerHTML = `New Balance ${calc}`;
+                                // new_balance.innerHTML = `New Balance $${new_bal.toString().replace(/\B(?))}`;
+                                new_balance.innerHTML = `New Balance <b> $${new_bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`;
+                                total_to_pay.innerHTML = `USD <b> $${sendAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`;
                             }
                         </script>
                         <ul class="total-fees">
