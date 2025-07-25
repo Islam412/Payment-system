@@ -74,7 +74,7 @@
                                 console.log(new_bal);
 
                                 // new_balance.innerHTML = `New Balance $${new_bal.toString().replace(/\B(?))}`;
-                                new_balance.innerHTML = `<b style='font-size: 18px; font-weight: 400; color: var(--para-color);'>New Balance</b> <b> $${new_bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`;
+                                new_balance.innerHTML = `<b style='font-size: 18px; font-weight: 400; color: var(--para-color);'>New Balance</b> <b style='font-size: 18px; font-weight: 500;'> $${new_bal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`;
                                 total_to_pay.innerHTML = `USD <b> $${sendAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} </b>`;
 
                                 if (new_bal < 0){
