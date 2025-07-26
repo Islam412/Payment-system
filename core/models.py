@@ -25,7 +25,6 @@ TRANSACTION_STATUS = (
     ("request_sent", "Request Sent"),
     ("request_settled", "Request Settled"),
     ("request_processing", "Request Processing"),
-
 )
 
 class Transaction(models.Model):
