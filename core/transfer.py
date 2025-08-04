@@ -6,6 +6,7 @@ from decimal import Decimal
 
 
 from account.models import Account
+from core.models import Transaction
 
 
 @login_required
@@ -50,3 +51,25 @@ def amount_transfer_process(request, account_number):
     
     sender_account = request.user.account ## get the currently logged in users account that vould send the money
     reciever_account = account # get the the person account that vould send the money
+    
+    if request.method == "POST":
+        amount = request.POST.get("amount-send")
+        description = request.POST.get("description")
+
+        print(amount)
+        print(description)
+        
+        
+        if sender_account.account_balance > 0 and amount:
+            new_transaction = Transaction.objects.create(
+                user=request.user,
+                amount=amount,
+                description=description,
+                reciever=description,
+                sender=sender,
+                sender_account=sender_account,
+                reciever_account=reciever_account,
+                status="processing",
+                transaction_type="Transfer"
+            )
+            new_transaction.save()
