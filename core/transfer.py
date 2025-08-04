@@ -84,6 +84,7 @@ def amount_transfer(request, account_number):
 #         return redirect("account:account")
 
 
+
 def amount_transfer_process(request, account_number):
     try:
         account = Account.objects.get(account_number=account_number)
@@ -127,3 +128,17 @@ def amount_transfer_process(request, account_number):
     else:
         messages.warning(request, "Error occurred. Try again later.")
         return redirect("account:account")
+
+
+
+
+def transfer_confirmation(request, account_number, transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+    
+    context = {
+        'account':account,
+        'transaction':transaction
+    }
+    
+    return render(request, 'transfer/transfer-confirmation.html', context)
