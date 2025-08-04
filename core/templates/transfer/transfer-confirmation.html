@@ -1,11 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    HI Islam
-</body>
-</html>
+{% extends "auth_base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+
+    <!-- header-section end -->
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step step-2 step-3">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="main-content">
+                    <div class="head-area d-flex align-items-center justify-content-between">
+                        <h4>Make a Payment</h4>
+                        <div class="icon-area">
+                            <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    <div class="choose-recipient">
+                        <div class="step-area">
+                            <span class="mdr">Step 3 of 3</span>
+                            <h5>Confirm Your Transfer</h5>
+                        </div>
+                        <div class="user-select">
+                            <div class="single-user">
+                                <div class="left d-flex align-items-center">
+                                    <div class="img-area">
+                                        <img src="{% static 'assets1/images/profile-1.png' %}" alt="image">
+                                    </div>
+                                    <div class="text-area">
+                                        <p>Herman Tran</p>
+                                        <span class="mdr"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="541c312639353a6761143339353d387a373b39">[email&#160;protected]</a></span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <a href="javascript:void(0)">
+                                        <i class="icon-g-tick"></i>
+                                        Choose
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <i class="icon-h-edit"></i>
+                                        Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-details">
+                        <div class="top-area">
+                            <h6>Payment Details</h6>
+                            <div class="right">
+                                <a href="javascript:void(0)">
+                                    <i class="icon-h-edit"></i>
+                                    Edit
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <ul class="details-list">
+                                    <li>
+                                        <span>You Send</span>
+                                        <b>400.00 GBP</b>
+                                    </li>
+                                    <li>
+                                        <span>Recipient gets</span>
+                                        <b>400.00 GBP</b>
+                                    </li>
+                                    <li>
+                                        <span>E-mail of receiver</span>
+                                        <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3bebca1a1baa0e1e193b4beb2babffdb0bcbe">[email&#160;protected]</a></b>
+                                    </li>
+                                    <li>
+                                        <span>Fee</span>
+                                        <b>Free</b>
+                                    </li>
+                                    <li>
+                                        <span>Purpose</span>
+                                        <b>Software development</b>
+                                    </li>
+                                    <li>
+                                        <span>Transfer will be receive on </span>
+                                        <b>29 June at 10:0 PM </b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="checkbox">
+                            <input type="checkbox" id="confirm">
+                            <label for="confirm">I confirm the payment details above</label>
+                        </div>
+                        <div class="footer-area mt-40">
+                            <a href="pay-step-2.html">Previous Step</a>
+                            <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Pay</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+    <!-- Transfer Popup start -->
+{% endblock content %}
