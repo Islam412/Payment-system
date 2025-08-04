@@ -223,7 +223,7 @@
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="sidebar-logo">
-                            <a href="dashboard.html"><img src="{% static 'assets1/images/logo.png' %}" alt="logo"></a>
+                            <a href="/"><img src="{% static 'assets1/images/logo.png' %}" alt="logo"></a>
                         </div>
                         <ul>
                             <li>
@@ -237,7 +237,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="pay.html">
+                                <a href="{% url 'core:search-account' %}">
                                     <img src="{% static 'assets1/images/icon/pay.png' %}" alt="Pay"> <span>Pay</span>
                                 </a>
                             </li>
