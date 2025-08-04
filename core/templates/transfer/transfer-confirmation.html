@@ -61,27 +61,27 @@
                                 <ul class="details-list">
                                     <li>
                                         <span>You Send</span>
-                                        <b>400.00 GBP</b>
+                                        <b>{{ transaction.amount }} USD</b>
                                     </li>
                                     <li>
                                         <span>Recipient gets</span>
-                                        <b>400.00 GBP</b>
+                                        <b>{{ transaction.amount }} USD</b>
                                     </li>
                                     <li>
                                         <span>E-mail of receiver</span>
-                                        <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3bebca1a1baa0e1e193b4beb2babffdb0bcbe">[email&#160;protected]</a></b>
+                                        <b>{{ account.user.email }}</b>
                                     </li>
                                     <li>
                                         <span>Fee</span>
                                         <b>Free</b>
                                     </li>
                                     <li>
-                                        <span>Purpose</span>
-                                        <b>Software development</b>
+                                        <span>Description</span>
+                                        <b>{{ transaction.description }}</b>
                                     </li>
                                     <li>
-                                        <span>Transfer will be receive on </span>
-                                        <b>29 June at 10:0 PM </b>
+                                        <span>Transfer was initated on </span>
+                                        <b>{{ transaction.date }}</b>
                                     </li>
                                 </ul>
                             </div>
