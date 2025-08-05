@@ -181,7 +181,7 @@ def transfer_process(request, account_number, transaction_id):
             receiver_account.save()
 
             messages.success(request, "Transfer Successful.")
-            return redirect('account:account')
+            return redirect("core:transfer-completed", account.account_number, transaction.transaction_id)
         else:
             messages.warning(request, "Incorrect Pin.")
             return redirect('core:transfer-confirmation', account.account_number, transaction.transaction_id)
