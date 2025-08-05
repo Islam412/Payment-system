@@ -147,3 +147,20 @@ def transfer_confirmation(request, account_number, transaction_id):
     }
     
     return render(request, 'transfer/transfer-confirmation.html', context)
+
+
+
+def transfer_process(request, account_number, transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+    
+    sender = request.user  # Logged-in user
+    receiver = account.user  # Receiver user
+
+    sender_account = sender.account  # Sender's account
+    receiver_account = account  # Receiver's account
+    
+    completed = False
+    
+    if request.method == 'POST':
+        pin_numper = request.POST.get("pin-number")
