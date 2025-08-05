@@ -189,6 +189,18 @@ def transfer_process(request, account_number, transaction_id):
         messages.warning(request, "An error occured, Try again later.")
         return redirect('account:account')
 
-            
-            
-           
+
+
+
+def transfer_completed(request, account_number, transaction_id):
+    try:
+        account = Account.objects.get(account_number=account_number)
+        transaction = Transaction.objects.get(transaction_id=transaction_id)
+    except:
+        messages.warning(request, "Transfer does not exist.")
+        return redirect("account:account")
+    context = {
+        "account":account,
+        "transaction":transaction
+    }
+    return render(request, "transfer/transfer-completed.html", context)
