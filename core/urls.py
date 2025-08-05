@@ -14,6 +14,6 @@ urlpatterns = [
     path('search-account/', transfer.search_users_account_number, name='search-account'),
     path('amount-transfer/<account_number>/', transfer.amount_transfer, name='amount-transfer'),
     path('amount-transfer-process/<account_number>/', transfer.amount_transfer_process, name='amount-transfer-process'),
-    path('transfer-confirmation/<account_number>/<transaction_id>/', transfer.transfer_confirmation, name='transfer-confirmation')
-    path('transfer-process/<account_number>/<transaction_id>/', transfer.transfer_process, name='transfer-process')
+    path('transfer-confirmation/<account_number>/<transaction_id>/', transfer.transfer_confirmation, name='transfer-confirmation'),
+    path('transfer-process/<account_number>/<transaction_id>/', transfer.transfer_process, name='transfer-process'),
 ]
