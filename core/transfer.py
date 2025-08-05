@@ -5,6 +5,7 @@ from django.contrib import messages
 from decimal import Decimal, InvalidOperation
 
 
+import account
 from account.models import Account
 from core.models import Transaction
 from userauths.models import User
@@ -159,8 +160,35 @@ def transfer_process(request, account_number, transaction_id):
 
     sender_account = sender.account  # Sender's account
     receiver_account = account  # Receiver's account
-    
+
     completed = False
-    
+
     if request.method == 'POST':
-        pin_numper = request.POST.get("pin-number")
+        pin_number = request.POST.get("pin-number")
+
+        print(pin_number)
+
+        if pin_number == sender_account.pin_number:
+            transaction.status = 'completed'
+            transaction.save()
+
+            # Deduct the amount from sender's balance
+            sender_account.account_balance -= transaction.amount
+            sender_account.save()
+
+            # Add the amount to receiver's balance
+            receiver_account.account_balance += transaction.amount
+            receiver_account.save()
+
+            messages.success(request, "Transfer Successful.")
+            return redirect('account:account')
+        else:
+            messages.warning(request, "Incorrect Pin.")
+            return redirect('core:transfer-confirmation', account.account_number, transaction.transaction_id)
+    else:
+        messages.warning(request, "An error occured, Try again later.")
+        return redirect('account:account')
+
+            
+            
+           
