@@ -63,4 +63,4 @@ def account(request):
 
 
 def dashboard(request):
-    return render(request, "account/dashboard.html", context)
+    return render(request, "account/dashboard.html")
