@@ -9,4 +9,5 @@ app_name = 'account'
 urlpatterns = [
     path('kyc/', views.kyc_registration, name='kyc-registration'),
     path('', views.account, name='account'),
+    path('dashboard/', views.dashboard, name='dashboard'),
 ]
