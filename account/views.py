@@ -58,3 +58,9 @@ def account(request):
         "account":account,
     }
     return render(request, "account/account.html", context)
+
+
+
+
+def dashboard(request):
+    return render(request, "account/dashboard.html", context)
