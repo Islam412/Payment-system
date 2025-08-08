@@ -22,4 +22,5 @@ urlpatterns = [
     
     #transaction
     path('transactions/', transaction.transaction_lists, name='transactions'),
+    path('transactions-detail/', transaction.transaction_detail, name='transactions-detail'),
 ]
