@@ -27,10 +27,26 @@
                                                                     <div class="icon-area">
                                                                     </div>
                                                                     <div class="text-area">
-                                                                        
-                                                                        <h5><b>100 USD</b></h5>
-                                                                        <p>20th July 2023</p>
-                                                                        <p class="text-success">Completed</p>
+                                                                        {% comment %} <h6 class="mt-2">Sender : {{transaction.sender.kyc.full_name|title}}</h6>
+                                                                        <br>
+                                                                        <h6 class="mt-2">Reciever : {{transaction.reciever.kyc.full_name|title}}</h6>
+                                                                        <br> {% endcomment %}
+                                                                        <h5><b>{{transaction.amount|intcomma}} USD</b></h5>
+                                                                        <p>{{transaction.date}}</p>
+
+                                                                        <p> 
+                                                                            {% if transaction.status == 'completed' %}
+                                                                                <p class="text-success" style="color: #28a745; font-weight: bold;">{{ transaction.status|title }}</p>
+                                                                            {% elif transaction.status == 'pending' %}
+                                                                                <p class="text-warning" style="color: #f39c12; font-weight: bold;">{{ transaction.status|title }}</p>
+                                                                            {% elif transaction.status == 'failed' %}
+                                                                                <p class="text-danger" style="color: #e74c3c; font-weight: bold;">{{ transaction.status|title }}</p>
+                                                                            {% elif transaction.status == 'processing' %}
+                                                                                <p class="text-info" style="color: #3498db; font-weight: bold;">{{ transaction.status|title }}</p>
+                                                                            {% else %}
+                                                                                <p class="text-muted" style="color: #bdc3c7; font-weight: bold;">{{ transaction.status|title }}</p>
+                                                                            {% endif %}
+                                                                        </p>
                                                                         
                                                                     </div>
                                                                 </div>
@@ -40,7 +56,7 @@
                                                                         <ul class="payment-details">
                                                                             <li>
                                                                                 <span>Payment Amount</span>
-                                                                                <span>100 USD</span>
+                                                                                <span>{{transaction.amount|intcomma}} USD</span>
                                                                             </li>
                                                                             <li>
                                                                                 <span>Fee</span>
@@ -48,25 +64,25 @@
                                                                             </li>
                                                                             <li>
                                                                                 <span>Total Amount</span>
-                                                                                <span>100 USD</span>
+                                                                                <span>{{transaction.amount|intcomma}} USD</span>
                                                                             </li>
                                                                         </ul>
                                                                         <ul class="payment-info">
                                                                             <li>
                                                                                 <p>Payment From</p>
-                                                                                <span class="mdr">Destiny Franks</span>
+                                                                                <span class="mdr">{{transaction.reciever.kyc.full_name|title}}</span>
                                                                             </li>
                                                                             <li>
                                                                                 <p>Payment To</p>
-                                                                                <span class="mdr">Destiny Franks</span>
+                                                                                <span class="mdr">{{transaction.sender.kyc.full_name|title}}</span>
                                                                             </li>
                                                                             <li>
                                                                                 <p>Payment Description</p>
-                                                                                <span class="mdr">Payment for school fees</span>
+                                                                                <span class="mdr">{{transaction.description}}</span>
                                                                             </li>
                                                                             <li>
                                                                                 <p>Transaction ID:</p>
-                                                                                <span class="mdr">ioewrweruwoer</span>
+                                                                                <span class="mdr">{{transaction.transaction_id}}</span>
                                                                             </li>
                                                                         </ul>
                                                                     </div>

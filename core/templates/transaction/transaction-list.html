@@ -61,17 +61,16 @@
                                                                 <p class="mdr">{{s.date|date:"d M, Y"}}</p>
                                                             </td>
                                                             <td>
-                                                                {% if s.status == 'completed' %}
-                                                                    <p class="text-success">{{s.status|title}}</p>
-                                                                {% endif %}
-                                                                {% if s.status == 'pending' %}
-                                                                    <p class="inprogress">{{s.status|title}}</p>
-                                                                {% endif %}
-                                                                {% if s.status == 'failed' %}
-                                                                    <p class="danger">{{s.status|title}}</p>
-                                                                {% endif %}
-                                                                {% if s.status == 'processing' %}
-                                                                    <p class="inprogress">{{s.status|title}}</p>
+                                                                {% if s.status %}
+                                                                    {% if s.status == 'completed' %}
+                                                                        <p class="text-success" style="color: #28a745; font-weight: bold;">{{ s.status|title }}</p>
+                                                                    {% elif s.status == 'pending' or s.status == 'processing' %}
+                                                                        <p class="text-warning" style="color: #f39c12; font-weight: bold;">{{ s.status|title }}</p>
+                                                                    {% elif s.status == 'failed' %}
+                                                                        <p class="text-danger" style="color: #e74c3c; font-weight: bold;">{{ s.status|title }}</p>
+                                                                    {% else %}
+                                                                        <p class="text-muted" style="color: #bdc3c7; font-weight: bold;">{{ s.status|title }}</p>
+                                                                    {% endif %}
                                                                 {% endif %}
                                                             </td>
                                                             <td>
