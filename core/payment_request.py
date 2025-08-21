@@ -110,3 +110,14 @@ def amount_request_final_process(request, account_number, transaction_id):
 
 
 
+def request_completed(request, account_number ,transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+    
+    context = {
+            "account":account,
+            "transaction":transaction,
+        }
+    return render(request, "payment_request/amount-request-completed.html", context)
+
+
