@@ -98,7 +98,7 @@ def amount_request_final_process(request, account_number, transaction_id):
     if request.method == "POST":
         pin_number = request.POST.get("pin-number")
         if pin_number == request.user.account.pin_number:
-            transaction.status == 'completed'
+            transaction.status == 'request_sent'
             transaction.save()
 
             messages.success(request, "Your payment request have been sent successfully.")
