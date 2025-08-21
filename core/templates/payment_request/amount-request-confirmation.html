@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="#">
+                    <form action="{% url 'core:amount-request-final-process' account.account_number transaction.transaction_id %}">
                         <div class="checkbox">
                             <input type="checkbox" id="confirm">
                             <label for="confirm">I confirm the payment details above</label>
