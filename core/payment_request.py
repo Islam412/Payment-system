@@ -91,4 +91,22 @@ def amount_request_confirmation(request, account_number, transaction_id):
     
 
 
+def amount_request_final_process(request, account_number, transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+
+    if request.method == "POST":
+        pin_number = request.POST.get("pin-number")
+        if pin_number == request.account.pin_number:
+            transaction.status == 'completed'
+            transaction.save()
+
+            messages.success(request, "Your payment request have been sent successfully.")
+            return redirect("core:amount-request-completed")
+        
+    else:
+        messages.warning(request, "An Error Occured, try again later.")
+        return redirect("account:dashboard")
+
+
 
