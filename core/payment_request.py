@@ -102,8 +102,7 @@ def amount_request_final_process(request, account_number, transaction_id):
             transaction.save()
 
             messages.success(request, "Your payment request have been sent successfully.")
-            return redirect("core:amount-request-completed")
-        
+            return redirect("core:amount-request-completed", account.account_number, transaction.transaction_id)        
     else:
         messages.warning(request, "An Error Occured, try again later.")
         return redirect("account:dashboard")
