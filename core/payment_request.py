@@ -79,7 +79,7 @@ def amount_request_process(request, account_number):
 
 
 
-def amount_request_onfirmation(request, account_number, transaction_id):
+def amount_request_confirmation(request, account_number, transaction_id):
     account = Account.objects.get(account_number=account_number)
     transaction = Transaction.objects.get(transaction_id=transaction_id)
 
