@@ -7,7 +7,7 @@ from decimal import Decimal
 from decimal import Decimal
 
 
-from core.models import Notification, Transaction
+from core.models import Transaction
 
 
 
