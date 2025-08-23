@@ -66,7 +66,7 @@ def amount_request_process(request, account_number):
             sender_account=sender_account,
             reciever_account=reciever_account,
 
-            status="request_processing",
+            status="request_sent",
             transaction_type="request",
         )
         new_request.save()
@@ -190,9 +190,3 @@ def delete_payment_request(request, account_number, transaction_id):
         transaction.delete()
         messages.success(request, "Payment Request Deleted Sucessfully")
         return redirect("core:transactions")
-    
-    context = {
-            "account":account,
-            "transaction":transaction,
-        }
-    return render(request, "payment_request/delete-payment-request.html", context)
