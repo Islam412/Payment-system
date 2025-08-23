@@ -166,3 +166,14 @@ def settlement_processing(request, account_number, transaction_id):
         messages.warning(request, "Error Occured")
         return redirect("account:dashboard")
 
+
+
+def settlement_completed(request, account_number ,transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+    
+    context = {
+            "account":account,
+            "transaction":transaction,
+        }
+    return render(request, "payment_request/settlement-completed.html", context)
