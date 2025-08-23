@@ -176,7 +176,7 @@
                             <div class="single-item user-area">
                                 <div class="profile-area d-flex align-items-center">
                                     <span class="user-profile">
-                                        {% if kyc.image %}
+                                        {% if request.user.kyc.image %}
                                             <img src="{{request.user.kyc.image.url}}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" alt="image">
                                         {% else %}
                                             <img src="{% static 'assets1/images/default.jpg' %}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" alt="image">
@@ -188,9 +188,9 @@
                                     <form action="{% url 'account:account' %}">
                                         <div class="head-area d-flex align-items-center">
                                             <div class="profile-img">
-                                                {% if kyc.image %}
+                                                {% if request.user.kyc.image %}
                                                     <a href="{% url 'account:account' %}">
-                                                        <img src="{{user.kyc.image.url}}" alt="image">
+                                                        <img src="{{request.user.kyc.image.url}}" alt="image">
                                                     </a>
                                                 {% else %}
                                                     <img src="{% static 'assets1/images/default.jpg' %}" alt="image">
@@ -200,8 +200,8 @@
                                                 <a href="{% url 'account:account' %}">
                                                     <h5>{{request.user.username|title}}</h5>
                                                 </a>
-                                                <p class="wallet-id">Account No: {{account.account_number}}</p>
-                                                <p class="wallet-id">Pin No: {{account.pin_number}}</p>
+                                                <p class="wallet-id">Account No: {{request.user.account.account_number}}</p>
+                                                <p class="wallet-id">Pin No: {{request.user.account.pin_number}}</p>
                                             </div>
                                         </div>
                                     </form>
