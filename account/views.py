@@ -62,43 +62,6 @@ def account(request):
 
 
 
-# def dashboard(request):
-#     if request.user.is_authenticated:
-#         try:
-#             kyc = KYC.objects.get(user=request.user)
-#         except:
-#             messages.warning(request, "You need to submit your kyc")
-#             return redirect("account:kyc-registration")
-        
-#         account = Account.objects.get(user=request.user)
-
-#         if request.method == "POST":
-#             form = CreditCardForm(request.POST)
-#             if form.is_valid():
-#                 new_form = form.save(commit=False)
-#                 new_form.user = request.user
-#                 new_form.save()
-
-#                 card_id = new_form.card_id
-#                 messages.success(request, "Card Added Successfully.")
-#                 return redirect("account:dashboard")
-            
-#             else:
-#                 form = CreditCardForm()
-
-#     else:
-#         messages.warning(request, "You need to login to access the dashboard")
-#         return redirect("userauths:sign-in")
-
-#     context = {
-#         "kyc":kyc,
-#         "account":account,
-#         "form": form,
-#     }
-#     return render(request, "account/dashboard.html",context)
-
-
-
 def dashboard(request):
     if request.user.is_authenticated:
         try:
