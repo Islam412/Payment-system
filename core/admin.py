@@ -19,3 +19,4 @@ class CreditCardAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Transaction , TransactionAdmin)
+admin.site.register(CreditCard , CreditCardAdmin)
