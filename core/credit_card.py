@@ -19,4 +19,4 @@ def card_detail(request, card_id):
         "credit_card":credit_card,
     }
 
-    return redirect(request, 'credit_card/card-detail.html')
+    return redirect(request, 'credit_card/card-detail.html', context)
