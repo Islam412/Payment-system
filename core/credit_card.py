@@ -12,11 +12,11 @@ from account.models import Account
 
 def card_detail(request, card_id):
     account = Account.objects.get(user=request.user)
-    credit_card = CreditCard.objects.get(card_id=card_id, user=request)
+    credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
 
     context = {
         "account":account,
         "credit_card":credit_card,
     }
 
-    return redirect(request, 'credit_card/card-detail.html', context)
+    return render(request, 'credit_card/card-detail.html', context)
