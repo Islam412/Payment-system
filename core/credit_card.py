@@ -25,21 +25,20 @@ def card_detail(request, card_id):
 def fund_credit_card(request, card_id):
     credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
     account = request.user.account
-
+    
     if request.method == "POST":
-        amount = request.POST.get("funding_amount")
-
+        amount = request.POST.get("funding_amount") # 25
+        
         if Decimal(amount) <= account.account_balance:
-            account.account_balance -= Decimal(amount)
+            account.account_balance -= Decimal(amount) ## 14,790.00 - 20
             account.save()
-
+            
             credit_card.amount += Decimal(amount)
             credit_card.save()
-
-            messages.success(request, "Funding Successful")
-            return redirect('core:card-detail',credit_card.card_id)
+            
+            messages.success(request, "Funding Successfull")
+            return redirect("core:card-detail", credit_card.card_id)
         else:
             messages.warning(request, "Insufficient Funds")
             return redirect("core:card-detail", credit_card.card_id)
-
 
