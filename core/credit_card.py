@@ -51,3 +51,16 @@ def withdraw_fund(request, card_id):
     if request.method == "POST":
         amount = request.POST.get("amount")
         print(amount)
+
+        if credit_card.amount >= Decimal(amount):
+            account.account_balance += Decimal(amount)
+            account.save()
+
+            credit_card.amount -= Decimal(amount)
+            credit_card.save()
+
+            messages.success(request, "Withdrawal Successfull")
+            return redirect("core:card-detail", credit_card.card_id)
+        else:
+            messages.warning(request, "Insufficient Funds")
+            return redirect("core:card-detail", credit_card.card_id)
