@@ -7,7 +7,7 @@ from django.contrib import messages
 from decimal import Decimal
 
 
-from core.models import Transaction
+from core.models import Transaction , Notification
 from account.models import Account
 
 
@@ -100,6 +100,19 @@ def amount_request_final_process(request, account_number, transaction_id):
         if pin_number == request.user.account.pin_number:
             transaction.status == 'request_sent'
             transaction.save()
+
+            Notification.objects.create(
+                user=account.user,
+                notification_type="Recieved Payment Request",
+                amount=transaction.amount,
+                
+            )
+            
+            Notification.objects.create(
+                user=request.user,
+                amount=transaction.amount,
+                notification_type="Sent Payment Request"
+            )
 
             messages.success(request, "Your payment request have been sent successfully.")
             return redirect("core:amount-request-completed", account.account_number, transaction.transaction_id)        
