@@ -7,7 +7,7 @@ from decimal import Decimal, InvalidOperation
 
 import account
 from account.models import Account
-from core.models import Transaction
+from core.models import Transaction , Notification
 from userauths.models import User
 
 @login_required
@@ -179,6 +179,19 @@ def transfer_process(request, account_number, transaction_id):
             # Add the amount to receiver's balance
             receiver_account.account_balance += transaction.amount
             receiver_account.save()
+
+            # Create Notification Object
+            Notification.objects.create(
+                amount=transaction.amount,
+                user=account.user,
+                notification_type="Credit Alert"
+            )
+            
+            Notification.objects.create(
+                user=sender,
+                notification_type="Debit Alert",
+                amount=transaction.amount
+            )
 
             messages.success(request, "Transfer Successful.")
             return redirect("core:transfer-completed", account.account_number, transaction.transaction_id)
