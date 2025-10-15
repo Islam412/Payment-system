@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from decimal import Decimal
 
-from core.models import CreditCard
+from core.models import CreditCard , Notification
 from account.models import Account
 
 
@@ -59,7 +59,16 @@ def withdraw_fund(request, card_id):
             credit_card.amount -= Decimal(amount)
             credit_card.save()
 
+            Notification.objects.create(
+                user=request.user,
+                amount=amount,
+                notification_type="Withdrew Credit Card Funds"
+            )
+
             messages.success(request, "Withdrawal Successfull")
+            return redirect("core:card-detail", credit_card.card_id)
+        elif credit_card.amount == 0.00:
+            messages.warning(request, "Insufficient Funds")
             return redirect("core:card-detail", credit_card.card_id)
         else:
             messages.warning(request, "Insufficient Funds")
