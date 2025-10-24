@@ -18,7 +18,7 @@ class HomeView(DetailView):
 
 
 
-class FAQ(DetailView):
+class FAQView(DetailView):
     model = AnsweringFrequentlyAskedQuestions
     template_name = 'core/home.html'
     context_object_name = 'faq'
