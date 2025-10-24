@@ -10,7 +10,7 @@ app_name = 'core'
 urlpatterns = [
     #core
     path('', HomeView.as_view(), name='home'),
-    path('', FAQView.as_view(), name='FAQ'),
+    path('faq', FAQView.as_view(), name='FAQ'),
 
     # transfer
     path('search-account/', transfer.search_users_account_number, name='search-account'),
