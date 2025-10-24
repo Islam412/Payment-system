@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="bottom-area d-xxl-flex">
                                     {% if not request.user.is_authenticated %}
-                                        <a href="{% url 'userauths:sign-out' %}" class="cmn-btn">Open a Free Account</a>
+                                        <a href="{% url 'userauths:sign-out' %}" class="cmn-btn active">Open a Free Account</a>
                                     {% endif %}
                                     {% if home.video %}
                                         <a class="cmn-btn active popup-video" href="{{ home.video.url }}">See How it Works</a>
