@@ -138,9 +138,7 @@ class Home(models.Model):
     android_app = models.URLField(max_length=500, blank=True, null=True)
     ios_app = models.URLField(max_length=500, blank=True, null=True)
 
-
-
-class AnsweringFrequentlyAskedQuestions(models.Model):
+    # FAQ
     how_to_send_money_online = models.CharField(max_length=1000)
     how_much_are_money_transfer_fees = models.CharField(max_length=1000)
     what_is_the_fastest_way_to_send_money_abroad = models.CharField(max_length=1000)
@@ -151,6 +149,7 @@ class AnsweringFrequentlyAskedQuestions(models.Model):
     which_currency_can_i_send = models.CharField(max_length=1000)
     Cancel_transaction = models.CharField(max_length=1000)
     Can_i_send_multiple_payments = models.CharField(max_length=1000)
+
 
 
 

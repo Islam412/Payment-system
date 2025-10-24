@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 
 
-from .models import Home , AnsweringFrequentlyAskedQuestions
+from .models import Home
 
 
 # Create your views here.
@@ -16,12 +16,3 @@ class HomeView(DetailView):
     def get_object(self):
         return Home.objects.first()
 
-
-
-class FAQView(DetailView):
-    model = AnsweringFrequentlyAskedQuestions
-    template_name = 'core/home.html'
-    context_object_name = 'faq'
-
-    def get_object(self):
-        return Home.objects.first()
