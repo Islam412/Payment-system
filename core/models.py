@@ -150,7 +150,7 @@ class AnsweringFrequentlyAskedQuestions(models.Model):
     money_can_i_send = models.CharField(max_length=1000)
     currency_can_i_send = models.CharField(max_length=1000)
     Cancel_transaction = models.CharField(max_length=1000)
-    Can_i_send__multiple_payments = models.CharField(max_length=1000)
+    Can_i_send_multiple_payments = models.CharField(max_length=1000)
 
 
 
