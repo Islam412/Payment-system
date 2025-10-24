@@ -29,7 +29,11 @@
                                     {% if not request.user.is_authenticated %}
                                         <a href="{% url 'userauths:sign-out' %}" class="cmn-btn">Open a Free Account</a>
                                     {% endif %}
-                                    <a class="cmn-btn active mfp-iframe popupvideo" href="https://www.youtube.com/watch?v=Djz8Nc0Qxwk">See How it Works</a>
+                                    {% if home.video %}
+                                        <a class="cmn-btn active popup-video" href="{{ home.video.url }}">See How it Works</a>
+                                    {% else %}
+                                        <p>Video not available</p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -115,7 +119,7 @@
                     <div class="col-xl-3 col-md-3 col-sm-6">
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
-                                <h2><span class="counter">50</span><span>+</span></h2>
+                                <h2><span class="counter">{{home.supported_currencies}}</span><span>+</span></h2>
                                 <p>Supported Currencies</p>
                             </div>
                         </div>
@@ -123,7 +127,7 @@
                     <div class="col-xl-3 col-md-3 col-sm-6">
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
-                                <h2><span class="counter">100</span><span>+</span></h2>
+                                <h2><span class="counter">{{home.available_countries}}</span><span>+</span></h2>
                                 <p>Available Countries</p>
                             </div>
                         </div>
@@ -131,7 +135,7 @@
                     <div class="col-xl-3 col-md-3 col-sm-6">
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
-                                <h2><span class="counter">70</span><span>+</span></h2>
+                                <h2><span class="counter">{{home.payment_methods}}</span><span>+</span></h2>
                                 <p>Payment Methods</p>
                             </div>
                         </div>
@@ -139,7 +143,7 @@
                     <div class="col-xl-3 col-md-3 col-sm-6">
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
-                                <h2><span class="counter">7</span><span>/</span><span class="counter">24</span><span>+</span></h2>
+                                <h2><span class="counter">{{home.support_team_day}}</span><span>/</span><span class="counter">{{home.support_team_hour}}</span><span>+</span></h2>
                                 <p>Support Team</p>
                             </div>
                         </div>
@@ -166,7 +170,11 @@
                 <div class="row">
                     <div class="col-xxl-6 col-xl-5 order-xl-0 order-1">
                         <div class="image-area d-rtl left-side">
-                            <img src="{% static 'assets/images/global-payment-img.png' %}" alt="images" class="max-un">
+                            {% if home.image %}
+                                <img src="{{home.image.url}}" alt="images" class="max-un">
+                            {% else %}
+                                <img src="{% static 'assets/images/global-payment-img.png' %}" alt="images" class="max-un">
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-xxl-6 col-xl-7">
@@ -175,28 +183,28 @@
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-1.png' %}" alt="icon">
                                     <h5>Peace of Mind</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    <p>{{home.peace_of_mind}}.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-2.png' %}" alt="icon">
                                     <h5>Business-Ready</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    <p>{{home.business_ready}}.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-3.png' %}" alt="icon">
                                     <h5>100% Transparent</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    <p>{{home.transparent}}.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-4.png' %}" alt="icon">
                                     <h5>International Network</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio.</p>
+                                    <p>{{home.international_network}}.</p>
                                 </div>
                             </div>
                         </div>
@@ -225,28 +233,28 @@
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-1.png' %}" alt="icon">
                             <h5>Payments</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <p>{{home.payments}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-2.png' %}" alt="icon">
                             <h5>Collections</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <p>{{home.collections}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-3.png' %}" alt="icon">
                             <h5>Conversions</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <p>{{home.conversions}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-4.png' %}" alt="icon">
                             <h5>Global Account</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <p>{{home.global_account}}.</p>
                         </div>
                     </div>
                 </div>
@@ -273,28 +281,28 @@
                         <div class="single-item first text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-1.png' %}" alt="icon">
                             <h5>Register for free</h5>
-                            <p>Simply sign up online for free and verify your identity</p>
+                            <p>{{home.register_for_free}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item second text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-2.png' %}" alt="icon">
                             <h5>Set up your transfer</h5>
-                            <p>Add a recipient's details and choose which currency ...</p>
+                            <p>{{home.set_up_your_transfer}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item first text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-3.png' %}" alt="icon">
                             <h5>Make your payment</h5>
-                            <p>Send us your funds with a bank transfer and we'll notify..</p>
+                            <p>{{home.make_your_payment}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-4.png' %}" alt="icon">
                             <h5>You're all done!</h5>
-                            <p>We inform you when the money has been sent and can also ...</p>
+                            <p>{{home.you_all_done}}.</p>
                         </div>
                     </div>
                 </div>
@@ -334,10 +342,10 @@
                             </li>
                         </ul>
                         <div class="brand-area mt-40">
-                            <a href="javascript:void(0)">
+                            <a href="{{home.android_app}}">
                                 <img src="{% static 'assets/images/GooglePlay-btn.png' %}" alt="icon">
                             </a>
-                            <a href="javascript:void(0)">
+                            <a href="{{home.ios_app}}">
                                 <img src="{% static 'assets/images/apple-btn.png' %}" alt="icon">
                             </a>
                         </div>
