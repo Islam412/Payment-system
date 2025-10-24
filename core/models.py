@@ -121,7 +121,8 @@ class Home(models.Model):
     supported_currencies = models.PositiveIntegerField()
     available_countries = models.PositiveIntegerField()
     payment_methods = models.PositiveIntegerField()
-    support_team = models.PositiveIntegerField()
+    support_team_day = models.PositiveIntegerField()
+    support_team_hour = models.PositiveIntegerField()
     peace_of_mind = models.CharField(max_length=1000)
     business_ready = models.CharField(max_length=1000)
     transparent = models.CharField(max_length=1000)
@@ -138,4 +139,3 @@ class Home(models.Model):
     ios_app = models.URLField(max_length=500, blank=True, null=True)
 
 
-    
