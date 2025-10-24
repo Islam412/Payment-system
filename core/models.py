@@ -139,3 +139,18 @@ class Home(models.Model):
     ios_app = models.URLField(max_length=500, blank=True, null=True)
 
 
+
+class AnsweringFrequentlyAskedQuestions(models.Model):
+    send_money_online = models.CharField(max_length=1000)
+    money_transfer_fees = models.CharField(max_length=1000)
+    fast_send_money = models.CharField(max_length=1000)
+    use_app = models.CharField(max_length=1000)
+    protect_your_money = models.CharField(max_length=1000)
+    money_transfer_apps_safe = models.CharField(max_length=1000)
+    money_can_i_send = models.CharField(max_length=1000)
+    currency_can_i_send = models.CharField(max_length=1000)
+    Cancel_transaction = models.CharField(max_length=1000)
+    Can_i_send__multiple_payments = models.CharField(max_length=1000)
+
+
+
