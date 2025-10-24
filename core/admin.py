@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from core.models import Transaction , CreditCard , Notification
+from core.models import Transaction , CreditCard , Notification , Home
 
 
 # Register your models here.
@@ -26,3 +26,4 @@ class NotificationAdmin(admin.ModelAdmin):
 admin.site.register(Transaction , TransactionAdmin)
 admin.site.register(CreditCard , CreditCardAdmin)
 admin.site.register(Notification, NotificationAdmin)
+admin.site.register(Home)
