@@ -9,7 +9,6 @@ app_name = 'core'
 
 urlpatterns = [
     #core
-    # path('', views.home, name='home'),
     path('', HomeView.as_view(), name='home'),
 
     # transfer
