@@ -27,7 +27,25 @@ def fund_credit_card(request, card_id):
     account = request.user.account
     
     if request.method == "POST":
-        amount = request.POST.get("funding_amount") # 25
+        amount = request.POST.get("funding_amount")  # 25
+
+        # fix erorr at amount avilable
+        if not amount:
+            messages.warning(request, "Please enter a funding amount")
+            return redirect("core:card-detail", credit_card.card_id)
+        
+        try:
+            amount = Decimal(amount)
+        except InvalidOperation:
+            messages.warning(request, "The entered amount is invalid")
+            return redirect("core:card-detail", credit_card.card_id)
+        
+
+        if amount <= 0:
+            messages.warning(request, "Please enter an amount greater than 0")
+            return redirect("core:card-detail", credit_card.card_id)
+
+
         
         if Decimal(amount) <= account.account_balance:
             account.account_balance -= Decimal(amount) ## 14,790.00 - 20
