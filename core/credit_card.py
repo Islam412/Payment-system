@@ -29,7 +29,7 @@ def fund_credit_card(request, card_id):
     if request.method == "POST":
         amount = request.POST.get("funding_amount")  # 25
 
-        # fix erorr at amount avilable
+        # fix erorr at Check if the amount is empty or <= 0
         if not amount:
             messages.warning(request, "Please enter a funding amount")
             return redirect("core:card-detail", credit_card.card_id)
@@ -71,7 +71,7 @@ def withdraw_fund(request, card_id):
         print(amount)
 
 
-
+        # fix erorr at Check if the amount is empty or <= 0
         if not amount or Decimal(amount) <= 0:
             messages.warning(request, "Please enter a valid amount greater than zero.")
             return redirect("core:card-detail", credit_card.card_id)
