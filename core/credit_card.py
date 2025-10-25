@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from decimal import Decimal
+from decimal import Decimal , InvalidOperation
 
 from core.models import CreditCard , Notification
 from account.models import Account
@@ -42,7 +42,7 @@ def fund_credit_card(request, card_id):
         
 
         if amount <= 0:
-            messages.warning(request, "Please enter an amount greater than 0")
+            messages.warning(request, "Please enter an amount greater than zero")
             return redirect("core:card-detail", credit_card.card_id)
 
 
@@ -69,6 +69,14 @@ def withdraw_fund(request, card_id):
     if request.method == "POST":
         amount = request.POST.get("amount")
         print(amount)
+
+
+
+        if not amount or Decimal(amount) <= 0:
+            messages.warning(request, "Please enter a valid amount greater than zero.")
+            return redirect("core:card-detail", credit_card.card_id)
+
+
 
         if credit_card.amount >= Decimal(amount):
             account.account_balance += Decimal(amount)
