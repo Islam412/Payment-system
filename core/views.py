@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.views.generic import DetailView
 
 
@@ -16,3 +16,8 @@ class HomeView(DetailView):
     def get_object(self):
         return Home.objects.first()
 
+
+
+
+def contatct_us(request):
+    return render(request,'core/contact.html')

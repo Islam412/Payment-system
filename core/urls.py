@@ -1,6 +1,6 @@
 from django.urls import path
 
-from core import views , transfer , transaction , payment_request , credit_card
+from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView
 
 
