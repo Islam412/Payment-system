@@ -21,3 +21,6 @@ class HomeView(DetailView):
 
 def contatct_us(request):
     return render(request,'core/contact.html')
+
+
+
