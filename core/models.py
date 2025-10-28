@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from shortuuid.django_fields import ShortUUIDField
 
@@ -135,8 +136,7 @@ class Home(models.Model):
     set_up_your_transfer = models.CharField(max_length=1000)
     make_your_payment = models.CharField(max_length=1000)
     you_all_done = models.CharField(max_length=1000)
-    android_app = models.URLField(max_length=500, blank=True, null=True)
-    ios_app = models.URLField(max_length=500, blank=True, null=True)
+
 
     # FAQ
     how_to_send_money_online = models.CharField(max_length=1000)
@@ -150,6 +150,22 @@ class Home(models.Model):
     Cancel_transaction = models.CharField(max_length=1000)
     Can_i_send_multiple_payments = models.CharField(max_length=1000)
 
+
+
+
+class Company(models.Model):
+    name = models.CharField(_('name'),max_length=255)
+    logo = models.ImageField(_('logo'),upload_to='company_logos')
+    address = models.CharField(_('address'),max_length=255)
+    support_mail = models.EmailField(_('Support Mail'),max_length=200, null=True, blank=True)
+    phone_number = models.CharField(_('Phone Number'),max_length=255, null=True, blank=True)
+    android_app = models.URLField(_('android app'),max_length=200, null=True, blank=True)
+    ios_app = models.URLField(_('ios app'),max_length=200, null=True, blank=True)
+    android_app = models.URLField(max_length=500, blank=True, null=True)
+    ios_app = models.URLField(max_length=500, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 
