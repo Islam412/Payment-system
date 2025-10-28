@@ -23,4 +23,5 @@ def contatct_us(request):
     return render(request,'core/contact.html')
 
 
-
+def need_help(request):
+    return render(request, 'core/need_help.html')
