@@ -29,8 +29,8 @@
                                     {% if not request.user.is_authenticated %}
                                         <a href="{% url 'userauths:sign-out' %}" class="cmn-btn active">Open a Free Account</a>
                                     {% endif %}
-                                    {% if home.video %}
-                                        <a class="cmn-btn active popup-video" href="{{ home.video.url }}">See How it Works</a>
+                                    {% if company_data.see_how_it_Works %}
+                                        <a class="cmn-btn active popup-video" href="{{ company_data.see_how_it_Works.url }}">See How it Works</a>
                                     {% else %}
                                         <p>Video not available</p>
                                     {% endif %}
@@ -342,10 +342,10 @@
                             </li>
                         </ul>
                         <div class="brand-area mt-40">
-                            <a href="">
+                            <a href="{{ company_data.android_app }}">
                                 <img src="{% static 'assets/images/GooglePlay-btn.png' %}" alt="icon">
                             </a>
-                            <a href="">
+                            <a href="{{ company_data.ios_app }}">
                                 <img src="{% static 'assets/images/apple-btn.png' %}" alt="icon">
                             </a>
                         </div>
@@ -490,7 +490,7 @@
                                 </h6>
                                 <div id="collapseLeftOne" class="accordion-collapse collapse" aria-labelledby="headingLeftOne" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.how_to_send_money_online}}.</p> -->
+                                        <p>{{company_data.how_to_send_money_online}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -502,7 +502,7 @@
                                 </h6>
                                 <div id="collapseLeftTwo" class="accordion-collapse collapse" aria-labelledby="headingLeftTwo" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.how_much_are_money_transfer_fees}}.</p> -->
+                                        <p>{{company_data.how_much_are_money_transfer_fees}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -514,7 +514,7 @@
                                 </h6>
                                 <div id="collapseLeftThree" class="accordion-collapse collapse" aria-labelledby="headingLeftThree" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.what_is_the_fastest_way_to_send_money_abroad}}.</p> -->
+                                        <p>{{company_data.what_is_the_fastest_way_to_send_money_abroad}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -526,7 +526,7 @@
                                 </h6>
                                 <div id="collapseLeftFour" class="accordion-collapse collapse" aria-labelledby="headingLeftFour" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.how_to_use_app}}.</p> -->
+                                        <p>{{company_data.how_to_use_app}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -538,7 +538,7 @@
                                 </h6>
                                 <div id="collapseLeftFive" class="accordion-collapse collapse" aria-labelledby="headingLeftFive" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.how_does_Paylio_protect_your_money}}.</p> -->
+                                        <p>{{company_data.how_does_Paylio_protect_your_money}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -554,7 +554,7 @@
                                 </h6>
                                 <div id="collapseRightOne" class="accordion-collapse collapse" aria-labelledby="headingRightOne" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.are_money_transfer_apps_safe}}.</p> -->
+                                        <p>{{company_data.are_money_transfer_apps_safe}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -566,7 +566,7 @@
                                 </h6>
                                 <div id="collapseRightTwo" class="accordion-collapse collapse" aria-labelledby="headingRightTwo" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.how_much_money_can_i_send}}.</p> -->
+                                        <p>{{company_data.how_much_money_can_i_send}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -578,7 +578,7 @@
                                 </h6>
                                 <div id="collapseRightThree" class="accordion-collapse collapse" aria-labelledby="headingRightThree" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.which_currency_can_i_send}}.</p> -->
+                                        <p>{{company_data.which_currency_can_i_send}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -590,7 +590,7 @@
                                 </h6>
                                 <div id="collapseRightFour" class="accordion-collapse collapse" aria-labelledby="headingRightFour" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.Cancel_transaction}}.</p> -->
+                                        <p>{{company_data.Cancel_transaction}}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -602,7 +602,7 @@
                                 </h6>
                                 <div id="collapseRightFive" class="accordion-collapse collapse" aria-labelledby="headingRightFive" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <!-- <p>{{home.Can_i_send_multiple_payments}}.</p> -->
+                                        <p>{{company_data.Can_i_send_multiple_payments}}.</p>
                                     </div>
                                 </div>
                             </div>
