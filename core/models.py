@@ -117,7 +117,6 @@ class Notification(models.Model):
 
 
 class Home(models.Model):
-    video = models.FileField(upload_to='videos')
     image = models.ImageField(upload_to="image home")
     supported_currencies = models.PositiveIntegerField()
     available_countries = models.PositiveIntegerField()
@@ -146,7 +145,8 @@ class Home(models.Model):
 class Company(models.Model):
     name = models.CharField(_('name'),max_length=255)
     logo = models.ImageField(_('logo'),upload_to='company_logos')
-    address = models.CharField(_('address'),max_length=255)
+    see_how_it_Works = models.FileField(_('logo'),upload_to='videos')
+    address = models.CharField(_('See How it Works'),max_length=255)
     support_mail = models.EmailField(_('Support Mail'),max_length=200, null=True, blank=True)
     phone_number = models.CharField(_('Phone Number'),max_length=255, null=True, blank=True)
     android_app = models.URLField(_('android app'),max_length=200, null=True, blank=True)
