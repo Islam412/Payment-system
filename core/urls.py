@@ -1,7 +1,7 @@
 from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
-from .views import HomeView
+from .views import HomeView , contatct_us
 
 
 app_name = 'core'
@@ -10,6 +10,7 @@ app_name = 'core'
 urlpatterns = [
     #core
     path('', HomeView.as_view(), name='home'),
+    path('contatct',contatct_us, name='contatct_us'),
 
     # transfer
     path('search-account/', transfer.search_users_account_number, name='search-account'),
