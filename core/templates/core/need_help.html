@@ -1,0 +1,211 @@
+{% extends "auth_base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!--=====================================
+                FAQ PAGE (Single Column)
+=======================================-->
+<section class="inner-section faq-section py-5" style="background: #f9fafc; margin-top: 80px;">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="section-title fw-bold text-dark">Frequently Asked Questions</h2>
+      <p class="section-subtitle text-muted">If you’ve got questions, we’ve got answers — explore the most common queries below.</p>
+      <div class="divider mx-auto my-3"></div>
+    </div>
+
+    <!-- Accordion (Single Column) -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <i class="fa-solid fa-paper-plane text-primary me-2"></i> How to send money online?
+              </button>
+            </h6>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.how_to_send_money_online }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="fa-solid fa-dollar-sign text-primary me-2"></i> How much are money transfer fees?
+              </button>
+            </h6>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.how_much_are_money_transfer_fees }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <i class="fa-solid fa-rocket text-primary me-2"></i> What is the fastest way to send money abroad?
+              </button>
+            </h6>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.what_is_the_fastest_way_to_send_money_abroad }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <i class="fa-solid fa-mobile-screen text-primary me-2"></i> How to use Paylio?
+              </button>
+            </h6>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.how_to_use_app }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <i class="fa-solid fa-shield-halved text-primary me-2"></i> How does Paylio protect your money?
+              </button>
+            </h6>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.how_does_Paylio_protect_your_money }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <i class="fa-solid fa-lock text-primary me-2"></i> Are money transfer apps safe?
+              </button>
+            </h6>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.are_money_transfer_apps_safe }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                <i class="fa-solid fa-money-bill-transfer text-primary me-2"></i> How much money can I send?
+              </button>
+            </h6>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.how_much_money_can_i_send }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                <i class="fa-solid fa-coins text-primary me-2"></i> Which currency can I send?
+              </button>
+            </h6>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.which_currency_can_i_send }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                <i class="fa-solid fa-ban text-primary me-2"></i> Cancel transaction
+              </button>
+            </h6>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.Cancel_transaction }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item shadow-sm mb-3 rounded overflow-hidden">
+            <h6 class="accordion-header" id="headingTen">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                <i class="fa-solid fa-layer-group text-primary me-2"></i> Can I send multiple payments?
+              </button>
+            </h6>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>{{ company_data.Can_i_send_multiple_payments }}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--=====================================
+            PAGE STYLES
+=======================================-->
+<style>
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+/* Accordion Styling */
+.accordion-button {
+  background: #fff;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #007bff1a, #eaf3ff);
+  color: #007bff;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+.accordion-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.accordion-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.accordion-body {
+  background: #fff;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .accordion-button {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+{% endblock content %}
