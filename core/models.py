@@ -138,17 +138,7 @@ class Home(models.Model):
     you_all_done = models.CharField(max_length=1000)
 
 
-    # FAQ
-    how_to_send_money_online = models.CharField(max_length=1000)
-    how_much_are_money_transfer_fees = models.CharField(max_length=1000)
-    what_is_the_fastest_way_to_send_money_abroad = models.CharField(max_length=1000)
-    how_to_use_app = models.CharField(max_length=1000)
-    how_does_Paylio_protect_your_money = models.CharField(max_length=1000)
-    are_money_transfer_apps_safe = models.CharField(max_length=1000)
-    how_much_money_can_i_send = models.CharField(max_length=1000)
-    which_currency_can_i_send = models.CharField(max_length=1000)
-    Cancel_transaction = models.CharField(max_length=1000)
-    Can_i_send_multiple_payments = models.CharField(max_length=1000)
+
 
 
 
@@ -161,6 +151,18 @@ class Company(models.Model):
     phone_number = models.CharField(_('Phone Number'),max_length=255, null=True, blank=True)
     android_app = models.URLField(_('android app'),max_length=200, null=True, blank=True)
     ios_app = models.URLField(_('ios app'),max_length=200, null=True, blank=True)
+
+    # FAQ
+    how_to_send_money_online = models.CharField(max_length=1000)
+    how_much_are_money_transfer_fees = models.CharField(max_length=1000)
+    what_is_the_fastest_way_to_send_money_abroad = models.CharField(max_length=1000)
+    how_to_use_app = models.CharField(max_length=1000)
+    how_does_Paylio_protect_your_money = models.CharField(max_length=1000)
+    are_money_transfer_apps_safe = models.CharField(max_length=1000)
+    how_much_money_can_i_send = models.CharField(max_length=1000)
+    which_currency_can_i_send = models.CharField(max_length=1000)
+    Cancel_transaction = models.CharField(max_length=1000)
+    Can_i_send_multiple_payments = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.name
