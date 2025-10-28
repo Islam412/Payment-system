@@ -161,8 +161,6 @@ class Company(models.Model):
     phone_number = models.CharField(_('Phone Number'),max_length=255, null=True, blank=True)
     android_app = models.URLField(_('android app'),max_length=200, null=True, blank=True)
     ios_app = models.URLField(_('ios app'),max_length=200, null=True, blank=True)
-    android_app = models.URLField(max_length=500, blank=True, null=True)
-    ios_app = models.URLField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.name
