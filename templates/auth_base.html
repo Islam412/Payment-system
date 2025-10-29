@@ -247,6 +247,17 @@
                                 </a>
                             </li>
                             <!-- <li>
+                                <a href="#">
+                                    <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit"> <span>Deposit Money</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="withdraw-money-step-1.html">
+                                    <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw"> <span>Withdraw Money</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="money-exchange.html">
                                     <img src="{% static 'assets1/images/icon/exchange.png' %}" alt="Exchange"> <span>Exchange</span>
                                 </a>
@@ -260,27 +271,17 @@
                                 <a href="crypto.html">
                                     <img src="{% static 'assets1/images/icon/crypto.png' %}" alt="Crypto"> <span>Crypto</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="deposit-money.html">
-                                    <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit"> <span>Deposit Money</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="withdraw-money-step-1.html">
-                                    <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw"> <span>Withdraw Money</span>
-                                </a>
                             </li> -->
                         </ul>
                         <ul class="bottom-item">
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="{% url 'core:contatct_us' %}">
                                     <img src="{% static 'assets1/images/icon/support.png' %}" alt="Contact Us"> <span>Contact Us</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="{% url 'core:faq' %}">
                                     <img src="{% static 'assets1/images/icon/icon-faqs.png' %}" style="width: 30px; height: 30px; grayscale(100%) brightness(60%) opacity(0.6); background-color: #BFC1DA;" alt="faq"> <span>FAQ</span>
                                 </a>
                             </li>
