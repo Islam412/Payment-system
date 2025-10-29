@@ -44,18 +44,19 @@
                                         <a class="nav-link dropdown" href="#"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Personal Account</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="payments-01.html">Profile</a></li>
-                                            <li><a class="nav-link" href="subscriptions.html">Update Profile</a></li>
-                                            <li><a class="nav-link" href="security.html">Sign Out</a></li>
+                                            <li><a class="nav-link" href="{% url 'account:account' %}">Profile</a></li>
+                                            <li><a class="nav-link" href="{% url 'account:kyc-registration' %}">Update Profile</a></li>
+                                            <li><a class="nav-link" href="{% url 'userauths:sign-out' %}">Sign Out</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown main-navbar">
                                         <a class="nav-link dropdown" href="#"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Financial Transactions</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="payments-01.html">Transactions</a></li>
-                                            <li><a class="nav-link" href="business-account.html">Transfer Money</a></li>
-                                            <li><a class="nav-link" href="corporate-card.html">Receive Money</a></li>
+                                            <li><a class="nav-link" href="{% url 'account:dashboard' %}">Dadhboard</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:transactions' %}">Transactions</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:search-account' %}">Transfer Money</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:request-search-account' %}">Receive Money</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown main-navbar">
@@ -63,8 +64,8 @@
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Company</a>
                                         <ul class="dropdown-menu main-menu shadow">
                                             <li><a class="nav-link" href="about-us.html">About Us</a></li>
-                                            <li><a class="nav-link" href="career.html">Contact Us</a></li>
-                                            <li><a class="nav-link" href="career-details.html">FAQ</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:contatct_us' %}">Contact Us</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
                                         </ul>
                                     </li>
                                     {% if request.user.is_staff and request.user.is_superuser %}
@@ -72,7 +73,7 @@
                                         <a class="nav-link dropdown" href="javascript:void(0)"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Control Panel</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="help-center.html">Admin Banal</a></li>
+                                            <li><a class="nav-link" href="/admin/">Admin Banal</a></li>
                                             <li><a class="nav-link" href="help-center-category.html">API</a></li>
                                         </ul>
                                     </li>
