@@ -25,3 +25,7 @@ def contatct_us(request):
 
 def need_help(request):
     return render(request, 'core/need_help.html')
+
+
+def about_us(request):
+    return render(request, 'core/about-us.html')
