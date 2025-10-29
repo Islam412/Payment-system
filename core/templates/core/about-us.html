@@ -1,0 +1,205 @@
+{% extends "auth_base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Font Awesome (Lightweight Build) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-7X8F4q9KhEwKAl2kKzMXEo6D94F0bZnBuPiZ1u4A9uNptmHgAXeOBY8Vw2vQ4rSkQZ7TQKXqW86NRVQ4BXY9eg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!--=====================================
+            ABOUT US PAGE (Optimized)
+=======================================-->
+<section class="inner-section about-part py-5" style="background: linear-gradient(180deg, #f8faff 0%, #eef3ff 100%); margin-top: 80px;">
+  <div class="container">
+
+    <!-- Title -->
+    <div class="text-center mb-5 fade-in">
+      <h2 class="fw-bold text-dark display-6 mb-3">About Our Payment System</h2>
+      <p class="text-muted fs-5 mb-4">
+        Empowering secure, fast, and reliable online transactions for individuals and businesses worldwide.
+      </p>
+      <div class="divider mx-auto"></div>
+    </div>
+
+    <!-- Image Banner -->
+    <!-- <div class="text-center mb-5 fade-in-delayed">
+      <img src="{% static 'assets1/images/about/faq.png.png' %}" 
+           alt="About Us" 
+           class="img-fluid rounded-4 shadow-lg" 
+           style="max-height: 380px;">
+    </div> -->
+
+    <!-- About Info Cards -->
+    <div class="row justify-content-center text-center g-4 mb-5">
+      <div class="col-md-6 col-lg-4">
+        <div class="info-card p-4 h-100">
+          <div class="icon-wrapper mb-3">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4 class="fw-semibold">Secure Payments</h4>
+          <p class="text-muted mt-2">
+            We use the latest encryption technologies to ensure every transaction is 100% safe and private.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="info-card p-4 h-100">
+          <div class="icon-wrapper mb-3">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h4 class="fw-semibold">Fast Processing</h4>
+          <p class="text-muted mt-2">
+            Our system guarantees lightning-fast transfers with real-time verification and minimal waiting time.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="info-card p-4 h-100">
+          <div class="icon-wrapper mb-3">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h4 class="fw-semibold">Global Coverage</h4>
+          <p class="text-muted mt-2">
+            Send and receive payments anywhere in the world — connecting people and businesses globally.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission and Vision Section -->
+    <div class="row justify-content-center text-center g-5 fade-in">
+      <div class="col-lg-8">
+        <div class="mission-vision bg-white shadow-sm rounded-4 p-5">
+          <h3 class="fw-bold text-dark mb-3"><i class="fa-solid fa-bullseye text-primary me-2"></i> Our Mission</h3>
+          <p class="text-muted mb-4 fs-6">
+            To make online payments accessible, transparent, and secure for everyone — individuals, startups, and enterprises alike.
+          </p>
+
+          <h3 class="fw-bold text-dark mb-3"><i class="fa-solid fa-eye text-primary me-2"></i> Our Vision</h3>
+          <p class="text-muted fs-6">
+            Building a future where financial technology empowers global connectivity and trust across every transaction.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="row justify-content-center text-center mt-5 g-4">
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>10K+</h3><p>Active Users</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>5M+</h3><p>Transactions</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>99.9%</h3><p>System Uptime</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>50+</h3><p>Countries Supported</p></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!--=====================================
+            PAGE STYLES
+=======================================-->
+<style>
+/* Title Divider */
+.divider {
+  width: 90px;
+  height: 5px;
+  background: linear-gradient(90deg, #0061ff, #60efff);
+  border-radius: 6px;
+  animation: grow 0.8s ease-in-out;
+}
+
+/* Info Card */
+.info-card {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e4e9f2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px rgba(0, 123, 255, 0.18);
+}
+.icon-wrapper {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e9f3ff, #f0f8ff);
+  font-size: 1.9rem;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+.info-card:hover .icon-wrapper {
+  background: linear-gradient(135deg, #0061ff, #60efff);
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+/* Mission / Vision */
+.mission-vision {
+  border: 1px solid #e5ecff;
+  background: linear-gradient(145deg, #ffffff, #f6f9ff);
+  transition: all 0.4s ease;
+}
+.mission-vision:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0, 123, 255, 0.12);
+}
+
+/* Stats Styling */
+.stats-box {
+  background: #fff;
+  border: 1px solid #e4e9f2;
+  padding: 1.6rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.stats-box h3 {
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-size: 1.8rem;
+}
+.stats-box p {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+.stats-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+}
+.stats-box:hover h3 {
+  color: #00b4d8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes grow {
+  from { width: 0; opacity: 0; }
+  to { width: 90px; opacity: 1; }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+.fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 1.2s 0.3s forwards;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .stats-box h3 { font-size: 1.4rem; }
+  .mission-vision { padding: 2rem; }
+}
+</style>
+
+{% endblock content %}
