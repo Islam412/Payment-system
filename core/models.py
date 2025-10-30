@@ -171,6 +171,8 @@ class Company(models.Model):
     our_mission = models.CharField(_('Our Mission'),max_length=255)
     our_vision = models.CharField(_('Our Vision'),max_length=255)
     transactions = models.CharField(_('Transactions'),max_length=255)
+    active_users = models.CharField(_('Active Users'),max_length=255)
+    countries_supported = models.CharField(_('Countries Supported'),max_length=255)
     system_uptime = models.CharField(_('System Uptime'),max_length=255)
 
 
