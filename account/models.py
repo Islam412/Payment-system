@@ -80,7 +80,7 @@ IDENTITY_TYPE = (
 class KYC(models.Model):
     id = models.UUIDField(_('id'),primary_key=True, unique=True, default=uuid.uuid4, editable=False)
     user =  models.OneToOneField(User, on_delete=models.CASCADE,verbose_name=_('user'))
-    account =  models.OneToOneField(Account, on_delete=models.CASCADE, null=True, blank=Trueverbose_name=_('account'))
+    account =  models.OneToOneField(Account, on_delete=models.CASCADE, null=True, blank=True,verbose_name=_('account'))
     full_name = models.CharField(_('full name'),max_length=1000)
     image = models.ImageField(_('image'),upload_to="kyc", default="default.jpg")
     marrital_status = models.CharField(_('marrital status'),choices=MARITAL_STATUS, max_length=40)
