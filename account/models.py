@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.signals import post_save
+from django.utils.translation import gettext_lazy as _
 
 
 import uuid
@@ -24,19 +25,19 @@ ACCOUNT_STATUS = (
 )
 
 class Account(models.Model):
-    id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
-    user =  models.OneToOneField(User, on_delete=models.CASCADE)
-    account_balance = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
-    account_number = ShortUUIDField(unique=True,length=10, max_length=25, prefix="217", alphabet="1234567890")
-    account_id = ShortUUIDField(unique=True,length=7, max_length=25, prefix="DEX", alphabet="1234567890")
-    pin_number = ShortUUIDField(unique=True,length=4, max_length=7, alphabet="1234567890") #2737
-    red_code = ShortUUIDField(unique=True,length=10, max_length=20, alphabet="abcdefgh1234567890")
-    account_status = models.CharField(max_length=100, choices=ACCOUNT_STATUS, default="in-active")
-    date = models.DateTimeField(auto_now_add=True)
-    kyc_submitted = models.BooleanField(default=False)
-    kyc_confirmed = models.BooleanField(default=False)
-    recommended_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="recommended_by")
-    review = models.CharField(max_length=100, null=True, blank=True, default="Review")
+    id = models.UUIDField(_('id'),primary_key=True, unique=True, default=uuid.uuid4, editable=False)
+    user =  models.OneToOneField(User, on_delete=models.CASCADE,verbose_name=_('user'))
+    account_balance = models.DecimalField(_('account balance'),max_digits=12, decimal_places=2, default=0.00)
+    account_number = ShortUUIDField(_('account number'),unique=True,length=10, max_length=25, prefix="217", alphabet="1234567890")
+    account_id = ShortUUIDField(_('account id'),unique=True,length=7, max_length=25, prefix="DEX", alphabet="1234567890")
+    pin_number = ShortUUIDField(_('pin number'),unique=True,length=4, max_length=7, alphabet="1234567890") #2737
+    red_code = ShortUUIDField(_('red code'),unique=True,length=10, max_length=20, alphabet="abcdefgh1234567890")
+    account_status = models.CharField(_('account status'),max_length=100, choices=ACCOUNT_STATUS, default="in-active")
+    date = models.DateTimeField(_('date'),auto_now_add=True)
+    kyc_submitted = models.BooleanField(_('kyc submitted'),default=False)
+    kyc_confirmed = models.BooleanField(_('kyc confirmed'),default=False)
+    recommended_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="recommended_by",verbose_name=_('recommended by'))
+    review = models.CharField(_('review'),max_length=100, null=True, blank=True, default="Review")
 
     
     class Meta:
