@@ -164,6 +164,16 @@ class Company(models.Model):
     Cancel_transaction = models.CharField(max_length=1000)
     Can_i_send_multiple_payments = models.CharField(max_length=1000)
 
+    # about us
+    secure_payments = models.CharField(_('Secure Payments'),max_length=255)
+    fast_processing = models.CharField(_('Fast Processing'),max_length=255)
+    global_coverage = models.CharField(_('Global Coverage'),max_length=255)
+    our_mission = models.CharField(_('Our Mission'),max_length=255)
+    our_vision = models.CharField(_('Our Vision'),max_length=255)
+    transactions = models.CharField(_('Transactions'),max_length=255)
+    system_uptime = models.CharField(_('System Uptime'),max_length=255)
+
+
     def __str__(self):
         return self.name
 
