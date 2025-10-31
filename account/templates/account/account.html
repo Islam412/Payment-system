@@ -1,5 +1,9 @@
 {% extends "auth_base.html" %}
 {% load static %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
     <!-- Dashboard Section start -->
@@ -34,15 +38,15 @@
                             <div class="owner-info">
                                 <ul>
                                     <li>
-                                        <p>Account No:</p>
+                                        <p>{% translate "Account No" %}:</p>
                                         <span class="mdr">{{account.account_number}}</span>
                                     </li>
                                     <li>
-                                        <p>Pin No:</p>
+                                        <p>{% translate "Pin No" %}:</p>
                                         <span class="mdr">{{account.pin_number}}</span>
                                     </li>
                                     <li>
-                                        <p>Joined:</p>
+                                        <p>{% translate "Joined" %}:</p>
                                         <span class="mdr"><small>{{account.date|date:"d M, Y"}}</small></span>
                                     </li>
                                     
@@ -56,11 +60,11 @@
                                     
                                 <a href="{% url 'userauths:sign-out' %}">
                                     <img src="{% static 'assets1/images/icon/logout.png' %}" alt="image">
-                                    Logout
+                                    {% translate "Logout" %}
                                 </a>
                                 <a href="javascript:void(0)" class="delete">
                                     <img src="{% static 'assets1/images/icon/delete-2.png' %}" alt="image">
-                                    Delete Account
+                                    {% translate "Delete Account" %}
                                 </a>
                                 {% endif %}
                             </div>
@@ -122,61 +126,61 @@
                                         <div class="row justify-content-center">
                                             <div class="col-md-6">
                                                 <div class="single-input">
-                                                    <label for="fName">Full Name</label>
+                                                    <label for="fName">{% translate "Full Name" %}</label>
                                                     <input type="text" id="fName" readonly placeholder="Alfred" value="{{kyc.full_name|title}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
-                                                    <label for="lName">Email</label>
+                                                    <label for="lName">{% translate "Email" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.user.email }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
-                                                    <label for="lName">Gender</label>
+                                                    <label for="lName">{% translate "Gender" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.gender|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
-                                                    <label for="lName">Marrital</label>
+                                                    <label for="lName">{% translate "Marrital" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.marrital_status|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    <label for="lName">Date of Birth</label>
+                                                    <label for="lName">{% translate "Date of Birth" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.date_of_birth|date:'d M, Y' }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    <label for="lName">Mobile</label>
+                                                    <label for="lName">{% translate "Mobile" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.mobile }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    <label for="lName">Identity Type</label>
+                                                    <label for="lName">{% translate "Identity Type" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.identity_type|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    <label for="lName">Country</label>
+                                                    <label for="lName">{% translate "Country" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.country|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    <label for="lName">State</label>
+                                                    <label for="lName">{% translate "State" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.state|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    <label for="lName">City</label>
+                                                    <label for="lName">{% translate "City" %}</label>
                                                     <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.city|title }}">
                                                 </div>
                                             </div>
@@ -191,7 +195,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
-                                                    <label for="fName">Signature</label>
+                                                    <label for="fName">{% translate "Signature" %}</label>
                                                     {% if kyc.signature %}
                                                         <img src="{{ kyc.signature.url }}" style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;" alt="">
                                                     {% endif %}
@@ -199,7 +203,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="btn-border">
-                                                    <a href="{% url 'account:kyc-registration' %}" class="cmn-btn">Edit KYC</a>
+                                                    <a href="{% url 'account:kyc-registration' %}" class="cmn-btn">{% translate "Edit KYC" %}</a>
                                                 </div>
                                             </div>
                                         </div>
