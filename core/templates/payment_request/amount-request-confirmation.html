@@ -123,8 +123,8 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                                         </div>
                                         <div class="main-content">
-                                            <h4>Confirm Request!</h4>
-                                            <p>{% translate "Enter PIN آumber" %}</p>
+                                            <h4>{% translate "Confirm Request" %}!</h4>
+                                            <p>{% translate "Enter PIN Number" %}</p>
                                             <form action="{% url 'core:amount-request-final-process' account.account_number transaction.transaction_id  %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="userInput">
