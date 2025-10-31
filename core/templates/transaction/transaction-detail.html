@@ -1,6 +1,10 @@
 {% extends "auth_base.html" %}
 {% load static %}
 {% load humanize %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
     
     <section class="dashboard-section body-collapse">
@@ -18,8 +22,8 @@
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header justify-content-between">
-                                                            <h5>Transaction Details</h5>
-                                                            <a href=""><i class="material-symbols-outlined">arrow_back</i></a>
+                                                            <h5>{% translate "Transaction Details" %}</h5>
+                                                            <a href=""><i class="material-symbols-outlined">{% translate "Arrow Back" %}</i></a>
                                                         </div>
                                                         <div class="main-content">
                                                             <div class="row">
@@ -27,11 +31,11 @@
                                                                     <div class="icon-area">
                                                                     </div>
                                                                     <div class="text-area">
-                                                                        {% comment %} <h6 class="mt-2">Sender : {{transaction.sender.kyc.full_name|title}}</h6>
+                                                                        {% comment %} <h6 class="mt-2">{% translate "Sender" %} : {{transaction.sender.kyc.full_name|title}}</h6>
                                                                         <br>
-                                                                        <h6 class="mt-2">Reciever : {{transaction.reciever.kyc.full_name|title}}</h6>
+                                                                        <h6 class="mt-2">{% translate "Reciever" %} : {{transaction.reciever.kyc.full_name|title}}</h6>
                                                                         <br> {% endcomment %}
-                                                                        <h5><b>{{transaction.amount|intcomma}} USD</b></h5>
+                                                                        <h5><b>{{transaction.amount|intcomma}} $</b></h5>
                                                                         <p>{{transaction.date}}</p>
 
                                                                         <p> 
@@ -52,36 +56,33 @@
                                                                 </div>
                                                                 <div class="col-sm-7">
                                                                     <div class="right-area">
-                                                                        <h6>Transaction Details</h6>
+                                                                        <h6>{% translate "Transaction Details" %}</h6>
                                                                         <ul class="payment-details">
                                                                             <li>
-                                                                                <span>Payment Amount</span>
-                                                                                <span>{{transaction.amount|intcomma}} USD</span>
+                                                                                <span>{% translate "Payment Amount" %}</span>
+                                                                                <span>{{transaction.amount|intcomma}} $</span>
                                                                             </li>
+                                                                            
                                                                             <li>
-                                                                                <span>Fee</span>
-                                                                                <span>Free USD</span>
-                                                                            </li>
-                                                                            <li>
-                                                                                <span>Total Amount</span>
-                                                                                <span>{{transaction.amount|intcomma}} USD</span>
+                                                                                <span>{% translate "Total Amount" %}</span>
+                                                                                <span>{{transaction.amount|intcomma}} $</span>
                                                                             </li>
                                                                         </ul>
                                                                         <ul class="payment-info">
                                                                             <li>
-                                                                                <p>Payment From</p>
+                                                                                <p>{% translate "Payment From" %}</p>
                                                                                 <span class="mdr">{{transaction.reciever.kyc.full_name|title}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <p>Payment To</p>
+                                                                                <p>{% translate "Payment To" %}</p>
                                                                                 <span class="mdr">{{transaction.sender.kyc.full_name|title}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <p>Payment Description</p>
+                                                                                <p>{% translate "Payment Description" %}</p>
                                                                                 <span class="mdr">{{transaction.description}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <p>Transaction ID:</p>
+                                                                                <p>{% translate "Transaction ID" %}:</p>
                                                                                 <span class="mdr">{{transaction.transaction_id}}</span>
                                                                             </li>
                                                                         </ul>
