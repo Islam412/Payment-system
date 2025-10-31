@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 import os
@@ -62,6 +63,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Django translation middleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -130,6 +132,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # translations settings
 LOCALE_PATHS = [
     "locale",
+]
+
+# select language
+LANGUAGES = [
+    ("ar", _("Arabic")),
+    ("en", _("English")),
 ]
 
 LANGUAGE_CODE = 'en-us'
