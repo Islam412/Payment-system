@@ -1,5 +1,9 @@
 {% extends "auth_base.html" %}
 {% load static %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
 <!-- Font Awesome (Lightweight Build) -->
@@ -13,9 +17,9 @@
 
     <!-- Title -->
     <div class="text-center mb-5 fade-in">
-      <h2 class="fw-bold text-dark display-6 mb-3">About Our Payment System</h2>
+      <h2 class="fw-bold text-dark display-6 mb-3">{% translate "About Our Payment System" %}</h2>
       <p class="text-muted fs-5 mb-4">
-        Empowering secure, fast, and reliable online transactions for individuals and businesses worldwide.
+        {% translate "Empowering secure, fast, and reliable online transactions for individuals and businesses worldwide." %}
       </p>
       <div class="divider mx-auto"></div>
     </div>
@@ -47,7 +51,7 @@
           <div class="icon-wrapper mb-3">
             <i class="fa-solid fa-bolt"></i>
           </div>
-          <h4 class="fw-semibold">Fast Processing</h4>
+          <h4 class="fw-semibold">{% translate "Fast Processing" %}</h4>
           <p class="text-muted mt-2">
             {{ company_data.fast_processing }}.
           </p>
@@ -59,7 +63,7 @@
           <div class="icon-wrapper mb-3">
             <i class="fa-solid fa-globe"></i>
           </div>
-          <h4 class="fw-semibold">Global Coverage</h4>
+          <h4 class="fw-semibold">{% translate "Global Coverage" %}</h4>
           <p class="text-muted mt-2">
             {{ company_data.global_coverage }}.
           </p>
@@ -71,12 +75,12 @@
     <div class="row justify-content-center text-center g-5 fade-in">
       <div class="col-lg-8">
         <div class="mission-vision bg-white shadow-sm rounded-4 p-5">
-          <h3 class="fw-bold text-dark mb-3"><i class="fa-solid fa-bullseye text-primary me-2"></i> Our Mission</h3>
+          <h3 class="fw-bold text-dark mb-3"><i class="fa-solid fa-bullseye text-primary me-2"></i>{% translate " Our Mission" %}</h3>
           <p class="text-muted mb-4 fs-6">
             {{ company_data.our_mission }}.
           </p>
 
-          <h3 class="fw-bold text-dark mb-3"><i class="fa-solid fa-eye text-primary me-2"></i> Our Vision</h3>
+          <h3 class="fw-bold text-dark mb-3"><i class="fa-solid fa-eye text-primary me-2"></i>{% translate " Our Vision" %}</h3>
           <p class="text-muted fs-6">
             {{ company_data.our_vision }}.
           </p>
@@ -86,10 +90,10 @@
 
     <!-- Stats Section -->
     <div class="row justify-content-center text-center mt-5 g-4">
-      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.active_users }}+</h3><p>Active Users</p></div></div>
-      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.transactions }}+</h3><p>Transactions</p></div></div>
-      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.system_uptime }}%</h3><p>System Uptime</p></div></div>
-      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.countries_supported }}+</h3><p>Countries Supported</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.active_users }}+</h3><p>{% translate "Active Users" %}</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.transactions }}+</h3><p>{% translate "Transactions" %}</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.system_uptime }}%</h3><p>{% translate "System Uptime" %}</p></div></div>
+      <div class="col-md-3 col-6 fade-in"><div class="stats-box"><h3>{{ company_data.countries_supported }}+</h3><p>{% translate "Countries Supported" %}</p></div></div>
     </div>
 
   </div>
