@@ -1,6 +1,10 @@
 {% extends "auth_base.html" %}
 {% load static %}
 {% load humanize %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
     <!-- Dashboard Section start -->
@@ -9,15 +13,15 @@
             <div class="container-fruid">
                 <div class="main-content">
                     <div class="head-area d-flex align-items-center justify-content-between">
-                        <h4>Request Payment</h4>
+                        <h4>{% translate "Request Payment" %}</h4>
                         <div class="icon-area">
                             <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon">
                         </div>
                     </div>
                     <div class="choose-recipient">
                         <div class="step-area">
-                            <span class="mdr">Step 2 of 3</span>
-                            <h5>Set Amount of request</h5>
+                            <span class="mdr">{% translate "Step 2 of 3" %}</span>
+                            <h5>{% translate "Set Amount of request" %}</h5>
                         </div>
                         <div class="user-select">
                             <div class="single-user">
@@ -37,7 +41,7 @@
                                     
                                     <a href="{% url 'core:search-account' %}">
                                         <i class="icon-h-edit"></i>
-                                        Edit
+                                        {% translate "Edit" %}
                                     </a>
                                 </div>
                             </div>
@@ -46,29 +50,24 @@
                     <form action="{% url 'core:amount-request-process' account.account_number %}" method="POST">
                         {% csrf_token %}
                         <div class="send-banance">
-                            <span class="mdr">You Request</span>
+                            <span class="mdr">{% translate "You Request" %}</span>
                             <div class="input-area">
-                                <input class="xxlr" placeholder="Enter Amount Request" type="number" name='amount_request' id="amount_request">
-                                <select>
-                                    <option value="1">USD</option>
-                                    <option value="2">USD</option>
-                                    <option value="3">USD</option>
-                                </select>
+                                <input class="xxlr" placeholder="{% translate 'Enter Amount Request' %}" type="number" name='amount_request' id="amount_request">
                             </div>
                         </div>
 
 
                         <div class="send-banance pt-0 mt-0">
-                            <span class="mdr">Request Description</span>
+                            <span class="mdr">{% translate "Request Description" %}</span>
                             <div class="input-area">
-                                <input class="xxlr" placeholder="Request money for house rent" type="text" name="description">
+                                <input class="xxlr" placeholder="{% translate 'Request money for house rent' %}" type="text" name="description">
                                 
                             </div>
                         </div>
 
                         <div class="footer-area mt-40">
-                            <a href="{% url 'core:request-search-account' %}">Previous Step</a>
-                            <button type="submit" style="padding: 10px 30px; border-radius: 10px; background: rgb(98, 0, 255); color: #fff;" class="active">Next</button>
+                            <a href="{% url 'core:request-search-account' %}">{% translate "Previous Step" %}</a>
+                            <button type="submit" style="padding: 10px 30px; border-radius: 10px; background: rgb(98, 0, 255); color: #fff;" class="active">{% translate "Next" %}</button>
                         </div>
                     </form>
                 </div>
