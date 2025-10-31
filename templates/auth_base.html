@@ -1,13 +1,16 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 <!doctype html>
-<html lang="en">
+<html lang=="en" {% if LANGUAGE_CODE == 'ar' %} dir="rtl" {% endif %}>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Paylio - Money Transfer and Online Payments Dashboard HTML Template</title>
+    <title>{{ company_data.name }} - {% translate "Money Transfer and Online Payments Dashboard HTML Template" %}</title>
 
     <link rel="shortcut icon" href="{% static 'assets1/images/fav.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'assets1/css/bootstrap.min.css' %}">
@@ -200,18 +203,18 @@
                                                 <a href="{% url 'account:account' %}">
                                                     <h5>{{request.user.username|title}}</h5>
                                                 </a>
-                                                <p class="wallet-id">Account No: {{request.user.account.account_number}}</p>
-                                                <p class="wallet-id">Pin No: {{request.user.account.pin_number}}</p>
+                                                <p class="wallet-id">{% translate "Account No" %}: {{request.user.account.account_number}}</p>
+                                                <p class="wallet-id">{% translate "Pin No" %}: {{request.user.account.pin_number}}</p>
                                             </div>
                                         </div>
                                     </form>
                                     
                                     <ul>
                                         <li class="border-area">
-                                            <a href="{% url 'account:kyc-registration' %}"><i class="fas fa-cog"></i>Settings</a>
+                                            <a href="{% url 'account:kyc-registration' %}"><i class="fas fa-cog"></i>{% translate "Settings" %}</a>
                                         </li>
                                         <li>
-                                            <a href="{% url 'userauths:sign-out' %}"><i class="fas fa-sign-out"></i>Logout</a>
+                                            <a href="{% url 'userauths:sign-out' %}"><i class="fas fa-sign-out"></i>{% translate "Logout" %}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -228,22 +231,22 @@
                         <ul>
                             <li>
                                 <a href="{% url 'account:dashboard' %}">
-                                    <img src="{% static 'assets1/images/icon/dashboard.png' %}" alt="Dashboard"> <span>Dashboard</span>
+                                    <img src="{% static 'assets1/images/icon/dashboard.png' %}" alt="Dashboard"> <span>{% translate "Dashboard" %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url 'core:transactions' %}">
-                                    <img src="{% static 'assets1/images/icon/transactions.png' %}" alt="Transactions"> <span>Transactions</span>
+                                    <img src="{% static 'assets1/images/icon/transactions.png' %}" alt="Transactions"> <span>{% translate "Transactions" %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url 'core:search-account' %}">
-                                    <img src="{% static 'assets1/images/icon/pay.png' %}" alt="Pay"> <span>Pay</span>
+                                    <img src="{% static 'assets1/images/icon/pay.png' %}" alt="Pay"> <span>{% translate "Pay" %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url 'core:request-search-account' %}">
-                                    <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive"> <span>Receive</span>
+                                    <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive"> <span>{% translate "Receive" %}</span>
                                 </a>
                             </li>
                             <!-- <li>
@@ -281,25 +284,25 @@
 
                             <li>
                                 <a href="{% url 'core:contatct_us' %}">
-                                    <img src="{% static 'assets1/images/icon/support.png' %}" alt="Contact Us"> <span>Contact Us</span>
+                                    <img src="{% static 'assets1/images/icon/support.png' %}" alt="Contact Us"> <span>{% translate "Contact Us" %}</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{% url 'core:faq' %}">
-                                    <img src="{% static 'assets1/images/icon/icon-faqs.png' %}" style="width: 30px; height: 30px; grayscale(100%) brightness(60%) opacity(0.6); background-color: #BFC1DA;" alt="faq"> <span>FAQ</span>
+                                    <img src="{% static 'assets1/images/icon/icon-faqs.png' %}" style="width: 30px; height: 30px; grayscale(100%) brightness(60%) opacity(0.6); background-color: #BFC1DA;" alt="faq"> <span>{% translate "FAQ" %}</span>
                                 </a>
                             </li>
 
                             <li class="">
                                 <a href="{% url 'account:account' %}">
-                                    <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account"> <span>Account</span>
+                                    <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account"> <span>{% translate "Account" %}</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{% url 'userauths:sign-out' %}">
-                                    <img src="{% static 'assets1/images/icon/quit.png' %}" alt="Quit"> <span>Quit</span>
+                                    <img src="{% static 'assets1/images/icon/quit.png' %}" alt="Quit"> <span>{% translate "Quit" %}</span>
                                 </a>
                             </li>
 
@@ -309,20 +312,20 @@
                             {% if request.user.is_staff and request.user.is_superuser %}
                                 <!-- ====== ADMIN SECTION ====== -->
                                 <li class="admin-section mt-3" style="list-style: none; text-align: center; padding: 12px; border-radius: 12px; background: linear-gradient(135deg, #f1f3ff, #e7e9fc); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                    <p style="margin-bottom: 8px; font-size: 13px; font-weight: 600; color: #5a5ccf; letter-spacing: 0.5px;">Admin Area</p>
+                                    <p style="margin-bottom: 8px; font-size: 13px; font-weight: 600; color: #5a5ccf; letter-spacing: 0.5px;">{% translate "Admin Area" %}</p>
 
                                     <a href="/admin/" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; text-decoration: none; color: #333;">
                                         <img src="{% static 'assets1/images/icon/adman.png' %}" 
                                             style="width: 30px; height: 30px; filter: grayscale(100%) brightness(65%) opacity(0.85);" 
                                             alt="Control Panel">
-                                        <span style="font-weight: 500;">Control Panel</span>
+                                        <span style="font-weight: 500;">{% translate "Control Panel" %}</span>
                                     </a>
 
                                     <a href="/api.html" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; text-decoration: none; color: #333;">
                                         <img src="{% static 'assets1/images/icon/api.jpg' %}" 
                                             style="width: 30px; height: 30px; filter: grayscale(100%) brightness(65%) opacity(0.85);" 
                                             alt="API">
-                                        <span style="font-weight: 500;">API</span>
+                                        <span style="font-weight: 500;">{% translate "API" %}</span>
                                     </a>
                                 </li>
                             {% endif %}
