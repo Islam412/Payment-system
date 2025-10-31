@@ -47,50 +47,47 @@
                                         <a class="nav-link dropdown" href="#"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">{% translate "Personal Account" %}</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="{% url 'account:account' %}">Profile</a></li>
-                                            <li><a class="nav-link" href="{% url 'account:kyc-registration' %}">Update Profile</a></li>
-                                            <li><a class="nav-link" href="{% url 'userauths:sign-out' %}">Sign Out</a></li>
+                                            <li><a class="nav-link" href="{% url 'account:account' %}">{% translate "Profile" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'account:kyc-registration' %}">{% translate "Update Profile" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'userauths:sign-out' %}">{% translate "Sign Out" %}</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown main-navbar">
                                         <a class="nav-link dropdown" href="#"
-                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">Financial Transactions</a>
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">{% translate "Financial Transactions" %}</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="{% url 'account:dashboard' %}">Dadhboard</a></li>
-                                            <li><a class="nav-link" href="{% url 'core:transactions' %}">Transactions</a></li>
-                                            <li><a class="nav-link" href="{% url 'core:search-account' %}">Transfer Money</a></li>
-                                            <li><a class="nav-link" href="{% url 'core:request-search-account' %}">Receive Money</a></li>
+                                            <li><a class="nav-link" href="{% url 'account:dashboard' %}">{% translate "Dadhboard" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:transactions' %}">{% translate "Transactions" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:search-account' %}">{% translate "Transfer Money" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:request-search-account' %}">{% translate "Receive Money" %}</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown main-navbar">
                                         <a class="nav-link dropdown" href="#"
-                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">Company</a>
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">{% translate "Company" %}</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="{% url 'core:about_us' %}">About Us</a></li>
-                                            <li><a class="nav-link" href="{% url 'core:contatct_us' %}">Contact Us</a></li>
-                                            <li><a class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:about_us' %}">{% translate "About Us" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:contatct_us' %}">{% translate "Contact Us" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:faq' %}">{% translate "FAQ" %}</a></li>
                                         </ul>
                                     </li>
                                     {% if request.user.is_staff and request.user.is_superuser %}
                                     <li class="nav-item dropdown main-navbar">
                                         <a class="nav-link dropdown" href="javascript:void(0)"
-                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">Control Panel</a>
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">{% translate "Control Panel" %}</a>
                                         <ul class="dropdown-menu main-menu shadow">
-                                            <li><a class="nav-link" href="/admin/">Admin Banal</a></li>
-                                            <li><a class="nav-link" href="help-center-category.html">API</a></li>
+                                            <li><a class="nav-link" href="/admin/">{% translate "Admin Banal" %}</a></li>
+                                            <li><a class="nav-link" href="help-center-category.html">{% translate "API" %}</a></li>
                                         </ul>
                                     </li>
                                     {% endif %}
                                 </ul>
                                 <div class="right-area header-action d-flex align-items-center max-un">
-                                    <a href="{% url 'userauths:sign-out' %}" class="login cmn-btn">Sign Out</a>
+                                    <a href="{% url 'userauths:sign-out' %}" class="login cmn-btn">{% translate "Sign Out" %}</a>
                                     {% elif request.path == '/user/sign-up/' %}
-                                    <a href="{% url 'userauths:sign-in' %}" class="cmn-btn">Login <i class="fas fa-caret-right"></i></a>
+                                    <a href="{% url 'userauths:sign-in' %}" class="cmn-btn">{% translate "Login" %}<i class="fas fa-caret-right"></i></a>
                             {% else %}
-                                    <a href="{% url 'userauths:sign-up' %}" class="cmn-btn">Sign Up
-                                        <i class="fas fa-caret-right"></i>
-                                    </a>
-                                    
+                                    <a href="{% url 'userauths:sign-up' %}" class="cmn-btn">{% translate "Sign Up" %}<i class="fas fa-caret-right"></i></a>
                                 </div>
                             {% endif %}
                         </div>
