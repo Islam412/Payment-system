@@ -24,16 +24,16 @@
                         <div class="col-lg-5 col-md-6">
                             <div class="main-content">
                                 <div class="top-area section-text">
-                                    <h5 class="sub-title">Trusted by over 3M customers</h5>
-                                    <h1 class="title">Pay Anyone, Anywhere</h1>
-                                    <p class="xlr">Quickly and easily send, receive and request money online with Paylio. Get a customised solution to fit your business needs.</p>
+                                    <h5 class="sub-title">{% translate "Trusted by over 3M customers" %}</h5>
+                                    <h1 class="title">{% translate "Pay Anyone, Anywhere" %}</h1>
+                                    <p class="xlr">{% translate "Quickly and easily send, receive and request money online with Paylio. Get a customised solution to fit your business needs." %}</p>
                                 </div>
                                 <div class="bottom-area d-xxl-flex">
                                     {% if not request.user.is_authenticated %}
-                                        <a href="{% url 'userauths:sign-out' %}" class="cmn-btn active">Open a Free Account</a>
+                                        <a href="{% url 'userauths:sign-out' %}" class="cmn-btn active">{% translate "Open a Free Account" %}</a>
                                     {% endif %}
                                     {% if company_data.see_how_it_Works %}
-                                        <a class="cmn-btn active popup-video" href="{{ company_data.see_how_it_Works.url }}">See How it Works</a>
+                                        <a class="cmn-btn active popup-video" href="{{ company_data.see_how_it_Works.url }}">{% translate "See How it Works" %}</a>
                                     {% else %}
                                         <p>Video not available</p>
                                     {% endif %}
@@ -123,7 +123,7 @@
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
                                 <h2><span class="counter">{{home.supported_currencies}}</span><span>+</span></h2>
-                                <p>Supported Currencies</p>
+                                <p>{% translate "Supported Currencies" %}</p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
                                 <h2><span class="counter">{{home.available_countries}}</span><span>+</span></h2>
-                                <p>Available Countries</p>
+                                <p>{% translate "Available Countries" %}</p>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
                                 <h2><span class="counter">{{home.payment_methods}}</span><span>+</span></h2>
-                                <p>Payment Methods</p>
+                                <p>{% translate "Payment Methods" %}</p>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         <div class="single-area d-flex align-items-center justify-content-center">
                             <div class="text-area text-center">
                                 <h2><span class="counter">{{home.support_team_day}}</span><span>/</span><span class="counter">{{home.support_team_hour}}</span><span>+</span></h2>
-                                <p>Support Team</p>
+                                <p>{% translate "Support Team" %}</p>
                             </div>
                         </div>
                     </div>
@@ -164,9 +164,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Send money in a heartbeat</h5>
-                            <h2 class="title">The World At Your Fingertips</h2>
-                            <p>Sign up to start saving on international money transfers and currency exchange.</p>
+                            <h5 class="sub-title">{% translate "Send money in a heartbeat" %}</h5>
+                            <h2 class="title">{% translate "The World At Your Fingertips" %}</h2>
+                            <p>{% translate "Sign up to start saving on international money transfers and currency exchange." %}</p>
                         </div>
                     </div>
                 </div>
@@ -185,28 +185,28 @@
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-1.png' %}" alt="icon">
-                                    <h5>Peace of Mind</h5>
+                                    <h5>{% translate "Peace of Mind" %}</h5>
                                     <p>{{home.peace_of_mind}}.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-2.png' %}" alt="icon">
-                                    <h5>Business-Ready</h5>
+                                    <h5>{% translate "Business-Ready" %}</h5>
                                     <p>{{home.business_ready}}.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-3.png' %}" alt="icon">
-                                    <h5>100% Transparent</h5>
+                                    <h5>{% translate "100% Transparent" %}</h5>
                                     <p>{{home.transparent}}.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-6">
                                 <div class="single-item">
                                     <img src="{% static 'assets/images/icon/global-payment-icon-4.png' %}" alt="icon">
-                                    <h5>International Network</h5>
+                                    <h5>{% translate "International Network" %}</h5>
                                     <p>{{home.international_network}}.</p>
                                 </div>
                             </div>
@@ -225,9 +225,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section-header dark-sec text-center">
-                            <h5 class="sub-title">High speeds. Low fees. No hassle.</h5>
-                            <h2 class="title">All Your Payments In One Place</h2>
-                            <p>Get used to low fees and great exchange rates on international money transfers.Expand your business worldwide</p>
+                            <h5 class="sub-title">{% translate "High speeds. Low fees. No hassle." %}</h5>
+                            <h2 class="title">{% translate "All Your Payments In One Place" %}</h2>
+                            <p>{% translate "Get used to low fees and great exchange rates on international money transfers.Expand your business worldwide" %}</p>
                         </div>
                     </div>
                 </div>
@@ -235,28 +235,28 @@
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-1.png' %}" alt="icon">
-                            <h5>Payments</h5>
+                            <h5>{% translate "Payments" %}</h5>
                             <p>{{home.payments}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-2.png' %}" alt="icon">
-                            <h5>Collections</h5>
+                            <h5>{% translate "Collections" %}</h5>
                             <p>{{home.collections}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-3.png' %}" alt="icon">
-                            <h5>Conversions</h5>
+                            <h5>{% translate "Conversions" %}</h5>
                             <p>{{home.conversions}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-4.png' %}" alt="icon">
-                            <h5>Global Account</h5>
+                            <h5>{% translate "Global Account" %}</h5>
                             <p>{{home.global_account}}.</p>
                         </div>
                     </div>
@@ -273,9 +273,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">How it works?</h5>
-                            <h2 class="title">Just few steps to start</h2>
-                            <p>It's easier than you think. Follow 3 simple easy steps</p>
+                            <h5 class="sub-title">{% translate "How it works?" %}</h5>
+                            <h2 class="title">{% translate "Just few steps to start" %}</h2>
+                            <p>{% translate "It's easier than you think. Follow 3 simple easy steps" %}</p>
                         </div>
                     </div>
                 </div>
@@ -283,28 +283,28 @@
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item first text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-1.png' %}" alt="icon">
-                            <h5>Register for free</h5>
+                            <h5>{% translate "Register for free" %}</h5>
                             <p>{{home.register_for_free}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item second text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-2.png' %}" alt="icon">
-                            <h5>Set up your transfer</h5>
+                            <h5>{% translate "Set up your transfer" %}</h5>
                             <p>{{home.set_up_your_transfer}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item first text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-3.png' %}" alt="icon">
-                            <h5>Make your payment</h5>
+                            <h5>{% translate "Make your payment" %}</h5>
                             <p>{{home.make_your_payment}}.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-6">
                         <div class="single-item text-center">
                             <img src="{% static 'assets/images/icon/how-works-icon-4.png' %}" alt="icon">
-                            <h5>You're all done!</h5>
+                            <h5>{% translate "You're all done!" %}</h5>
                             <p>{{home.you_all_done}}.</p>
                         </div>
                     </div>
@@ -326,22 +326,22 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="section-area">
-                            <h5 class="sub-title">App Download</h5>
-                            <h2 class="title">Fast, Secure Money Transfers</h2>
-                            <p>Access your account via your mobile phone. View balance, transfer funds, view transactions wherever you are.</p>
+                            <h5 class="sub-title">{% translate "App Download" %}</h5>
+                            <h2 class="title">{% translate "Fast, Secure Money Transfers" %}</h2>
+                            <p>{% translate "Access your account via your mobile phone. View balance, transfer funds, view transactions wherever you are." %}</p>
                         </div>
                         <ul class="features">
                             <li>
-                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Login with fingerprint or Face ID.
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon">{% translate " Login with fingerprint or Face ID." %}
                             </li>
                             <li>
-                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Simple few Taps to send money
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon">{% translate " Simple few Taps to send money" %}
                             </li>
                             <li>
-                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> View transaction history.
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon">{% translate " View transaction history." %}
                             </li>
                             <li>
-                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Get instant App notifications.
+                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon">{% translate " Get instant App notifications." %}
                             </li>
                         </ul>
                         <div class="brand-area mt-40">
@@ -366,9 +366,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Testimonials</h5>
-                            <h2 class="title">What Our Customers Say</h2>
-                            <p>245m+ happy clients all around the world. Don’t just take our word for it</p>
+                            <h5 class="sub-title">{% translate "Testimonials" %}</h5>
+                            <h2 class="title">{% translate "What Our Customers Say" %}</h2>
+                            <p>{% translate "245m+ happy clients all around the world. Do not just take our word for it" %}</p>
                         </div>
                     </div>
                 </div>
@@ -476,9 +476,9 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-7">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Frequently Asked Questions</h5>
-                            <h2 class="title">If you got questions we have answer</h2>
-                            <p>We have a list of frequently asked questions about us</p>
+                            <h5 class="sub-title">{% translate "Frequently Asked Questions" %}</h5>
+                            <h2 class="title">{% translate "If you got questions we have answer" %}</h2>
+                            <p>{% translate "We have a list of frequently asked questions about us" %}</p>
                         </div>
                     </div>
                 </div>
@@ -488,7 +488,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftOne" aria-expanded="false" aria-controls="collapseLeftOne">
-                                        How to send money online?
+                                        {% translate "How to send money online?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseLeftOne" class="accordion-collapse collapse" aria-labelledby="headingLeftOne" data-bs-parent="#accordionLeft">
@@ -500,7 +500,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftTwo" aria-expanded="false" aria-controls="collapseLeftTwo">
-                                        How much are money transfer fees?
+                                        {% translate "How much are money transfer fees?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseLeftTwo" class="accordion-collapse collapse" aria-labelledby="headingLeftTwo" data-bs-parent="#accordionLeft">
@@ -512,7 +512,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftThree" aria-expanded="false" aria-controls="collapseLeftThree">
-                                        What is the fastest way to send money abroad?
+                                        {% translate "What is the fastest way to send money abroad?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseLeftThree" class="accordion-collapse collapse" aria-labelledby="headingLeftThree" data-bs-parent="#accordionLeft">
@@ -524,7 +524,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftFour" aria-expanded="false" aria-controls="collapseLeftFour">
-                                        How to use Paylio?
+                                        {% translate "How to use Paylio?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseLeftFour" class="accordion-collapse collapse" aria-labelledby="headingLeftFour" data-bs-parent="#accordionLeft">
@@ -536,7 +536,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftFive">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftFive" aria-expanded="false" aria-controls="collapseLeftFive">
-                                        How does Paylio protect your money?
+                                        {% translate "How does Paylio protect your money?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseLeftFive" class="accordion-collapse collapse" aria-labelledby="headingLeftFive" data-bs-parent="#accordionLeft">
@@ -552,7 +552,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightOne" aria-expanded="false" aria-controls="collapseRightOne">
-                                        Are money transfer apps safe?
+                                        {% translate "Are money transfer apps safe?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseRightOne" class="accordion-collapse collapse" aria-labelledby="headingRightOne" data-bs-parent="#accordionRight">
@@ -564,7 +564,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightTwo" aria-expanded="false" aria-controls="collapseRightTwo">
-                                        How much money can I send?
+                                        {% translate "How much money can I send?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseRightTwo" class="accordion-collapse collapse" aria-labelledby="headingRightTwo" data-bs-parent="#accordionRight">
@@ -576,7 +576,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightThree" aria-expanded="false" aria-controls="collapseRightThree">
-                                        Which currency can I send?
+                                        {% translate "Which currency can I send?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseRightThree" class="accordion-collapse collapse" aria-labelledby="headingRightThree" data-bs-parent="#accordionRight">
@@ -588,7 +588,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightFour" aria-expanded="false" aria-controls="collapseRightFour">
-                                        Cancel transaction
+                                        {% translate "Cancel transaction" %}
                                     </button>
                                 </h6>
                                 <div id="collapseRightFour" class="accordion-collapse collapse" aria-labelledby="headingRightFour" data-bs-parent="#accordionRight">
@@ -600,7 +600,7 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightFive">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightFive" aria-expanded="false" aria-controls="collapseRightFive">
-                                        Can I send multiple payments?
+                                        {% translate "Can I send multiple payments?" %}
                                     </button>
                                 </h6>
                                 <div id="collapseRightFive" class="accordion-collapse collapse" aria-labelledby="headingRightFive" data-bs-parent="#accordionRight">
