@@ -1,6 +1,10 @@
 {% extends "auth_base.html" %}
 {% load static %}
 {% load humanize %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
     <!-- Dashboard Section start -->
@@ -13,8 +17,8 @@
                             
                             <div class="transactions-area">
                                 <div class="section-text">
-                                    <h5>Transactions</h5>
-                                    <p>Updated every several minutes</p>
+                                    <h5>{% translate "Transactions" %}</h5>
+                                    <p>{% translate "Updated every several minutes" %}</p>
                                 </div>
                                 <div class="top-area d-flex align-items-center justify-content-between">
                                     <ul class="nav nav-tabs" role="tablist">
@@ -42,11 +46,11 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Name/ Business</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col">Action</th>
+                                                        <th scope="col">{% translate "Name" %} / {% translate "Business" %}</th>
+                                                        <th scope="col">{% translate "Date" %}</th>
+                                                        <th scope="col">{% translate "Status" %}</th>
+                                                        <th scope="col">{% translate "Amount" %}</th>
+                                                        <th scope="col">{% translate "Action" %}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -94,11 +98,11 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Name/ Business</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col">Action</th>
+                                                        <th scope="col">{% translate "Name" %} / {% translate "Business" %}</th>
+                                                        <th scope="col">{% translate "Date" %}</th>
+                                                        <th scope="col">{% translate "Status" %}</th>
+                                                        <th scope="col">{% translate "Amount" %}</th>
+                                                        <th scope="col">{% translate "Action" %}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -145,11 +149,11 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Name/ Business</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col">Action</th>
+                                                        <th scope="col">{% translate "Name" %} / {% translate "Business" %}</th>
+                                                        <th scope="col">{% translate "Date" %}</th>
+                                                        <th scope="col">{% translate "Status" %}</th>
+                                                        <th scope="col">{% translate "Amount" %}</th>
+                                                        <th scope="col">{% translate "Action" %}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -192,17 +196,17 @@
                                                             </td>
                                                             <td>
                                                                 {% if s.status == "request_sent" %}
-                                                                <a href="{% url 'core:transaction-detail' s.transaction_id %}" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
-                                                                <a href="{% url 'core:delete-request' s.sender.account.account_number s.transaction_id %}" class=" btn btn-danger"> <i class="fas fa-trash"></i> Delete</a>
+                                                                <a href="{% url 'core:transaction-detail' s.transaction_id %}" class="btn btn-primary"><i class="fas fa-eye"></i> {% translate "View" %}</a>
+                                                                <a href="{% url 'core:delete-request' s.sender.account.account_number s.transaction_id %}" class=" btn btn-danger"> <i class="fas fa-trash"></i> {% translate "Delete" %}</a>
                                                                 {% endif %}
 
                                                                 {% if s.status == "request_processing" %}
-                                                                <a href="{% url 'core:transaction-detail' s.transaction_id %}" class="btn btn-primary"><i class="fas fa-eye"></i> View</a>
-                                                                <a href="{% url 'core:delete-request' s.sender.account.account_number s.transaction_id %}" class=" btn btn-danger"> <i class="fas fa-trash"></i> Delete</a>
+                                                                <a href="{% url 'core:transaction-detail' s.transaction_id %}" class="btn btn-primary"><i class="fas fa-eye"></i> {% translate "View" %}</a>
+                                                                <a href="{% url 'core:delete-request' s.sender.account.account_number s.transaction_id %}" class=" btn btn-danger"> <i class="fas fa-trash"></i> {% translate "Delete" %}</a>
                                                                 {% endif %}
 
                                                                 {% if s.status == "request_settled" %}
-                                                                <a class="btn btn-success"><i class="fas fa-check-circle"></i> Settled</a>
+                                                                <a class="btn btn-success"><i class="fas fa-check-circle"></i> {% translate "Settled" %}</a>
                                                                 {% endif %}
 
                                                             </td>
@@ -218,11 +222,11 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Name/ Business</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col">Action</th>
+                                                        <th scope="col">{% translate "Name" %} / {% translate "Business" %}</th>
+                                                        <th scope="col">{% translate "Date" %}</th>
+                                                        <th scope="col">{% translate "Status" %}</th>
+                                                        <th scope="col">{% translate "Amount" %}</th>
+                                                        <th scope="col">{% translate "Action" %}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -266,18 +270,18 @@
                                                             <td>
                                                                 
                                                                 {% if s.status == "request_processing" %}
-                                                                    <a href="{% url 'core:settlement-confirmation' s.sender.account.account_number s.transaction_id %}" class="btn btn-primary"><i class="fas fa-check-circle"></i> Settle</a>
-                                                                    <a href="{% url 'core:transaction-detail' s.transaction_id %}" class=" btn btn-danger"> <i class="fas fa-x"></i> Cancel</a>
+                                                                    <a href="{% url 'core:settlement-confirmation' s.sender.account.account_number s.transaction_id %}" class="btn btn-primary"><i class="fas fa-check-circle"></i> {% translate "Settle" %}</a>
+                                                                    <a href="{% url 'core:transaction-detail' s.transaction_id %}" class=" btn btn-danger"> <i class="fas fa-x"></i> {% translate "Cancel" %}</a>
                                                                 {% endif %}
 
                                                                 {% if s.status == "request_settled" %}
-                                                                    <a href="" class="btn btn-success"><i class="fas fa-check-circle"></i> Settled</a>
+                                                                    <a href="" class="btn btn-success"><i class="fas fa-check-circle"></i> {% translate "Settled" %}</a>
                                                                 {% endif %}
                                                                     
                                                             </td>
                                                         </tr>
                                                     {% empty %}
-                                                    <li>No Received Requests</li>
+                                                    <li>{% translate "No Received Requests" %}</li>
                                                     {% endfor %}
                                                     
                                                 </tbody>
