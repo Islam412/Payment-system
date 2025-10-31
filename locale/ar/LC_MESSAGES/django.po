@@ -1,0 +1,1385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: account/templates/account/dashboard.html:228
+#: userauths/templates/userauths/sign-up.html:23
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-31 23:32+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: account/models.py:28 account/models.py:81
+msgid "id"
+msgstr ""
+
+#: account/models.py:29 account/models.py:82 core/models.py:57
+#: core/models.py:82 core/models.py:103
+msgid "user"
+msgstr ""
+
+#: account/models.py:30
+msgid "account balance"
+msgstr ""
+
+#: account/models.py:31
+msgid "account number"
+msgstr ""
+
+#: account/models.py:32
+msgid "account id"
+msgstr ""
+
+#: account/models.py:33
+msgid "pin number"
+msgstr ""
+
+#: account/models.py:34
+msgid "red code"
+msgstr ""
+
+#: account/models.py:35
+msgid "account status"
+msgstr ""
+
+#: account/models.py:36 account/models.py:101 core/models.py:70
+#: core/models.py:95 core/models.py:107
+msgid "date"
+msgstr ""
+
+#: account/models.py:37
+msgid "kyc submitted"
+msgstr ""
+
+#: account/models.py:38
+msgid "kyc confirmed"
+msgstr ""
+
+#: account/models.py:39
+msgid "recommended by"
+msgstr ""
+
+#: account/models.py:40
+msgid "review"
+msgstr ""
+
+#: account/models.py:83
+msgid "account"
+msgstr ""
+
+#: account/models.py:84
+msgid "full name"
+msgstr ""
+
+#: account/models.py:85 core/models.py:120
+msgid "image"
+msgstr ""
+
+#: account/models.py:86
+msgid "marrital status"
+msgstr ""
+
+#: account/models.py:87
+msgid "gender"
+msgstr ""
+
+#: account/models.py:88
+msgid "identity type"
+msgstr ""
+
+#: account/models.py:89
+msgid "identity image"
+msgstr ""
+
+#: account/models.py:90
+msgid "date of birth"
+msgstr ""
+
+#: account/models.py:91
+msgid "signature"
+msgstr ""
+
+#: account/models.py:94
+msgid "country"
+msgstr ""
+
+#: account/models.py:95
+msgid "state"
+msgstr ""
+
+#: account/models.py:96
+msgid "city"
+msgstr ""
+
+#: account/models.py:99
+msgid "mobile"
+msgstr ""
+
+#: account/models.py:100
+msgid "fax"
+msgstr ""
+
+#: account/templates/account/account.html:41 templates/auth_base.html:206
+msgid "Account No"
+msgstr ""
+
+#: account/templates/account/account.html:45 templates/auth_base.html:207
+msgid "Pin No"
+msgstr ""
+
+#: account/templates/account/account.html:49
+#: account/templates/account/kyc-form.html:117
+msgid "Joined"
+msgstr ""
+
+#: account/templates/account/account.html:63
+#: account/templates/account/kyc-form.html:130 templates/auth_base.html:217
+#: templates/base.html:52 templates/base.html:86
+msgid "Sign Out"
+msgstr ""
+
+#: account/templates/account/account.html:67
+#: account/templates/account/kyc-form.html:134
+msgid "Delete Account"
+msgstr ""
+
+#: account/templates/account/account.html:110
+msgid "Your Avatar<"
+msgstr ""
+
+#: account/templates/account/account.html:129
+#: account/templates/account/kyc-form.html:176
+msgid "Full Name"
+msgstr ""
+
+#: account/templates/account/account.html:135
+msgid "Email"
+msgstr ""
+
+#: account/templates/account/account.html:141
+msgid "Gender"
+msgstr ""
+
+#: account/templates/account/account.html:147
+msgid "Marrital"
+msgstr ""
+
+#: account/templates/account/account.html:153
+msgid "Date of Birth"
+msgstr ""
+
+#: account/templates/account/account.html:159
+msgid "Mobile"
+msgstr ""
+
+#: account/templates/account/account.html:165
+msgid "Identity Type"
+msgstr ""
+
+#: account/templates/account/account.html:171
+#: account/templates/account/kyc-form.html:189
+msgid "Country"
+msgstr ""
+
+#: account/templates/account/account.html:177
+#: account/templates/account/kyc-form.html:195
+msgid "State"
+msgstr ""
+
+#: account/templates/account/account.html:183
+#: account/templates/account/kyc-form.html:201
+msgid "City"
+msgstr ""
+
+#: account/templates/account/account.html:198
+msgid "Signature"
+msgstr ""
+
+#: account/templates/account/account.html:206
+msgid "Edit KYC"
+msgstr ""
+
+#: account/templates/account/dashboard.html:20
+msgid "Hi"
+msgstr ""
+
+#: account/templates/account/dashboard.html:51 templates/base.html:61
+msgid "Transfer Money"
+msgstr ""
+
+#: account/templates/account/dashboard.html:52 templates/base.html:62
+msgid "Receive Money"
+msgstr ""
+
+#: account/templates/account/dashboard.html:76
+msgid "Linked Payment system"
+msgstr ""
+
+#: account/templates/account/dashboard.html:186
+msgid "Card name"
+msgstr ""
+
+#: account/templates/account/dashboard.html:193
+#: core/templates/credit_card/card-detail.html:100
+#: core/templates/credit_card/card-detail.html:164
+msgid "Card Number"
+msgstr ""
+
+#: account/templates/account/dashboard.html:200
+msgid "Expiry Month"
+msgstr ""
+
+#: account/templates/account/dashboard.html:207
+msgid "Expiry Year"
+msgstr ""
+
+#: account/templates/account/dashboard.html:214
+#: core/templates/credit_card/card-detail.html:108
+msgid "CVV"
+msgstr ""
+
+#: account/templates/account/dashboard.html:221
+#: core/templates/credit_card/card-detail.html:96
+msgid "Card Type"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:113
+msgid "Account ID"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:145
+msgid "KYC Registration Form"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:164
+msgid "Your Avatar"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:183
+msgid "Mobile Number"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:207
+msgid "Fax"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:213
+msgid "Date Of Birth"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:234
+msgid "Select Identity Image"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:244
+msgid "Select Signature Image"
+msgstr ""
+
+#: account/templates/account/kyc-form.html:255
+msgid "Submit KYC"
+msgstr ""
+
+#: core/models.py:55
+msgid "transaction id"
+msgstr ""
+
+#: core/models.py:58 core/models.py:91 core/models.py:105
+msgid "amount"
+msgstr ""
+
+#: core/models.py:59
+msgid "description"
+msgstr ""
+
+#: core/models.py:61
+msgid "reciever"
+msgstr ""
+
+#: core/models.py:62
+msgid "sender"
+msgstr ""
+
+#: core/models.py:64
+msgid "reciever account"
+msgstr ""
+
+#: core/models.py:65
+msgid "sender account"
+msgstr ""
+
+#: core/models.py:67
+msgid "status"
+msgstr ""
+
+#: core/models.py:68
+msgid "transaction type"
+msgstr ""
+
+#: core/models.py:71
+msgid "updated"
+msgstr ""
+
+#: core/models.py:83
+msgid "card id"
+msgstr ""
+
+#: core/models.py:85 core/models.py:146
+msgid "name"
+msgstr ""
+
+#: core/models.py:86
+msgid "number"
+msgstr ""
+
+#: core/models.py:87
+msgid "month"
+msgstr ""
+
+#: core/models.py:88
+msgid "year"
+msgstr ""
+
+#: core/models.py:89
+msgid "cvv"
+msgstr ""
+
+#: core/models.py:93
+msgid "card type"
+msgstr ""
+
+#: core/models.py:104
+msgid "notification type"
+msgstr ""
+
+#: core/models.py:106
+msgid "is read"
+msgstr ""
+
+#: core/models.py:108
+msgid "nid"
+msgstr ""
+
+#: core/models.py:121
+msgid "supported currencies"
+msgstr ""
+
+#: core/models.py:122
+msgid "available countries"
+msgstr ""
+
+#: core/models.py:123
+msgid "payment methods"
+msgstr ""
+
+#: core/models.py:124
+msgid "support team day"
+msgstr ""
+
+#: core/models.py:125
+msgid "support team hour"
+msgstr ""
+
+#: core/models.py:126
+msgid "peace of mind"
+msgstr ""
+
+#: core/models.py:127
+msgid "business ready"
+msgstr ""
+
+#: core/models.py:128
+msgid "transparent"
+msgstr ""
+
+#: core/models.py:129
+msgid "international network"
+msgstr ""
+
+#: core/models.py:130
+msgid "payments"
+msgstr ""
+
+#: core/models.py:131
+msgid "collections"
+msgstr ""
+
+#: core/models.py:132
+msgid "conversions"
+msgstr ""
+
+#: core/models.py:133
+msgid "global account"
+msgstr ""
+
+#: core/models.py:134
+msgid "register for free"
+msgstr ""
+
+#: core/models.py:135
+msgid "set up your transfer"
+msgstr ""
+
+#: core/models.py:136
+msgid "make your payment"
+msgstr ""
+
+#: core/models.py:137
+msgid "you all done"
+msgstr ""
+
+#: core/models.py:147
+msgid "logo"
+msgstr ""
+
+#: core/models.py:148 core/templates/core/home.html:36
+msgid "See How it Works"
+msgstr ""
+
+#: core/models.py:149
+msgid "address"
+msgstr ""
+
+#: core/models.py:150 core/templates/core/contact.html:56
+msgid "Support Mail"
+msgstr ""
+
+#: core/models.py:151 core/templates/core/contact.html:44
+msgid "Phone Number"
+msgstr ""
+
+#: core/models.py:152
+msgid "android app"
+msgstr ""
+
+#: core/models.py:153
+msgid "ios app"
+msgstr ""
+
+#: core/models.py:156
+msgid "how to send money online"
+msgstr ""
+
+#: core/models.py:157
+msgid "how much are money transfer fees"
+msgstr ""
+
+#: core/models.py:158
+msgid "what is the fastest way to send money abroad"
+msgstr ""
+
+#: core/models.py:159
+msgid "how_to_use_app"
+msgstr ""
+
+#: core/models.py:160
+msgid "how does Paylio protect your money"
+msgstr ""
+
+#: core/models.py:161
+msgid "are money transfer apps safe"
+msgstr ""
+
+#: core/models.py:162
+msgid "how much money can i send"
+msgstr ""
+
+#: core/models.py:163
+msgid "which currency can i send"
+msgstr ""
+
+#: core/models.py:164 core/templates/core/home.html:591
+msgid "Cancel transaction"
+msgstr ""
+
+#: core/models.py:165
+msgid "Can i send multiple payments"
+msgstr ""
+
+#: core/models.py:168
+msgid "Secure Payments"
+msgstr ""
+
+#: core/models.py:169 core/templates/core/about-us.html:54
+msgid "Fast Processing"
+msgstr ""
+
+#: core/models.py:170 core/templates/core/about-us.html:66
+msgid "Global Coverage"
+msgstr ""
+
+#: core/models.py:171
+msgid "Our Mission"
+msgstr ""
+
+#: core/models.py:172
+msgid "Our Vision"
+msgstr ""
+
+#: core/models.py:173 core/templates/core/about-us.html:94
+#: core/templates/transaction/transaction-list.html:20
+#: templates/auth_base.html:239 templates/base.html:60
+msgid "Transactions"
+msgstr ""
+
+#: core/models.py:174 core/templates/core/about-us.html:93
+msgid "Active Users"
+msgstr ""
+
+#: core/models.py:175 core/templates/core/about-us.html:96
+msgid "Countries Supported"
+msgstr ""
+
+#: core/models.py:176 core/templates/core/about-us.html:95
+msgid "System Uptime"
+msgstr ""
+
+#: core/templates/core/about-us.html:20
+msgid "About Our Payment System"
+msgstr ""
+
+#: core/templates/core/about-us.html:22
+msgid ""
+"Empowering secure, fast, and reliable online transactions for individuals "
+"and businesses worldwide."
+msgstr ""
+
+#: core/templates/core/about-us.html:78
+msgid " Our Mission"
+msgstr ""
+
+#: core/templates/core/about-us.html:83
+msgid " Our Vision"
+msgstr ""
+
+#: core/templates/core/contact.html:20
+msgid "Get in Touch"
+msgstr ""
+
+#: core/templates/core/contact.html:21
+msgid ""
+"We would love to hear from you! Contact us through any of the options below."
+msgstr ""
+
+#: core/templates/core/contact.html:32
+msgid "Head Office"
+msgstr ""
+
+#: core/templates/core/contact.html:77
+msgid "Drop Your Thoughts"
+msgstr ""
+
+#: core/templates/core/contact.html:80
+msgid "Your Name"
+msgstr ""
+
+#: core/templates/core/contact.html:85
+msgid "Your Email"
+msgstr ""
+
+#: core/templates/core/contact.html:90
+msgid "Your Subject"
+msgstr ""
+
+#: core/templates/core/contact.html:95
+msgid "Your Message"
+msgstr ""
+
+#: core/templates/core/contact.html:100
+msgid " Send Message"
+msgstr ""
+
+#: core/templates/core/home.html:27
+msgid "Trusted by over 3M customers"
+msgstr ""
+
+#: core/templates/core/home.html:28
+msgid "Pay Anyone, Anywhere"
+msgstr ""
+
+#: core/templates/core/home.html:29
+msgid ""
+"Quickly and easily send, receive and request money online with Paylio. Get a "
+"customised solution to fit your business needs."
+msgstr ""
+
+#: core/templates/core/home.html:33
+msgid "Open a Free Account"
+msgstr ""
+
+#: core/templates/core/home.html:126
+msgid "Supported Currencies"
+msgstr ""
+
+#: core/templates/core/home.html:134
+msgid "Available Countries"
+msgstr ""
+
+#: core/templates/core/home.html:142
+msgid "Payment Methods"
+msgstr ""
+
+#: core/templates/core/home.html:150
+msgid "Support Team"
+msgstr ""
+
+#: core/templates/core/home.html:167
+msgid "Send money in a heartbeat"
+msgstr ""
+
+#: core/templates/core/home.html:168
+msgid "The World At Your Fingertips"
+msgstr ""
+
+#: core/templates/core/home.html:169
+msgid ""
+"Sign up to start saving on international money transfers and currency "
+"exchange."
+msgstr ""
+
+#: core/templates/core/home.html:188
+msgid "Peace of Mind"
+msgstr ""
+
+#: core/templates/core/home.html:195
+msgid "Business-Ready"
+msgstr ""
+
+#: core/templates/core/home.html:202
+#, python-format
+msgid "100%% Transparent"
+msgstr ""
+
+#: core/templates/core/home.html:209
+msgid "International Network"
+msgstr ""
+
+#: core/templates/core/home.html:228
+msgid "High speeds. Low fees. No hassle."
+msgstr ""
+
+#: core/templates/core/home.html:229
+msgid "All Your Payments In One Place"
+msgstr ""
+
+#: core/templates/core/home.html:230
+msgid ""
+"Get used to low fees and great exchange rates on international money "
+"transfers.Expand your business worldwide"
+msgstr ""
+
+#: core/templates/core/home.html:238
+msgid "Payments"
+msgstr ""
+
+#: core/templates/core/home.html:245
+msgid "Collections"
+msgstr ""
+
+#: core/templates/core/home.html:252
+msgid "Conversions"
+msgstr ""
+
+#: core/templates/core/home.html:259
+msgid "Global Account"
+msgstr ""
+
+#: core/templates/core/home.html:276
+msgid "How it works?"
+msgstr ""
+
+#: core/templates/core/home.html:277
+msgid "Just few steps to start"
+msgstr ""
+
+#: core/templates/core/home.html:278
+msgid "It's easier than you think. Follow 3 simple easy steps"
+msgstr ""
+
+#: core/templates/core/home.html:286
+msgid "Register for free"
+msgstr ""
+
+#: core/templates/core/home.html:293
+msgid "Set up your transfer"
+msgstr ""
+
+#: core/templates/core/home.html:300
+msgid "Make your payment"
+msgstr ""
+
+#: core/templates/core/home.html:307
+msgid "You're all done!"
+msgstr ""
+
+#: core/templates/core/home.html:329
+msgid "App Download"
+msgstr ""
+
+#: core/templates/core/home.html:330
+msgid "Fast, Secure Money Transfers"
+msgstr ""
+
+#: core/templates/core/home.html:331
+msgid ""
+"Access your account via your mobile phone. View balance, transfer funds, "
+"view transactions wherever you are."
+msgstr ""
+
+#: core/templates/core/home.html:335
+msgid " Login with fingerprint or Face ID."
+msgstr ""
+
+#: core/templates/core/home.html:338
+msgid " Simple few Taps to send money"
+msgstr ""
+
+#: core/templates/core/home.html:341
+msgid " View transaction history."
+msgstr ""
+
+#: core/templates/core/home.html:344
+msgid " Get instant App notifications."
+msgstr ""
+
+#: core/templates/core/home.html:369
+msgid "Testimonials"
+msgstr ""
+
+#: core/templates/core/home.html:370
+msgid "What Our Customers Say"
+msgstr ""
+
+#: core/templates/core/home.html:371
+msgid ""
+"245m+ happy clients all around the world. Do not just take our word for it"
+msgstr ""
+
+#: core/templates/core/home.html:479 core/templates/core/need_help.html:20
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: core/templates/core/home.html:480
+msgid "If you got questions we have answer"
+msgstr ""
+
+#: core/templates/core/home.html:481
+msgid "We have a list of frequently asked questions about us"
+msgstr ""
+
+#: core/templates/core/home.html:491
+msgid "How to send money online?"
+msgstr ""
+
+#: core/templates/core/home.html:503
+msgid "How much are money transfer fees?"
+msgstr ""
+
+#: core/templates/core/home.html:515
+msgid "What is the fastest way to send money abroad?"
+msgstr ""
+
+#: core/templates/core/home.html:527
+msgid "How to use Paylio?"
+msgstr ""
+
+#: core/templates/core/home.html:539
+msgid "How does Paylio protect your money?"
+msgstr ""
+
+#: core/templates/core/home.html:555
+msgid "Are money transfer apps safe?"
+msgstr ""
+
+#: core/templates/core/home.html:567
+msgid "How much money can I send?"
+msgstr ""
+
+#: core/templates/core/home.html:579
+msgid "Which currency can I send?"
+msgstr ""
+
+#: core/templates/core/home.html:603
+msgid "Can I send multiple payments?"
+msgstr ""
+
+#: core/templates/core/need_help.html:21
+msgid ""
+"If you have got questions, we have got answers — explore the most common "
+"queries below."
+msgstr ""
+
+#: core/templates/core/need_help.html:33
+msgid " How to send money online?"
+msgstr ""
+
+#: core/templates/core/need_help.html:46
+msgid " How much are money transfer fees?"
+msgstr ""
+
+#: core/templates/core/need_help.html:59
+msgid " What is the fastest way to send money abroad?"
+msgstr ""
+
+#: core/templates/core/need_help.html:72
+msgid " How to use Paylio?"
+msgstr ""
+
+#: core/templates/core/need_help.html:85
+msgid " How does Paylio protect your money?"
+msgstr ""
+
+#: core/templates/core/need_help.html:98
+msgid " Are money transfer apps safe?"
+msgstr ""
+
+#: core/templates/core/need_help.html:111
+msgid " How much money can I send?"
+msgstr ""
+
+#: core/templates/core/need_help.html:124
+msgid " Which currency can I send?"
+msgstr ""
+
+#: core/templates/core/need_help.html:137
+msgid " Cancel transaction"
+msgstr ""
+
+#: core/templates/core/need_help.html:150
+msgid " Can I send multiple payments?"
+msgstr ""
+
+#: core/templates/core/search-user-by-account-number.html:15
+#: core/templates/payment_request/settlement-completed.html:16
+#: core/templates/payment_request/settlement-confirmation.html:16
+#: core/templates/transfer/amount_transfer.html:16
+#: core/templates/transfer/transfer-completed.html:16
+#: core/templates/transfer/transfer-confirmation.html:16
+msgid "Make a Payment"
+msgstr ""
+
+#: core/templates/core/search-user-by-account-number.html:24
+#: core/templates/payment_request/search-users.html:24
+msgid "Enter Account Number or ID"
+msgstr ""
+
+#: core/templates/core/search-user-by-account-number.html:45
+#: core/templates/payment_request/search-users.html:45
+msgid "Choose"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:25
+msgid "Credit Card"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:26
+#: core/templates/transaction/transaction-detail.html:26
+msgid "Arrow Back"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:85
+msgid "Credit Card Details"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:88
+msgid "Current Amount"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:92
+msgid "Name of holder"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:104
+msgid "Expiry Month & Year"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:114
+msgid "Fund Card"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:117
+msgid "Withdraw"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:120
+msgid "Delete Card"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:156
+msgid "Fund Credit Card"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:170
+msgid "Card Holder"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:176
+msgid "Paylio Available Balance"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:182
+#: core/templates/credit_card/card-detail.html:228
+msgid "Enter Amount"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:188
+#: core/templates/credit_card/card-detail.html:234
+msgid "Confirm Transaction"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:213
+msgid "Withdraw from Card"
+msgstr ""
+
+#: core/templates/credit_card/card-detail.html:222
+msgid "Card's Available Balance"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-completed.html:16
+#: core/templates/payment_request/amount-request.html:16
+msgid "Request Payment"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-completed.html:26
+msgid "Sent"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-completed.html:27
+msgid "Payment Request"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-completed.html:27
+#: core/templates/payment_request/settlement-completed.html:27
+#: core/templates/transfer/transfer-completed.html:27
+msgid "was sent to"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-completed.html:28
+#: core/templates/payment_request/settlement-completed.html:28
+#: core/templates/transfer/transfer-completed.html:28
+msgid "View Detail"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-completed.html:28
+#: core/templates/payment_request/settlement-completed.html:28
+#: core/templates/transfer/transfer-completed.html:28
+msgid "Send Another Payment"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:23
+#: core/templates/payment_request/settlement-confirmation.html:23
+#: core/templates/transfer/transfer-confirmation.html:23
+msgid "Step 3 of 3"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:24
+#: core/templates/payment_request/amount-request-confirmation.html:126
+msgid "Confirm Request"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:44
+#: core/templates/payment_request/amount-request-confirmation.html:56
+#: core/templates/payment_request/amount-request.html:44
+#: core/templates/payment_request/settlement-confirmation.html:44
+#: core/templates/payment_request/settlement-confirmation.html:56
+#: core/templates/transfer/transfer-confirmation.html:44
+#: core/templates/transfer/transfer-confirmation.html:56
+msgid "Edit"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:52
+#: core/templates/payment_request/settlement-confirmation.html:52
+#: core/templates/transfer/transfer-confirmation.html:52
+msgid "Payment Details"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:64
+#: core/templates/payment_request/amount-request.html:53
+msgid "You Request"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:69
+msgid "From"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:73
+#: core/templates/payment_request/settlement-confirmation.html:77
+#: core/templates/transfer/transfer-confirmation.html:80
+msgid "Description"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:77
+#: core/templates/payment_request/settlement-confirmation.html:81
+#: core/templates/transfer/transfer-confirmation.html:84
+msgid "Transfer was initated on"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:87
+#: core/templates/payment_request/settlement-confirmation.html:91
+#: core/templates/transfer/transfer-confirmation.html:94
+msgid "I confirm the payment details above"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:90
+#: core/templates/payment_request/amount-request.html:69
+#: core/templates/payment_request/settlement-confirmation.html:94
+#: core/templates/transfer/amount_transfer.html:111
+#: core/templates/transfer/transfer-confirmation.html:97
+msgid "Previous Step"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:91
+#: core/templates/transfer/transfer-confirmation.html:98
+#: templates/auth_base.html:244
+msgid "Pay"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:109
+#: core/templates/payment_request/settlement-confirmation.html:113
+#: core/templates/transfer/transfer-confirmation.html:116
+msgid "transfer"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:112
+#: core/templates/payment_request/amount-request-confirmation.html:135
+#: core/templates/payment_request/settlement-confirmation.html:116
+#: core/templates/payment_request/settlement-confirmation.html:138
+#: core/templates/transfer/transfer-confirmation.html:119
+#: core/templates/transfer/transfer-confirmation.html:141
+msgid "Confirm"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:121
+#: core/templates/payment_request/settlement-confirmation.html:125
+#: core/templates/transfer/transfer-confirmation.html:128
+msgid "Back"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:127
+#: core/templates/payment_request/settlement-confirmation.html:131
+#: core/templates/transfer/transfer-confirmation.html:134
+msgid "Enter PIN Number"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:147
+#: core/templates/payment_request/settlement-confirmation.html:150
+#: core/templates/transfer/transfer-confirmation.html:153
+msgid "Success"
+msgstr ""
+
+#: core/templates/payment_request/amount-request-confirmation.html:148
+#: core/templates/payment_request/settlement-confirmation.html:151
+#: core/templates/transfer/transfer-confirmation.html:154
+msgid "Transfer was completed"
+msgstr ""
+
+#: core/templates/payment_request/amount-request.html:23
+#: core/templates/transfer/amount_transfer.html:23
+msgid "Step 2 of 3"
+msgstr ""
+
+#: core/templates/payment_request/amount-request.html:24
+msgid "Set Amount of request"
+msgstr ""
+
+#: core/templates/payment_request/amount-request.html:55
+msgid "Enter Amount Request"
+msgstr ""
+
+#: core/templates/payment_request/amount-request.html:61
+msgid "Request Description"
+msgstr ""
+
+#: core/templates/payment_request/amount-request.html:63
+msgid "Request money for house rent"
+msgstr ""
+
+#: core/templates/payment_request/amount-request.html:70
+#: core/templates/transfer/amount_transfer.html:112
+msgid "Next"
+msgstr ""
+
+#: core/templates/payment_request/search-users.html:15
+msgid "Request a Payment"
+msgstr ""
+
+#: core/templates/payment_request/search-users.html:50
+msgid "Account does not exist"
+msgstr ""
+
+#: core/templates/payment_request/settlement-completed.html:26
+#: core/templates/transfer/transfer-completed.html:26
+msgid "Money Sent"
+msgstr ""
+
+#: core/templates/payment_request/settlement-confirmation.html:24
+#: core/templates/transfer/transfer-confirmation.html:24
+msgid "Confirm Your Transfer"
+msgstr ""
+
+#: core/templates/payment_request/settlement-confirmation.html:64
+#: core/templates/transfer/amount_transfer.html:53
+#: core/templates/transfer/transfer-confirmation.html:64
+msgid "You Send"
+msgstr ""
+
+#: core/templates/payment_request/settlement-confirmation.html:68
+#: core/templates/transfer/transfer-confirmation.html:68
+msgid "Recipient gets"
+msgstr ""
+
+#: core/templates/payment_request/settlement-confirmation.html:72
+#: core/templates/transfer/transfer-confirmation.html:72
+msgid "E-mail of receiver"
+msgstr ""
+
+#: core/templates/payment_request/settlement-confirmation.html:95
+msgid "Settle Now"
+msgstr ""
+
+#: core/templates/payment_request/settlement-confirmation.html:130
+#: core/templates/transfer/transfer-confirmation.html:133
+msgid "Confirm Transfer"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:25
+#: core/templates/transaction/transaction-detail.html:60
+msgid "Transaction Details"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:63
+msgid "Payment Amount"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:68
+msgid "Total Amount"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:74
+msgid "Payment From"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:78
+msgid "Payment To"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:82
+#: core/templates/transfer/amount_transfer.html:64
+msgid "Payment Description"
+msgstr ""
+
+#: core/templates/transaction/transaction-detail.html:86
+msgid "Transaction ID"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:21
+msgid "Updated every several minutes"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:49
+#: core/templates/transaction/transaction-list.html:101
+#: core/templates/transaction/transaction-list.html:152
+#: core/templates/transaction/transaction-list.html:225
+msgid "Name"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:49
+#: core/templates/transaction/transaction-list.html:101
+#: core/templates/transaction/transaction-list.html:152
+#: core/templates/transaction/transaction-list.html:225
+msgid "Business"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:50
+#: core/templates/transaction/transaction-list.html:102
+#: core/templates/transaction/transaction-list.html:153
+#: core/templates/transaction/transaction-list.html:226
+msgid "Date"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:51
+#: core/templates/transaction/transaction-list.html:103
+#: core/templates/transaction/transaction-list.html:154
+#: core/templates/transaction/transaction-list.html:227
+msgid "Status"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:52
+#: core/templates/transaction/transaction-list.html:104
+#: core/templates/transaction/transaction-list.html:155
+#: core/templates/transaction/transaction-list.html:228
+msgid "Amount"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:53
+#: core/templates/transaction/transaction-list.html:105
+#: core/templates/transaction/transaction-list.html:156
+#: core/templates/transaction/transaction-list.html:229
+msgid "Action"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:199
+#: core/templates/transaction/transaction-list.html:204
+msgid "View"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:200
+#: core/templates/transaction/transaction-list.html:205
+msgid "Delete"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:209
+#: core/templates/transaction/transaction-list.html:278
+msgid "Settled"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:273
+msgid "Settle"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:274
+msgid "Cancel"
+msgstr ""
+
+#: core/templates/transaction/transaction-list.html:284
+msgid "No Received Requests"
+msgstr ""
+
+#: core/templates/transfer/amount_transfer.html:24
+msgid "Set Amount of transfer"
+msgstr ""
+
+#: core/templates/transfer/amount_transfer.html:57
+msgid "Available Balance"
+msgstr ""
+
+#: core/templates/transfer/amount_transfer.html:66
+msgid "Payment for fees"
+msgstr ""
+
+#: core/templates/transfer/amount_transfer.html:87
+msgid "New Balance"
+msgstr ""
+
+#: core/templates/transfer/amount_transfer.html:104
+msgid "Total To Pay"
+msgstr ""
+
+#: core/templates/transfer/transfer-completed.html:27
+msgid "Payment of"
+msgstr ""
+
+#: templates/auth_base.html:13
+msgid "Money Transfer and Online Payments Dashboard HTML Template"
+msgstr ""
+
+#: templates/auth_base.html:214
+msgid "Settings"
+msgstr ""
+
+#: templates/auth_base.html:234
+msgid "Dashboard"
+msgstr ""
+
+#: templates/auth_base.html:249
+msgid "Receive"
+msgstr ""
+
+#: templates/auth_base.html:282 templates/base.html:69
+msgid "About Us"
+msgstr ""
+
+#: templates/auth_base.html:288 templates/base.html:70
+msgid "Contact Us"
+msgstr ""
+
+#: templates/auth_base.html:294 templates/base.html:71
+msgid "FAQ"
+msgstr ""
+
+#: templates/auth_base.html:300
+msgid "Account"
+msgstr ""
+
+#: templates/auth_base.html:306
+msgid "Quit"
+msgstr ""
+
+#: templates/auth_base.html:316
+msgid "Admin Area"
+msgstr ""
+
+#: templates/auth_base.html:322 templates/base.html:77
+msgid "Control Panel"
+msgstr ""
+
+#: templates/auth_base.html:329 templates/base.html:80
+msgid "API"
+msgstr ""
+
+#: templates/base.html:48
+msgid "Personal Account"
+msgstr ""
+
+#: templates/base.html:50
+msgid "Profile"
+msgstr ""
+
+#: templates/base.html:51
+msgid "Update Profile"
+msgstr ""
+
+#: templates/base.html:57
+msgid "Financial Transactions"
+msgstr ""
+
+#: templates/base.html:59
+msgid "Dadhboard"
+msgstr ""
+
+#: templates/base.html:67
+msgid "Company"
+msgstr ""
+
+#: templates/base.html:79
+msgid "Admin Banal"
+msgstr ""
+
+#: templates/base.html:88 userauths/templates/userauths/sign-in.html:22
+#: userauths/templates/userauths/sign-in.html:50
+#: userauths/templates/userauths/sign-up.html:23
+msgid "Sign In"
+msgstr ""
+
+#: templates/base.html:90 userauths/templates/userauths/sign-in.html:23
+#: userauths/templates/userauths/sign-up.html:22
+#: userauths/templates/userauths/sign-up.html:67
+msgid "Sign Up"
+msgstr ""
+
+#: userauths/templates/userauths/sign-in.html:21
+#: userauths/templates/userauths/sign-up.html:21
+msgid "Welcome to"
+msgstr ""
+
+#: userauths/templates/userauths/sign-in.html:23
+msgid "Do not have an account yet?"
+msgstr ""
+
+#: userauths/templates/userauths/sign-in.html:43
+msgid "Enter Your Email"
+msgstr ""
+
+#: userauths/templates/userauths/sign-in.html:47
+msgid "Enter Your Password"
+msgstr ""
