@@ -1,8 +1,11 @@
 {% extends "auth_base.html" %}
 {% load static %}
 {% load humanize %}
-{% block content %}
 
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
     <!-- Dashboard Section start -->
     <section class="dashboard-section body-collapse">
         <div class="overlay pt-120">
@@ -19,8 +22,8 @@
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header justify-content-between">
-                                                            <h5>Credit Card</h5>
-                                                            <a href="{% url 'account:dashboard' %}"><i class="material-symbols-outlined">arrow_back</i></a>
+                                                            <h5>{% translate "Credit Card" %}</h5>
+                                                            <a href="{% url 'account:dashboard' %}"><i class="material-symbols-outlined">{% translate "Arrow Back" %}</i></a>
                                                         </div>
                                                         <div class="main-content">
                                                             <div class="row">
@@ -58,7 +61,7 @@
                                                                                 <div class="top_card">
                                                                                     <span class="black_strip"></span>
                                                                                     <div class="cvc_strip">
-                                                                                    <span class="cvc_number">000</span>
+                                                                                    <span class="cvc_number">{{credit_card.cvv}}</span>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="bottom_card">
@@ -79,42 +82,42 @@
                                                                 </div>
                                                                 <div class="col-sm-7">
                                                                     <div class="right-area">
-                                                                        <h6>Credit Card Details</h6>
+                                                                        <h6>{% translate "Credit Card Details" %}</h6>
                                                                         <ul class="payment-details">
                                                                             <li>
-                                                                                <span>Current Amount</span>
+                                                                                <span>{% translate "Current Amount" %}</span>
                                                                                 <span>${{credit_card.amount|intcomma}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>Name of holder</span>
+                                                                                <span>{% translate "Name of holder" %}</span>
                                                                                 <span>{{credit_card.name|title}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>Card Type</span>
+                                                                                <span>{% translate "Card Type" %}</span>
                                                                                 <span>{{credit_card.card_type|upper}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>Card Number</span>
+                                                                                <span>{% translate "Card Number" %}</span>
                                                                                 <span>{{credit_card.number}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>Expiry Month & Year</span>
+                                                                                <span>{% translate "Expiry Month & Year" %}</span>
                                                                                 <span>{{credit_card.month}}/{{credit_card.year}}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>CVV</span>
+                                                                                <span>{% translate "CVV" %}</span>
                                                                                 <span>{{credit_card.cvv}}</span>
                                                                             </li>
                                                                             <li>
                                                                                 <div class="">
                                                                                         <button type="button" class="reg btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#addcardMod">
-                                                                                            Fund Card
+                                                                                            {% translate "Fund Card" %}
                                                                                         </button>  
                                                                                         <button type="button" class="reg btn btn-success w-100 mb-2" data-bs-toggle="modal" data-bs-target="#withdraw_fund">
-                                                                                            Withdraw
+                                                                                            {% translate "Withdraw" %}
                                                                                         </button>  
                                                                                         <a href="{% url 'core:delete_card' credit_card.card_id %}" class="reg btn btn-danger w-100 mb-2">
-                                                                                            Delete Card
+                                                                                            {% translate "Delete Card" %}
                                                                                         </a> 
                                                                                 </div>    
                                                                                
