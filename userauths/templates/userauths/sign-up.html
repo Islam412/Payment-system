@@ -2,6 +2,9 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
     <!-- Login Reg start -->
     <section class="login-reg">
@@ -15,9 +18,9 @@
                     </div>
                     <div class="col-xl-5">
                         <div class="section-text text-center">
-                            <h2 class="title">Welcome to {{ company_data.name }}</h2>
-                            <h5 class="sub-title">Sign Up</h5>
-                            <p class="dont-acc">Already have an account? <a href="{% url 'userauths:sign-in' %}">Login</a></p>
+                            <h2 class="title">{% translate "Welcome to" %} {{ company_data.name }}</h2>
+                            <h5 class="sub-title">{% translate "Sign Up" %}</h5>
+                            <p class="dont-acc">{% translate "" %}Already have an account? <a href="{% url 'userauths:sign-in' %}">{% translate "Sign In" %}</a></p>
                             <!-- <div class="reg-google">
                                 <a href="javascript:void(0)">Sign up with Google</a>
                             </div>
@@ -61,7 +64,7 @@
                                         {{form.password2}}
                                     </div>
                                     
-                                    <button class="cmn-btn w-100" type="submit">Sign Up</button>
+                                    <button class="cmn-btn w-100" type="submit">{% translate "Sign Up" %}</button>
                                 </div>
                             </div>
                         </form>
