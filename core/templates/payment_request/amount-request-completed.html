@@ -1,6 +1,10 @@
 {% extends "auth_base.html" %}
 {% load static %}
 {% load humanize %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block content %}
 
     <!-- Dashboard Section start -->
@@ -9,7 +13,7 @@
             <div class="container-fruid">
                 <div class="main-content">
                     <div class="head-area d-flex align-items-center justify-content-between">
-                        <h4>Request Payment</h4>
+                        <h4>{% translate "Request Payment" %}</h4>
                         <div class="icon-area">
                             <!-- <img src="{% static 'assets1/images/icon/support-icon.png' %}" alt="icon"> -->
                         </div>
@@ -19,9 +23,9 @@
                             <div class="icon-area">
                                 <img src="{% static 'assets1/images/icon/submitted-icon.png' %}" alt="icon">
                             </div>
-                            <h3>Sent!</h3>
-                            <p>Payment Request <b>${{transaction.amount}}</b> was sent to <b>{{account.user.kyc.full_name}}</b></p>
-                            <h5><a href=""><b>View Detail</b></a> | <a href=""><b>Send Another Payment</b></a></h5>
+                            <h3>{% translate "Sent" %}!</h3>
+                            <p>{% translate "Payment Request" %} <b>${{transaction.amount}}</b>{% translate "was sent to" %}  <b>{{account.user.kyc.full_name}}</b></p>
+                            <h5><a href=""><b>{% translate "View Detail" %}</b></a> | <a href=""><b>{% translate "Send Another Payment" %}</b></a></h5>
                         </div>
                         <!-- <div class="share-link">
                             <p>Share direct link with your  payer</p>
