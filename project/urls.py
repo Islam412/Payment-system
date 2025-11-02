@@ -24,6 +24,9 @@ urlpatterns = [
     path('user/', include('userauths.urls')),
     path('', include('core.urls')),
     path('account/', include('account.urls')),
+
+    # Translation url
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 

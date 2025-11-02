@@ -14,7 +14,7 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,842 +22,842 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 #: account/models.py:28 account/models.py:81
 msgid "id"
-msgstr ""
+msgstr "المعرف"
 
 #: account/models.py:29 account/models.py:82 core/models.py:57
 #: core/models.py:82 core/models.py:103
 msgid "user"
-msgstr ""
+msgstr "المستخدم"
 
 #: account/models.py:30
 msgid "account balance"
-msgstr ""
+msgstr "رصيد الحساب"
 
 #: account/models.py:31
 msgid "account number"
-msgstr ""
+msgstr "رقم الحساب"
 
 #: account/models.py:32
 msgid "account id"
-msgstr ""
+msgstr "معرف الحساب"
 
 #: account/models.py:33
 msgid "pin number"
-msgstr ""
+msgstr "الرقم السري"
 
 #: account/models.py:34
 msgid "red code"
-msgstr ""
+msgstr "الرمز الأحمر"
 
 #: account/models.py:35
 msgid "account status"
-msgstr ""
+msgstr "حالة الحساب"
 
 #: account/models.py:36 account/models.py:101 core/models.py:70
 #: core/models.py:95 core/models.py:107
 msgid "date"
-msgstr ""
+msgstr "التاريخ"
 
 #: account/models.py:37
 msgid "kyc submitted"
-msgstr ""
+msgstr "تم تقديم KYC"
 
 #: account/models.py:38
 msgid "kyc confirmed"
-msgstr ""
+msgstr "تم تأكيد KYC"
 
 #: account/models.py:39
 msgid "recommended by"
-msgstr ""
+msgstr "موصى به من قبل"
 
 #: account/models.py:40
 msgid "review"
-msgstr ""
+msgstr "مراجعة"
 
 #: account/models.py:83
 msgid "account"
-msgstr ""
+msgstr "الحساب"
 
 #: account/models.py:84
 msgid "full name"
-msgstr ""
+msgstr "الاسم الكامل"
 
 #: account/models.py:85 core/models.py:120
 msgid "image"
-msgstr ""
+msgstr "صورة"
 
 #: account/models.py:86
 msgid "marrital status"
-msgstr ""
+msgstr "الحالة الاجتماعية"
 
 #: account/models.py:87
 msgid "gender"
-msgstr ""
+msgstr "الجنس"
 
 #: account/models.py:88
 msgid "identity type"
-msgstr ""
+msgstr "نوع الهوية"
 
 #: account/models.py:89
 msgid "identity image"
-msgstr ""
+msgstr "صورة الهوية"
 
 #: account/models.py:90
 msgid "date of birth"
-msgstr ""
+msgstr "تاريخ الميلاد"
 
 #: account/models.py:91
 msgid "signature"
-msgstr ""
+msgstr "التوقيع"
 
 #: account/models.py:94
 msgid "country"
-msgstr ""
+msgstr "البلد"
 
 #: account/models.py:95
 msgid "state"
-msgstr ""
+msgstr "الولاية/المقاطعة"
 
 #: account/models.py:96
 msgid "city"
-msgstr ""
+msgstr "المدينة"
 
 #: account/models.py:99
 msgid "mobile"
-msgstr ""
+msgstr "الجوال"
 
 #: account/models.py:100
 msgid "fax"
-msgstr ""
+msgstr "فاكس"
 
 #: account/templates/account/account.html:41 templates/auth_base.html:206
 msgid "Account No"
-msgstr ""
+msgstr "رقم الحساب"
 
 #: account/templates/account/account.html:45 templates/auth_base.html:207
 msgid "Pin No"
-msgstr ""
+msgstr "رقم التعريف الشخصي"
 
 #: account/templates/account/account.html:49
 #: account/templates/account/kyc-form.html:117
 msgid "Joined"
-msgstr ""
+msgstr "تاريخ الانضمام"
 
 #: account/templates/account/account.html:63
 #: account/templates/account/kyc-form.html:130 templates/auth_base.html:217
 #: templates/base.html:52 templates/base.html:86
 msgid "Sign Out"
-msgstr ""
+msgstr "تسجيل الخروج"
 
 #: account/templates/account/account.html:67
 #: account/templates/account/kyc-form.html:134
 msgid "Delete Account"
-msgstr ""
+msgstr "حذف الحساب"
 
 #: account/templates/account/account.html:110
 msgid "Your Avatar<"
-msgstr ""
+msgstr "صورتك الرمزية"
 
 #: account/templates/account/account.html:129
 #: account/templates/account/kyc-form.html:176
 msgid "Full Name"
-msgstr ""
+msgstr "الاسم الكامل"
 
 #: account/templates/account/account.html:135
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: account/templates/account/account.html:141
 msgid "Gender"
-msgstr ""
+msgstr "الجنس"
 
 #: account/templates/account/account.html:147
 msgid "Marrital"
-msgstr ""
+msgstr "الحالة الاجتماعية"
 
 #: account/templates/account/account.html:153
 msgid "Date of Birth"
-msgstr ""
+msgstr "تاريخ الميلاد"
 
 #: account/templates/account/account.html:159
 msgid "Mobile"
-msgstr ""
+msgstr "الجوال"
 
 #: account/templates/account/account.html:165
 msgid "Identity Type"
-msgstr ""
+msgstr "نوع الهوية"
 
 #: account/templates/account/account.html:171
 #: account/templates/account/kyc-form.html:189
 msgid "Country"
-msgstr ""
+msgstr "البلد"
 
 #: account/templates/account/account.html:177
 #: account/templates/account/kyc-form.html:195
 msgid "State"
-msgstr ""
+msgstr "الولاية/المقاطعة"
 
 #: account/templates/account/account.html:183
 #: account/templates/account/kyc-form.html:201
 msgid "City"
-msgstr ""
+msgstr "المدينة"
 
 #: account/templates/account/account.html:198
 msgid "Signature"
-msgstr ""
+msgstr "التوقيع"
 
 #: account/templates/account/account.html:206
 msgid "Edit KYC"
-msgstr ""
+msgstr "تعديل KYC"
 
 #: account/templates/account/dashboard.html:20
 msgid "Hi"
-msgstr ""
+msgstr "أهلاً"
 
 #: account/templates/account/dashboard.html:51 templates/base.html:61
 msgid "Transfer Money"
-msgstr ""
+msgstr "تحويل الأموال"
 
 #: account/templates/account/dashboard.html:52 templates/base.html:62
 msgid "Receive Money"
-msgstr ""
+msgstr "استلام الأموال"
 
 #: account/templates/account/dashboard.html:76
 msgid "Linked Payment system"
-msgstr ""
+msgstr "نظام الدفع المرتبط"
 
 #: account/templates/account/dashboard.html:186
 msgid "Card name"
-msgstr ""
+msgstr "اسم البطاقة"
 
 #: account/templates/account/dashboard.html:193
 #: core/templates/credit_card/card-detail.html:100
 #: core/templates/credit_card/card-detail.html:164
 msgid "Card Number"
-msgstr ""
+msgstr "رقم البطاقة"
 
 #: account/templates/account/dashboard.html:200
 msgid "Expiry Month"
-msgstr ""
+msgstr "شهر الانتهاء"
 
 #: account/templates/account/dashboard.html:207
 msgid "Expiry Year"
-msgstr ""
+msgstr "سنة الانتهاء"
 
 #: account/templates/account/dashboard.html:214
 #: core/templates/credit_card/card-detail.html:108
 msgid "CVV"
-msgstr ""
+msgstr "رمز CVV"
 
 #: account/templates/account/dashboard.html:221
 #: core/templates/credit_card/card-detail.html:96
 msgid "Card Type"
-msgstr ""
+msgstr "نوع البطاقة"
 
 #: account/templates/account/kyc-form.html:113
 msgid "Account ID"
-msgstr ""
+msgstr "معرف الحساب"
 
 #: account/templates/account/kyc-form.html:145
 msgid "KYC Registration Form"
-msgstr ""
+msgstr "نموذج تسجيل KYC"
 
 #: account/templates/account/kyc-form.html:164
 msgid "Your Avatar"
-msgstr ""
+msgstr "صورتك الرمزية"
 
 #: account/templates/account/kyc-form.html:183
 msgid "Mobile Number"
-msgstr ""
+msgstr "رقم الجوال"
 
 #: account/templates/account/kyc-form.html:207
 msgid "Fax"
-msgstr ""
+msgstr "فاكس"
 
 #: account/templates/account/kyc-form.html:213
 msgid "Date Of Birth"
-msgstr ""
+msgstr "تاريخ الميلاد"
 
 #: account/templates/account/kyc-form.html:234
 msgid "Select Identity Image"
-msgstr ""
+msgstr "اختر صورة الهوية"
 
 #: account/templates/account/kyc-form.html:244
 msgid "Select Signature Image"
-msgstr ""
+msgstr "اختر صورة التوقيع"
 
 #: account/templates/account/kyc-form.html:255
 msgid "Submit KYC"
-msgstr ""
+msgstr "إرسال KYC"
 
 #: core/models.py:55
 msgid "transaction id"
-msgstr ""
+msgstr "معرف المعاملة"
 
 #: core/models.py:58 core/models.py:91 core/models.py:105
 msgid "amount"
-msgstr ""
+msgstr "المبلغ"
 
 #: core/models.py:59
 msgid "description"
-msgstr ""
+msgstr "الوصف"
 
 #: core/models.py:61
 msgid "reciever"
-msgstr ""
+msgstr "المستلم"
 
 #: core/models.py:62
 msgid "sender"
-msgstr ""
+msgstr "المرسل"
 
 #: core/models.py:64
 msgid "reciever account"
-msgstr ""
+msgstr "حساب المستلم"
 
 #: core/models.py:65
 msgid "sender account"
-msgstr ""
+msgstr "حساب المرسل"
 
 #: core/models.py:67
 msgid "status"
-msgstr ""
+msgstr "الحالة"
 
 #: core/models.py:68
 msgid "transaction type"
-msgstr ""
+msgstr "نوع المعاملة"
 
 #: core/models.py:71
 msgid "updated"
-msgstr ""
+msgstr "تم التحديث"
 
 #: core/models.py:83
 msgid "card id"
-msgstr ""
+msgstr "معرف البطاقة"
 
 #: core/models.py:85 core/models.py:146
 msgid "name"
-msgstr ""
+msgstr "الاسم"
 
 #: core/models.py:86
 msgid "number"
-msgstr ""
+msgstr "الرقم"
 
 #: core/models.py:87
 msgid "month"
-msgstr ""
+msgstr "الشهر"
 
 #: core/models.py:88
 msgid "year"
-msgstr ""
+msgstr "السنة"
 
 #: core/models.py:89
 msgid "cvv"
-msgstr ""
+msgstr "رمز CVV"
 
 #: core/models.py:93
 msgid "card type"
-msgstr ""
+msgstr "نوع البطاقة"
 
 #: core/models.py:104
 msgid "notification type"
-msgstr ""
+msgstr "نوع الإشعار"
 
 #: core/models.py:106
 msgid "is read"
-msgstr ""
+msgstr "مقروء"
 
 #: core/models.py:108
 msgid "nid"
-msgstr ""
+msgstr "NID"
 
 #: core/models.py:121
 msgid "supported currencies"
-msgstr ""
+msgstr "العملات المدعومة"
 
 #: core/models.py:122
 msgid "available countries"
-msgstr ""
+msgstr "البلدان المتاحة"
 
 #: core/models.py:123
 msgid "payment methods"
-msgstr ""
+msgstr "طرق الدفع"
 
 #: core/models.py:124
 msgid "support team day"
-msgstr ""
+msgstr "فريق الدعم يومياً"
 
 #: core/models.py:125
 msgid "support team hour"
-msgstr ""
+msgstr "فريق الدعم بالساعة"
 
 #: core/models.py:126
 msgid "peace of mind"
-msgstr ""
+msgstr "راحة البال"
 
 #: core/models.py:127
 msgid "business ready"
-msgstr ""
+msgstr "جاهز للأعمال"
 
 #: core/models.py:128
 msgid "transparent"
-msgstr ""
+msgstr "شفاف"
 
 #: core/models.py:129
 msgid "international network"
-msgstr ""
+msgstr "شبكة دولية"
 
 #: core/models.py:130
 msgid "payments"
-msgstr ""
+msgstr "المدفوعات"
 
 #: core/models.py:131
 msgid "collections"
-msgstr ""
+msgstr "التحصيلات"
 
 #: core/models.py:132
 msgid "conversions"
-msgstr ""
+msgstr "التحويلات"
 
 #: core/models.py:133
 msgid "global account"
-msgstr ""
+msgstr "حساب عالمي"
 
 #: core/models.py:134
 msgid "register for free"
-msgstr ""
+msgstr "سجل مجاناً"
 
 #: core/models.py:135
 msgid "set up your transfer"
-msgstr ""
+msgstr "إعداد تحويلك"
 
 #: core/models.py:136
 msgid "make your payment"
-msgstr ""
+msgstr "قم بالدفع"
 
 #: core/models.py:137
 msgid "you all done"
-msgstr ""
+msgstr "لقد انتهيت"
 
 #: core/models.py:147
 msgid "logo"
-msgstr ""
+msgstr "الشعار"
 
 #: core/models.py:148 core/templates/core/home.html:36
 msgid "See How it Works"
-msgstr ""
+msgstr "شاهد كيف يعمل"
 
 #: core/models.py:149
 msgid "address"
-msgstr ""
+msgstr "العنوان"
 
 #: core/models.py:150 core/templates/core/contact.html:56
 msgid "Support Mail"
-msgstr ""
+msgstr "بريد الدعم"
 
 #: core/models.py:151 core/templates/core/contact.html:44
 msgid "Phone Number"
-msgstr ""
+msgstr "رقم الهاتف"
 
 #: core/models.py:152
 msgid "android app"
-msgstr ""
+msgstr "تطبيق أندرويد"
 
 #: core/models.py:153
 msgid "ios app"
-msgstr ""
+msgstr "تطبيق iOS"
 
 #: core/models.py:156
 msgid "how to send money online"
-msgstr ""
+msgstr "كيفية إرسال الأموال عبر الإنترنت"
 
 #: core/models.py:157
 msgid "how much are money transfer fees"
-msgstr ""
+msgstr "كم تبلغ رسوم تحويل الأموال"
 
 #: core/models.py:158
 msgid "what is the fastest way to send money abroad"
-msgstr ""
+msgstr "ما هي أسرع طريقة لإرسال الأموال إلى الخارج"
 
 #: core/models.py:159
 msgid "how_to_use_app"
-msgstr ""
+msgstr "كيفية استخدام التطبيق"
 
 #: core/models.py:160
 msgid "how does Paylio protect your money"
-msgstr ""
+msgstr "كيف يحمي Paylio أموالك"
 
 #: core/models.py:161
 msgid "are money transfer apps safe"
-msgstr ""
+msgstr "هل تطبيقات تحويل الأموال آمنة"
 
 #: core/models.py:162
 msgid "how much money can i send"
-msgstr ""
+msgstr "كم من المال يمكنني إرساله"
 
 #: core/models.py:163
 msgid "which currency can i send"
-msgstr ""
+msgstr "ما هي العملات التي يمكنني إرسالها"
 
 #: core/models.py:164 core/templates/core/home.html:591
 msgid "Cancel transaction"
-msgstr ""
+msgstr "إلغاء المعاملة"
 
 #: core/models.py:165
 msgid "Can i send multiple payments"
-msgstr ""
+msgstr "هل يمكنني إرسال دفعات متعددة"
 
 #: core/models.py:168
 msgid "Secure Payments"
-msgstr ""
+msgstr "مدفوعات آمنة"
 
 #: core/models.py:169 core/templates/core/about-us.html:54
 msgid "Fast Processing"
-msgstr ""
+msgstr "معالجة سريعة"
 
 #: core/models.py:170 core/templates/core/about-us.html:66
 msgid "Global Coverage"
-msgstr ""
+msgstr "تغطية عالمية"
 
 #: core/models.py:171
 msgid "Our Mission"
-msgstr ""
+msgstr "مهمتنا"
 
 #: core/models.py:172
 msgid "Our Vision"
-msgstr ""
+msgstr "رؤيتنا"
 
 #: core/models.py:173 core/templates/core/about-us.html:94
 #: core/templates/transaction/transaction-list.html:20
 #: templates/auth_base.html:239 templates/base.html:60
 msgid "Transactions"
-msgstr ""
+msgstr "المعاملات"
 
 #: core/models.py:174 core/templates/core/about-us.html:93
 msgid "Active Users"
-msgstr ""
+msgstr "المستخدمون النشطون"
 
 #: core/models.py:175 core/templates/core/about-us.html:96
 msgid "Countries Supported"
-msgstr ""
+msgstr "البلدان المدعومة"
 
 #: core/models.py:176 core/templates/core/about-us.html:95
 msgid "System Uptime"
-msgstr ""
+msgstr "وقت تشغيل النظام"
 
 #: core/templates/core/about-us.html:20
 msgid "About Our Payment System"
-msgstr ""
+msgstr "حول نظام الدفع الخاص بنا"
 
 #: core/templates/core/about-us.html:22
 msgid ""
 "Empowering secure, fast, and reliable online transactions for individuals "
 "and businesses worldwide."
-msgstr ""
+msgstr "تمكين المعاملات الآمنة والسريعة والموثوقة عبر الإنترنت للأفراد والشركات في جميع أنحاء العالم."
 
 #: core/templates/core/about-us.html:78
 msgid " Our Mission"
-msgstr ""
+msgstr " مهمتنا"
 
 #: core/templates/core/about-us.html:83
 msgid " Our Vision"
-msgstr ""
+msgstr " رؤيتنا"
 
 #: core/templates/core/contact.html:20
 msgid "Get in Touch"
-msgstr ""
+msgstr "تواصل معنا"
 
 #: core/templates/core/contact.html:21
 msgid ""
 "We would love to hear from you! Contact us through any of the options below."
-msgstr ""
+msgstr "نحب أن نسمع منك! تواصل معنا عبر أي من الخيارات أدناه."
 
 #: core/templates/core/contact.html:32
 msgid "Head Office"
-msgstr ""
+msgstr "المكتب الرئيسي"
 
 #: core/templates/core/contact.html:77
 msgid "Drop Your Thoughts"
-msgstr ""
+msgstr "أرسل أفكارك"
 
 #: core/templates/core/contact.html:80
 msgid "Your Name"
-msgstr ""
+msgstr "اسمك"
 
 #: core/templates/core/contact.html:85
 msgid "Your Email"
-msgstr ""
+msgstr "بريدك الإلكتروني"
 
 #: core/templates/core/contact.html:90
 msgid "Your Subject"
-msgstr ""
+msgstr "موضوع الرسالة"
 
 #: core/templates/core/contact.html:95
 msgid "Your Message"
-msgstr ""
+msgstr "رسالتك"
 
 #: core/templates/core/contact.html:100
 msgid " Send Message"
-msgstr ""
+msgstr " إرسال الرسالة"
 
 #: core/templates/core/home.html:27
 msgid "Trusted by over 3M customers"
-msgstr ""
+msgstr "موثوق به من قبل أكثر من 3 ملايين عميل"
 
 #: core/templates/core/home.html:28
 msgid "Pay Anyone, Anywhere"
-msgstr ""
+msgstr "ادفع لأي شخص، في أي مكان"
 
 #: core/templates/core/home.html:29
 msgid ""
 "Quickly and easily send, receive and request money online with Paylio. Get a "
 "customised solution to fit your business needs."
-msgstr ""
+msgstr "أرسل واستقبل واطلب الأموال عبر الإنترنت بسرعة وسهولة مع Paylio. احصل على حل مخصص يناسب احتياجات عملك."
 
 #: core/templates/core/home.html:33
 msgid "Open a Free Account"
-msgstr ""
+msgstr "افتح حساباً مجانياً"
 
 #: core/templates/core/home.html:126
 msgid "Supported Currencies"
-msgstr ""
+msgstr "العملات المدعومة"
 
 #: core/templates/core/home.html:134
 msgid "Available Countries"
-msgstr ""
+msgstr "البلدان المتاحة"
 
 #: core/templates/core/home.html:142
 msgid "Payment Methods"
-msgstr ""
+msgstr "طرق الدفع"
 
 #: core/templates/core/home.html:150
 msgid "Support Team"
-msgstr ""
+msgstr "فريق الدعم"
 
 #: core/templates/core/home.html:167
 msgid "Send money in a heartbeat"
-msgstr ""
+msgstr "أرسل الأموال في لمح البصر"
 
 #: core/templates/core/home.html:168
 msgid "The World At Your Fingertips"
-msgstr ""
+msgstr "العالم بين يديك"
 
 #: core/templates/core/home.html:169
 msgid ""
 "Sign up to start saving on international money transfers and currency "
 "exchange."
-msgstr ""
+msgstr "سجل لتبدأ التوفير في تحويلات الأموال الدولية وصرف العملات."
 
 #: core/templates/core/home.html:188
 msgid "Peace of Mind"
-msgstr ""
+msgstr "راحة البال"
 
 #: core/templates/core/home.html:195
 msgid "Business-Ready"
-msgstr ""
+msgstr "جاهز للأعمال"
 
 #: core/templates/core/home.html:202
 #, python-format
 msgid "100%% Transparent"
-msgstr ""
+msgstr "شفاف $100\$$"
 
 #: core/templates/core/home.html:209
 msgid "International Network"
-msgstr ""
+msgstr "شبكة دولية"
 
 #: core/templates/core/home.html:228
 msgid "High speeds. Low fees. No hassle."
-msgstr ""
+msgstr "سرعات عالية. رسوم منخفضة. بدون عناء."
 
 #: core/templates/core/home.html:229
 msgid "All Your Payments In One Place"
-msgstr ""
+msgstr "جميع مدفوعاتك في مكان واحد"
 
 #: core/templates/core/home.html:230
 msgid ""
 "Get used to low fees and great exchange rates on international money "
 "transfers.Expand your business worldwide"
-msgstr ""
+msgstr "اعتد على الرسوم المنخفضة وأسعار الصرف الرائعة على تحويلات الأموال الدولية. وسّع نطاق عملك في جميع أنحاء العالم"
 
 #: core/templates/core/home.html:238
 msgid "Payments"
-msgstr ""
+msgstr "المدفوعات"
 
 #: core/templates/core/home.html:245
 msgid "Collections"
-msgstr ""
+msgstr "التحصيلات"
 
 #: core/templates/core/home.html:252
 msgid "Conversions"
-msgstr ""
+msgstr "التحويلات"
 
 #: core/templates/core/home.html:259
 msgid "Global Account"
-msgstr ""
+msgstr "حساب عالمي"
 
 #: core/templates/core/home.html:276
 msgid "How it works?"
-msgstr ""
+msgstr "كيف يعمل؟"
 
 #: core/templates/core/home.html:277
 msgid "Just few steps to start"
-msgstr ""
+msgstr "فقط بضع خطوات للبدء"
 
 #: core/templates/core/home.html:278
 msgid "It's easier than you think. Follow 3 simple easy steps"
-msgstr ""
+msgstr "الأمر أسهل مما تتخيل. اتبع 3 خطوات بسيطة وسهلة"
 
 #: core/templates/core/home.html:286
 msgid "Register for free"
-msgstr ""
+msgstr "سجل مجاناً"
 
 #: core/templates/core/home.html:293
 msgid "Set up your transfer"
-msgstr ""
+msgstr "إعداد تحويلك"
 
 #: core/templates/core/home.html:300
 msgid "Make your payment"
-msgstr ""
+msgstr "قم بالدفع"
 
 #: core/templates/core/home.html:307
 msgid "You're all done!"
-msgstr ""
+msgstr "لقد انتهيت!"
 
 #: core/templates/core/home.html:329
 msgid "App Download"
-msgstr ""
+msgstr "تحميل التطبيق"
 
 #: core/templates/core/home.html:330
 msgid "Fast, Secure Money Transfers"
-msgstr ""
+msgstr "تحويلات أموال سريعة وآمنة"
 
 #: core/templates/core/home.html:331
 msgid ""
 "Access your account via your mobile phone. View balance, transfer funds, "
 "view transactions wherever you are."
-msgstr ""
+msgstr "ادخل إلى حسابك عبر هاتفك المحمول. اعرض الرصيد، حوّل الأموال، وشاهد المعاملات أينما كنت."
 
 #: core/templates/core/home.html:335
 msgid " Login with fingerprint or Face ID."
-msgstr ""
+msgstr " تسجيل الدخول ببصمة الإصبع أو Face ID."
 
 #: core/templates/core/home.html:338
 msgid " Simple few Taps to send money"
-msgstr ""
+msgstr " نقرات بسيطة لإرسال الأموال"
 
 #: core/templates/core/home.html:341
 msgid " View transaction history."
-msgstr ""
+msgstr " عرض سجل المعاملات."
 
 #: core/templates/core/home.html:344
 msgid " Get instant App notifications."
-msgstr ""
+msgstr " احصل على إشعارات فورية للتطبيق."
 
 #: core/templates/core/home.html:369
 msgid "Testimonials"
-msgstr ""
+msgstr "الشهادات"
 
 #: core/templates/core/home.html:370
 msgid "What Our Customers Say"
-msgstr ""
+msgstr "ماذا يقول عملاؤنا"
 
 #: core/templates/core/home.html:371
 msgid ""
 "245m+ happy clients all around the world. Do not just take our word for it"
-msgstr ""
+msgstr "أكثر من 245 مليون عميل سعيد حول العالم. لا تكتفِ بكلامنا فقط"
 
 #: core/templates/core/home.html:479 core/templates/core/need_help.html:20
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "الأسئلة المتكررة"
 
 #: core/templates/core/home.html:480
 msgid "If you got questions we have answer"
-msgstr ""
+msgstr "إذا كانت لديك أسئلة، فلدينا الإجابة"
 
 #: core/templates/core/home.html:481
 msgid "We have a list of frequently asked questions about us"
-msgstr ""
+msgstr "لدينا قائمة بالأسئلة المتكررة حولنا"
 
 #: core/templates/core/home.html:491
 msgid "How to send money online?"
-msgstr ""
+msgstr "كيفية إرسال الأموال عبر الإنترنت؟"
 
 #: core/templates/core/home.html:503
 msgid "How much are money transfer fees?"
-msgstr ""
+msgstr "كم تبلغ رسوم تحويل الأموال؟"
 
 #: core/templates/core/home.html:515
 msgid "What is the fastest way to send money abroad?"
-msgstr ""
+msgstr "ما هي أسرع طريقة لإرسال الأموال إلى الخارج؟"
 
 #: core/templates/core/home.html:527
 msgid "How to use Paylio?"
-msgstr ""
+msgstr "كيفية استخدام Paylio؟"
 
 #: core/templates/core/home.html:539
 msgid "How does Paylio protect your money?"
-msgstr ""
+msgstr "كيف يحمي Paylio أموالك؟"
 
 #: core/templates/core/home.html:555
 msgid "Are money transfer apps safe?"
-msgstr ""
+msgstr "هل تطبيقات تحويل الأموال آمنة؟"
 
 #: core/templates/core/home.html:567
 msgid "How much money can I send?"
-msgstr ""
+msgstr "كم من المال يمكنني إرساله؟"
 
 #: core/templates/core/home.html:579
 msgid "Which currency can I send?"
-msgstr ""
+msgstr "ما هي العملات التي يمكنني إرسالها؟"
 
 #: core/templates/core/home.html:603
 msgid "Can I send multiple payments?"
-msgstr ""
+msgstr "هل يمكنني إرسال دفعات متعددة؟"
 
 #: core/templates/core/need_help.html:21
 msgid ""
 "If you have got questions, we have got answers — explore the most common "
 "queries below."
-msgstr ""
+msgstr "إذا كانت لديك أسئلة، فلدينا الإجابات - استكشف الأسئلة الأكثر شيوعاً أدناه."
 
 #: core/templates/core/need_help.html:33
 msgid " How to send money online?"
-msgstr ""
+msgstr " كيفية إرسال الأموال عبر الإنترنت؟"
 
 #: core/templates/core/need_help.html:46
 msgid " How much are money transfer fees?"
-msgstr ""
+msgstr " كم تبلغ رسوم تحويل الأموال؟"
 
 #: core/templates/core/need_help.html:59
 msgid " What is the fastest way to send money abroad?"
-msgstr ""
+msgstr " ما هي أسرع طريقة لإرسال الأموال إلى الخارج؟"
 
 #: core/templates/core/need_help.html:72
 msgid " How to use Paylio?"
-msgstr ""
+msgstr " كيفية استخدام Paylio؟"
 
 #: core/templates/core/need_help.html:85
 msgid " How does Paylio protect your money?"
-msgstr ""
+msgstr " كيف يحمي Paylio أموالك؟"
 
 #: core/templates/core/need_help.html:98
 msgid " Are money transfer apps safe?"
-msgstr ""
+msgstr " هل تطبيقات تحويل الأموال آمنة؟"
 
 #: core/templates/core/need_help.html:111
 msgid " How much money can I send?"
-msgstr ""
+msgstr " كم من المال يمكنني إرساله؟"
 
 #: core/templates/core/need_help.html:124
 msgid " Which currency can I send?"
-msgstr ""
+msgstr " ما هي العملات التي يمكنني إرسالها؟"
 
 #: core/templates/core/need_help.html:137
 msgid " Cancel transaction"
-msgstr ""
+msgstr " إلغاء المعاملة"
 
 #: core/templates/core/need_help.html:150
 msgid " Can I send multiple payments?"
-msgstr ""
+msgstr " هل يمكنني إرسال دفعات متعددة؟"
 
 #: core/templates/core/search-user-by-account-number.html:15
 #: core/templates/payment_request/settlement-completed.html:16
@@ -866,126 +866,130 @@ msgstr ""
 #: core/templates/transfer/transfer-completed.html:16
 #: core/templates/transfer/transfer-confirmation.html:16
 msgid "Make a Payment"
-msgstr ""
+msgstr "قم بالدفع"
 
 #: core/templates/core/search-user-by-account-number.html:24
 #: core/templates/payment_request/search-users.html:24
 msgid "Enter Account Number or ID"
-msgstr ""
+msgstr "أدخل رقم الحساب أو المعرف"
 
 #: core/templates/core/search-user-by-account-number.html:45
 #: core/templates/payment_request/search-users.html:45
 msgid "Choose"
-msgstr ""
+msgstr "اختر"
 
 #: core/templates/credit_card/card-detail.html:25
 msgid "Credit Card"
-msgstr ""
+msgstr "بطاقة الائتمان"
 
 #: core/templates/credit_card/card-detail.html:26
 #: core/templates/transaction/transaction-detail.html:26
 msgid "Arrow Back"
-msgstr ""
+msgstr "الرجوع"
 
 #: core/templates/credit_card/card-detail.html:85
 msgid "Credit Card Details"
-msgstr ""
+msgstr "تفاصيل بطاقة الائتمان"
 
 #: core/templates/credit_card/card-detail.html:88
 msgid "Current Amount"
-msgstr ""
+msgstr "المبلغ الحالي"
 
 #: core/templates/credit_card/card-detail.html:92
 msgid "Name of holder"
-msgstr ""
+msgstr "اسم حامل البطاقة"
 
 #: core/templates/credit_card/card-detail.html:104
 msgid "Expiry Month & Year"
-msgstr ""
+msgstr "شهر وسنة الانتهاء"
 
 #: core/templates/credit_card/card-detail.html:114
 msgid "Fund Card"
-msgstr ""
+msgstr "تمويل البطاقة"
 
 #: core/templates/credit_card/card-detail.html:117
 msgid "Withdraw"
-msgstr ""
+msgstr "سحب"
 
 #: core/templates/credit_card/card-detail.html:120
 msgid "Delete Card"
-msgstr ""
+msgstr "حذف البطاقة"
 
 #: core/templates/credit_card/card-detail.html:156
 msgid "Fund Credit Card"
-msgstr ""
+msgstr "تمويل بطاقة الائتمان"
+
+#: core/templates/credit_card/card-detail.html:164
+msgid "Card Number"
+msgstr "رقم البطاقة"
 
 #: core/templates/credit_card/card-detail.html:170
 msgid "Card Holder"
-msgstr ""
+msgstr "حامل البطاقة"
 
 #: core/templates/credit_card/card-detail.html:176
 msgid "Paylio Available Balance"
-msgstr ""
+msgstr "رصيد Paylio المتاح"
 
 #: core/templates/credit_card/card-detail.html:182
 #: core/templates/credit_card/card-detail.html:228
 msgid "Enter Amount"
-msgstr ""
+msgstr "أدخل المبلغ"
 
 #: core/templates/credit_card/card-detail.html:188
 #: core/templates/credit_card/card-detail.html:234
 msgid "Confirm Transaction"
-msgstr ""
+msgstr "تأكيد المعاملة"
 
 #: core/templates/credit_card/card-detail.html:213
 msgid "Withdraw from Card"
-msgstr ""
+msgstr "السحب من البطاقة"
 
 #: core/templates/credit_card/card-detail.html:222
 msgid "Card's Available Balance"
-msgstr ""
+msgstr "رصيد البطاقة المتاح"
 
 #: core/templates/payment_request/amount-request-completed.html:16
 #: core/templates/payment_request/amount-request.html:16
 msgid "Request Payment"
-msgstr ""
+msgstr "طلب دفع"
 
 #: core/templates/payment_request/amount-request-completed.html:26
 msgid "Sent"
-msgstr ""
+msgstr "أُرسل"
 
 #: core/templates/payment_request/amount-request-completed.html:27
 msgid "Payment Request"
-msgstr ""
+msgstr "طلب الدفع"
 
 #: core/templates/payment_request/amount-request-completed.html:27
 #: core/templates/payment_request/settlement-completed.html:27
 #: core/templates/transfer/transfer-completed.html:27
 msgid "was sent to"
-msgstr ""
+msgstr "أُرسل إلى"
 
 #: core/templates/payment_request/amount-request-completed.html:28
 #: core/templates/payment_request/settlement-completed.html:28
 #: core/templates/transfer/transfer-completed.html:28
 msgid "View Detail"
-msgstr ""
+msgstr "عرض التفاصيل"
 
 #: core/templates/payment_request/amount-request-completed.html:28
 #: core/templates/payment_request/settlement-completed.html:28
 #: core/templates/transfer/transfer-completed.html:28
 msgid "Send Another Payment"
-msgstr ""
+msgstr "إرسال دفعة أخرى"
 
 #: core/templates/payment_request/amount-request-confirmation.html:23
 #: core/templates/payment_request/settlement-confirmation.html:23
 #: core/templates/transfer/transfer-confirmation.html:23
 msgid "Step 3 of 3"
-msgstr ""
+msgstr "الخطوة 3 من 3"
 
 #: core/templates/payment_request/amount-request-confirmation.html:24
 #: core/templates/payment_request/amount-request-confirmation.html:126
 msgid "Confirm Request"
-msgstr ""
+msgstr "تأكيد الطلب"
 
 #: core/templates/payment_request/amount-request-confirmation.html:44
 #: core/templates/payment_request/amount-request-confirmation.html:56
@@ -995,40 +999,40 @@ msgstr ""
 #: core/templates/transfer/transfer-confirmation.html:44
 #: core/templates/transfer/transfer-confirmation.html:56
 msgid "Edit"
-msgstr ""
+msgstr "تعديل"
 
 #: core/templates/payment_request/amount-request-confirmation.html:52
 #: core/templates/payment_request/settlement-confirmation.html:52
 #: core/templates/transfer/transfer-confirmation.html:52
 msgid "Payment Details"
-msgstr ""
+msgstr "تفاصيل الدفع"
 
 #: core/templates/payment_request/amount-request-confirmation.html:64
 #: core/templates/payment_request/amount-request.html:53
 msgid "You Request"
-msgstr ""
+msgstr "أنت تطلب"
 
 #: core/templates/payment_request/amount-request-confirmation.html:69
 msgid "From"
-msgstr ""
+msgstr "من"
 
 #: core/templates/payment_request/amount-request-confirmation.html:73
 #: core/templates/payment_request/settlement-confirmation.html:77
 #: core/templates/transfer/transfer-confirmation.html:80
 msgid "Description"
-msgstr ""
+msgstr "الوصف"
 
 #: core/templates/payment_request/amount-request-confirmation.html:77
 #: core/templates/payment_request/settlement-confirmation.html:81
 #: core/templates/transfer/transfer-confirmation.html:84
 msgid "Transfer was initated on"
-msgstr ""
+msgstr "تم بدء التحويل في"
 
 #: core/templates/payment_request/amount-request-confirmation.html:87
 #: core/templates/payment_request/settlement-confirmation.html:91
 #: core/templates/transfer/transfer-confirmation.html:94
 msgid "I confirm the payment details above"
-msgstr ""
+msgstr "أؤكد تفاصيل الدفع المذكورة أعلاه"
 
 #: core/templates/payment_request/amount-request-confirmation.html:90
 #: core/templates/payment_request/amount-request.html:69
@@ -1036,19 +1040,19 @@ msgstr ""
 #: core/templates/transfer/amount_transfer.html:111
 #: core/templates/transfer/transfer-confirmation.html:97
 msgid "Previous Step"
-msgstr ""
+msgstr "الخطوة السابقة"
 
 #: core/templates/payment_request/amount-request-confirmation.html:91
 #: core/templates/transfer/transfer-confirmation.html:98
 #: templates/auth_base.html:244
 msgid "Pay"
-msgstr ""
+msgstr "دفع"
 
 #: core/templates/payment_request/amount-request-confirmation.html:109
 #: core/templates/payment_request/settlement-confirmation.html:113
 #: core/templates/transfer/transfer-confirmation.html:116
 msgid "transfer"
-msgstr ""
+msgstr "تحويل"
 
 #: core/templates/payment_request/amount-request-confirmation.html:112
 #: core/templates/payment_request/amount-request-confirmation.html:135
@@ -1057,329 +1061,329 @@ msgstr ""
 #: core/templates/transfer/transfer-confirmation.html:119
 #: core/templates/transfer/transfer-confirmation.html:141
 msgid "Confirm"
-msgstr ""
+msgstr "تأكيد"
 
 #: core/templates/payment_request/amount-request-confirmation.html:121
 #: core/templates/payment_request/settlement-confirmation.html:125
 #: core/templates/transfer/transfer-confirmation.html:128
 msgid "Back"
-msgstr ""
+msgstr "رجوع"
 
 #: core/templates/payment_request/amount-request-confirmation.html:127
 #: core/templates/payment_request/settlement-confirmation.html:131
 #: core/templates/transfer/transfer-confirmation.html:134
 msgid "Enter PIN Number"
-msgstr ""
+msgstr "أدخل الرقم السري"
 
 #: core/templates/payment_request/amount-request-confirmation.html:147
 #: core/templates/payment_request/settlement-confirmation.html:150
 #: core/templates/transfer/transfer-confirmation.html:153
 msgid "Success"
-msgstr ""
+msgstr "نجاح"
 
 #: core/templates/payment_request/amount-request-confirmation.html:148
 #: core/templates/payment_request/settlement-confirmation.html:151
 #: core/templates/transfer/transfer-confirmation.html:154
 msgid "Transfer was completed"
-msgstr ""
+msgstr "اكتمل التحويل"
 
 #: core/templates/payment_request/amount-request.html:23
 #: core/templates/transfer/amount_transfer.html:23
 msgid "Step 2 of 3"
-msgstr ""
+msgstr "الخطوة 2 من 3"
 
 #: core/templates/payment_request/amount-request.html:24
 msgid "Set Amount of request"
-msgstr ""
+msgstr "حدد مبلغ الطلب"
 
 #: core/templates/payment_request/amount-request.html:55
 msgid "Enter Amount Request"
-msgstr ""
+msgstr "أدخل مبلغ الطلب"
 
 #: core/templates/payment_request/amount-request.html:61
 msgid "Request Description"
-msgstr ""
+msgstr "وصف الطلب"
 
 #: core/templates/payment_request/amount-request.html:63
 msgid "Request money for house rent"
-msgstr ""
+msgstr "طلب المال لإيجار المنزل"
 
 #: core/templates/payment_request/amount-request.html:70
 #: core/templates/transfer/amount_transfer.html:112
 msgid "Next"
-msgstr ""
+msgstr "التالي"
 
 #: core/templates/payment_request/search-users.html:15
 msgid "Request a Payment"
-msgstr ""
+msgstr "طلب دفعة"
 
 #: core/templates/payment_request/search-users.html:50
 msgid "Account does not exist"
-msgstr ""
+msgstr "الحساب غير موجود"
 
 #: core/templates/payment_request/settlement-completed.html:26
 #: core/templates/transfer/transfer-completed.html:26
 msgid "Money Sent"
-msgstr ""
+msgstr "تم إرسال الأموال"
 
 #: core/templates/payment_request/settlement-confirmation.html:24
 #: core/templates/transfer/transfer-confirmation.html:24
 msgid "Confirm Your Transfer"
-msgstr ""
+msgstr "تأكيد التحويل الخاص بك"
 
 #: core/templates/payment_request/settlement-confirmation.html:64
 #: core/templates/transfer/amount_transfer.html:53
 #: core/templates/transfer/transfer-confirmation.html:64
 msgid "You Send"
-msgstr ""
+msgstr "أنت ترسل"
 
 #: core/templates/payment_request/settlement-confirmation.html:68
 #: core/templates/transfer/transfer-confirmation.html:68
 msgid "Recipient gets"
-msgstr ""
+msgstr "يستلم المستلم"
 
 #: core/templates/payment_request/settlement-confirmation.html:72
 #: core/templates/transfer/transfer-confirmation.html:72
 msgid "E-mail of receiver"
-msgstr ""
+msgstr "البريد الإلكتروني للمستلم"
 
 #: core/templates/payment_request/settlement-confirmation.html:95
 msgid "Settle Now"
-msgstr ""
+msgstr "التسوية الآن"
 
 #: core/templates/payment_request/settlement-confirmation.html:130
 #: core/templates/transfer/transfer-confirmation.html:133
 msgid "Confirm Transfer"
-msgstr ""
+msgstr "تأكيد التحويل"
 
 #: core/templates/transaction/transaction-detail.html:25
 #: core/templates/transaction/transaction-detail.html:60
 msgid "Transaction Details"
-msgstr ""
+msgstr "تفاصيل المعاملة"
 
 #: core/templates/transaction/transaction-detail.html:63
 msgid "Payment Amount"
-msgstr ""
+msgstr "مبلغ الدفع"
 
 #: core/templates/transaction/transaction-detail.html:68
 msgid "Total Amount"
-msgstr ""
+msgstr "المبلغ الإجمالي"
 
 #: core/templates/transaction/transaction-detail.html:74
 msgid "Payment From"
-msgstr ""
+msgstr "الدفع من"
 
 #: core/templates/transaction/transaction-detail.html:78
 msgid "Payment To"
-msgstr ""
+msgstr "الدفع إلى"
 
 #: core/templates/transaction/transaction-detail.html:82
 #: core/templates/transfer/amount_transfer.html:64
 msgid "Payment Description"
-msgstr ""
+msgstr "وصف الدفع"
 
 #: core/templates/transaction/transaction-detail.html:86
 msgid "Transaction ID"
-msgstr ""
+msgstr "معرف المعاملة"
 
 #: core/templates/transaction/transaction-list.html:21
 msgid "Updated every several minutes"
-msgstr ""
+msgstr "يتم التحديث كل عدة دقائق"
 
 #: core/templates/transaction/transaction-list.html:49
 #: core/templates/transaction/transaction-list.html:101
 #: core/templates/transaction/transaction-list.html:152
 #: core/templates/transaction/transaction-list.html:225
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: core/templates/transaction/transaction-list.html:49
 #: core/templates/transaction/transaction-list.html:101
 #: core/templates/transaction/transaction-list.html:152
 #: core/templates/transaction/transaction-list.html:225
 msgid "Business"
-msgstr ""
+msgstr "العمل/الشركة"
 
 #: core/templates/transaction/transaction-list.html:50
 #: core/templates/transaction/transaction-list.html:102
 #: core/templates/transaction/transaction-list.html:153
 #: core/templates/transaction/transaction-list.html:226
 msgid "Date"
-msgstr ""
+msgstr "التاريخ"
 
 #: core/templates/transaction/transaction-list.html:51
 #: core/templates/transaction/transaction-list.html:103
 #: core/templates/transaction/transaction-list.html:154
 #: core/templates/transaction/transaction-list.html:227
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 #: core/templates/transaction/transaction-list.html:52
 #: core/templates/transaction/transaction-list.html:104
 #: core/templates/transaction/transaction-list.html:155
 #: core/templates/transaction/transaction-list.html:228
 msgid "Amount"
-msgstr ""
+msgstr "المبلغ"
 
 #: core/templates/transaction/transaction-list.html:53
 #: core/templates/transaction/transaction-list.html:105
 #: core/templates/transaction/transaction-list.html:156
 #: core/templates/transaction/transaction-list.html:229
 msgid "Action"
-msgstr ""
+msgstr "الإجراء"
 
 #: core/templates/transaction/transaction-list.html:199
 #: core/templates/transaction/transaction-list.html:204
 msgid "View"
-msgstr ""
+msgstr "عرض"
 
 #: core/templates/transaction/transaction-list.html:200
 #: core/templates/transaction/transaction-list.html:205
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: core/templates/transaction/transaction-list.html:209
 #: core/templates/transaction/transaction-list.html:278
 msgid "Settled"
-msgstr ""
+msgstr "تمت التسوية"
 
 #: core/templates/transaction/transaction-list.html:273
 msgid "Settle"
-msgstr ""
+msgstr "تسوية"
 
 #: core/templates/transaction/transaction-list.html:274
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 #: core/templates/transaction/transaction-list.html:284
 msgid "No Received Requests"
-msgstr ""
+msgstr "لا توجد طلبات مستلمة"
 
 #: core/templates/transfer/amount_transfer.html:24
 msgid "Set Amount of transfer"
-msgstr ""
+msgstr "حدد مبلغ التحويل"
 
 #: core/templates/transfer/amount_transfer.html:57
 msgid "Available Balance"
-msgstr ""
+msgstr "الرصيد المتاح"
 
 #: core/templates/transfer/amount_transfer.html:66
 msgid "Payment for fees"
-msgstr ""
+msgstr "دفع الرسوم"
 
 #: core/templates/transfer/amount_transfer.html:87
 msgid "New Balance"
-msgstr ""
+msgstr "الرصيد الجديد"
 
 #: core/templates/transfer/amount_transfer.html:104
 msgid "Total To Pay"
-msgstr ""
+msgstr "المبلغ الإجمالي للدفع"
 
 #: core/templates/transfer/transfer-completed.html:27
 msgid "Payment of"
-msgstr ""
+msgstr "دفعة بمبلغ"
 
 #: templates/auth_base.html:13
 msgid "Money Transfer and Online Payments Dashboard HTML Template"
-msgstr ""
+msgstr "قالب HTML للوحة تحكم تحويل الأموال والمدفوعات عبر الإنترنت"
 
 #: templates/auth_base.html:214
 msgid "Settings"
-msgstr ""
+msgstr "الإعدادات"
 
 #: templates/auth_base.html:234
 msgid "Dashboard"
-msgstr ""
+msgstr "لوحة التحكم"
 
 #: templates/auth_base.html:249
 msgid "Receive"
-msgstr ""
+msgstr "استلام"
 
 #: templates/auth_base.html:282 templates/base.html:69
 msgid "About Us"
-msgstr ""
+msgstr "من نحن"
 
 #: templates/auth_base.html:288 templates/base.html:70
 msgid "Contact Us"
-msgstr ""
+msgstr "اتصل بنا"
 
 #: templates/auth_base.html:294 templates/base.html:71
 msgid "FAQ"
-msgstr ""
+msgstr "الأسئلة المتكررة"
 
 #: templates/auth_base.html:300
 msgid "Account"
-msgstr ""
+msgstr "الحساب"
 
 #: templates/auth_base.html:306
 msgid "Quit"
-msgstr ""
+msgstr "خروج"
 
 #: templates/auth_base.html:316
 msgid "Admin Area"
-msgstr ""
+msgstr "منطقة المسؤول"
 
 #: templates/auth_base.html:322 templates/base.html:77
 msgid "Control Panel"
-msgstr ""
+msgstr "لوحة التحكم"
 
 #: templates/auth_base.html:329 templates/base.html:80
 msgid "API"
-msgstr ""
+msgstr "واجهة برمجة التطبيقات (API)"
 
 #: templates/base.html:48
 msgid "Personal Account"
-msgstr ""
+msgstr "حساب شخصي"
 
 #: templates/base.html:50
 msgid "Profile"
-msgstr ""
+msgstr "الملف الشخصي"
 
 #: templates/base.html:51
 msgid "Update Profile"
-msgstr ""
+msgstr "تحديث الملف الشخصي"
 
 #: templates/base.html:57
 msgid "Financial Transactions"
-msgstr ""
+msgstr "المعاملات المالية"
 
 #: templates/base.html:59
 msgid "Dadhboard"
-msgstr ""
+msgstr "لوحة التحكم"
 
 #: templates/base.html:67
 msgid "Company"
-msgstr ""
+msgstr "الشركة"
 
 #: templates/base.html:79
 msgid "Admin Banal"
-msgstr ""
+msgstr "لوحة المسؤول"
 
 #: templates/base.html:88 userauths/templates/userauths/sign-in.html:22
 #: userauths/templates/userauths/sign-in.html:50
 #: userauths/templates/userauths/sign-up.html:23
 msgid "Sign In"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: templates/base.html:90 userauths/templates/userauths/sign-in.html:23
 #: userauths/templates/userauths/sign-up.html:22
 #: userauths/templates/userauths/sign-up.html:67
 msgid "Sign Up"
-msgstr ""
+msgstr "التسجيل"
 
 #: userauths/templates/userauths/sign-in.html:21
 #: userauths/templates/userauths/sign-up.html:21
 msgid "Welcome to"
-msgstr ""
+msgstr "مرحباً بك في"
 
 #: userauths/templates/userauths/sign-in.html:23
 msgid "Do not have an account yet?"
-msgstr ""
+msgstr "أليس لديك حساب بعد؟"
 
 #: userauths/templates/userauths/sign-in.html:43
 msgid "Enter Your Email"
-msgstr ""
+msgstr "أدخل بريدك الإلكتروني"
 
 #: userauths/templates/userauths/sign-in.html:47
 msgid "Enter Your Password"
-msgstr ""
+msgstr "أدخل كلمة المرور الخاصة بك"

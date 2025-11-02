@@ -101,14 +101,31 @@
                                 <div class="language-btn">
                                     <img src="{% static 'assets1/images/icon/lang.png' %}" alt="icon">
                                 </div>
-                                <ul class="main-area language-content">
+                                <!-- <ul class="main-area language-content">
                                     <li>English</li>
                                     <li>Hindi</li>
                                     <li class="active">English (US)</li>
                                     <li>Japanese</li>
                                     <li>Kannada</li>
                                     <li>Lithuanian</li>
-                                </ul>
+                                </ul> -->
+                                
+
+                                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                                    <select name="language" class="main-area language-content">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                                                {{ language.name_local }} ({{ language.code }})
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <input type="submit" value="  {% translate "Translate" %}" style="color: #FFFFFF;">
+                                </form>
+
                             </div>
                             <div class="single-item notifications-area">
                                 <div class="notifications-btn">
