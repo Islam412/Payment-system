@@ -312,7 +312,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sidebar-wrapper">
+                    <div class="sidebar-wrapper" {% if LANGUAGE_CODE == 'ar' %} lang="ar" dir="rtl" {% else %} lang="en" dir="ltr" {% endif %}>
                         <div class="close-btn">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
