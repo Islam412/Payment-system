@@ -70,6 +70,67 @@
     .wallet-id:first-of-type {
         margin-top: 5px;
     }
+
+
+
+
+    
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.language-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.language-box:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-color: #a0aec0;
+}
+
+.language-box select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  padding: 6px 8px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.language-box select:focus {
+  outline: none;
+}
+
+.language-box button {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+}
+
+.language-box button:hover {
+  background: linear-gradient(90deg, #4338ca, #2563eb);
+  transform: translateY(-1px);
+}
     
 </style>
 <body>
@@ -98,9 +159,9 @@
                         </form> -->
                         <div class="dashboard-nav">
                             <div class="single-item language-area">
-                                <div class="language-btn">
+                                <!-- <div class="language-btn">
                                     <img src="{% static 'assets1/images/icon/lang.png' %}" alt="icon">
-                                </div>
+                                </div> -->
                                 <!-- <ul class="main-area language-content">
                                     <li>English</li>
                                     <li>Hindi</li>
@@ -111,20 +172,33 @@
                                 </ul> -->
                                 
 
-                                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                                    <input name="next" type="hidden" value="{{ redirect_to }}">
-                                    <select name="language" class="main-area language-content">
-                                        {% get_current_language as LANGUAGE_CODE %}
-                                        {% get_available_languages as LANGUAGES %}
-                                        {% get_language_info_list for LANGUAGES as languages %}
-                                        {% for language in languages %}
-                                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
-                                                {{ language.name_local }} ({{ language.code }})
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                    <input type="submit" value="  {% translate "Translate" %}" style="color: #FFFFFF;">
+                               <form action="{% url 'set_language' %}" method="post" class="language-switcher">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="next" value="{{ redirect_to }}">
+
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+
+                                    <div class="language-box" style="display: flex; align-items: center; gap: 10px;">
+                                        <select name="language" id="languageSelect" class="form-select" style="padding: 6px 10px;">
+                                            {% for language in languages %}
+                                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                                                    {{ language.name_local }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+
+                                        <button type="submit" class="btn btn-primary" style="padding: 6px 12px; border-radius: 6px;">
+                                            {% if LANGUAGE_CODE == 'ar' %}
+                                                {% translate "Translate to English" %}
+                                            {% else %}
+                                                ترجمة إلى العربية
+                                            {% endif %}
+                                        </button>
+                                    </div>
                                 </form>
+
 
                             </div>
                             <div class="single-item notifications-area">
