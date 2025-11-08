@@ -27,6 +27,8 @@ urlpatterns = [
 
     # Translation url
     path('i18n/', include('django.conf.urls.i18n')),
+    # rosetta translation
+    path('rosetta/', include('rosetta.urls')),
 ]
 
 

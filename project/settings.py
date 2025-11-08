@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'bootstrap5',
+    'rosetta', # django rosetta translate
 ]
 
 MIDDLEWARE = [
