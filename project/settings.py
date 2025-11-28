@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'userauths',
 
     # Third-party apps
-    'bootstrap5',
+    'django_bootstrap5',
     'rosetta', # django rosetta translate
 ]
 
