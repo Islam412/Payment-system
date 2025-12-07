@@ -146,3 +146,13 @@ class DashboardViewAPI(APIView):
             "kyc": KYCSerializer(kyc).data if kyc else None,
             "credit_cards": CreditCardSerializer(credit_cards, many=True).data
         })
+
+
+
+
+class AddCardViewAPI(CreateAPIView):
+    serializer_class = CreditCardSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
