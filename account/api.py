@@ -2,10 +2,25 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 
+# genric based views api
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
+from rest_framework.generics import (
+    RetrieveAPIView,
+    CreateAPIView,
+    ListAPIView,
+    UpdateAPIView
+)
+
+
+
 from .models import Account, KYC
 from core.models import CreditCard
 
 from .serializers import AccountSerializer, KYCSerializer, CreditCardSerializer
+
 
 
 
@@ -66,3 +81,16 @@ def dashboard_api(request):
         "kyc": KYCSerializer(kyc).data if kyc else None,
         "credit_cards": CreditCardSerializer(credit_cards, many=True).data,
     })
+
+
+
+# --------- genric based views api ----------------
+class AccountView(RetrieveAPIView):
+    serializer_class = AccountSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return Account.objects.get(user=self.request.user)
+
+
+
