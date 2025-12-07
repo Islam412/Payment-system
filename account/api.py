@@ -89,8 +89,10 @@ class AccountViewAPI(RetrieveAPIView):
     serializer_class = AccountSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_object(self):
-        return Account.objects.get(user=self.request.user)
+    def get(self, request):
+        account = Account.objects.get(user=request.user)
+        serializer = AccountSerializer(account, context={"request": request})
+        return Response(serializer.data)
 
 
 
@@ -141,20 +143,19 @@ class DashboardViewAPI(APIView):
 
     def get(self, request):
         user = request.user
-
         account = Account.objects.get(user=user)
 
         try:
             kyc = KYC.objects.get(user=user)
-        except:
+        except KYC.DoesNotExist:
             kyc = None
 
         credit_cards = CreditCard.objects.filter(user=user)
 
         return Response({
-            "account": AccountSerializer(account).data,
-            "kyc": KYCSerializer(kyc).data if kyc else None,
-            "credit_cards": CreditCardSerializer(credit_cards, many=True).data
+            "account": AccountSerializer(account, context={"request": request}).data,
+            "kyc": KYCSerializer(kyc, context={"request": request}).data if kyc else None,
+            "credit_cards": CreditCardSerializer(credit_cards, many=True, context={"request": request}).data
         })
 
 
