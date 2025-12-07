@@ -85,7 +85,7 @@ def dashboard_api(request):
 
 
 # --------- genric based views api ----------------
-class AccountView(RetrieveAPIView):
+class AccountViewAPI(RetrieveAPIView):
     serializer_class = AccountSerializer
     permission_classes = [IsAuthenticated]
 
