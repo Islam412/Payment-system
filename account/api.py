@@ -94,3 +94,31 @@ class AccountViewAPI(RetrieveAPIView):
 
 
 
+class KYCViewAPI(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        try:
+            kyc = KYC.objects.get(user=request.user)
+            serializer = KYCSerializer(kyc)
+            return Response(serializer.data)
+        except KYC.DoesNotExist:
+            return Response({"message": "No KYC found"}, status=404)
+
+    def post(self, request):
+        try:
+            kyc = KYC.objects.get(user=request.user)
+            serializer = KYCSerializer(kyc, data=request.data, partial=True)
+        except KYC.DoesNotExist:
+            serializer = KYCSerializer(data=request.data)
+
+        if serializer.is_valid():
+            saved_obj = serializer.save(
+                user=request.user,
+                account=request.user.account
+            )
+            return Response({
+                "message": "KYC submitted successfully.",
+                "data": KYCSerializer(saved_obj).data
+            })
+        return Response(serializer.errors, status=400)
