@@ -122,3 +122,27 @@ class KYCViewAPI(APIView):
                 "data": KYCSerializer(saved_obj).data
             })
         return Response(serializer.errors, status=400)
+
+
+
+
+class DashboardViewAPI(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+
+        account = Account.objects.get(user=user)
+
+        try:
+            kyc = KYC.objects.get(user=user)
+        except:
+            kyc = None
+
+        credit_cards = CreditCard.objects.filter(user=user)
+
+        return Response({
+            "account": AccountSerializer(account).data,
+            "kyc": KYCSerializer(kyc).data if kyc else None,
+            "credit_cards": CreditCardSerializer(credit_cards, many=True).data
+        })
