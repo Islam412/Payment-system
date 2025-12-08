@@ -1,6 +1,8 @@
 from django.shortcuts import render , redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import Account , KYC
@@ -100,3 +102,40 @@ def dashboard(request):
     }
     return render(request, "account/dashboard.html", context)
     
+    
+
+class DeleteAccountView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        cards = CreditCard.objects.filter(user=request.user)
+
+        return render(request, "account/delete_account_confirm.html", {
+            "cards": cards
+        })
+
+    def post(self, request):
+        user = request.user
+        
+        account = Account.objects.get(user=user)
+        balance = account.account_balance  
+
+        card_id = request.POST.get("card_id")
+
+        try:
+            card = CreditCard.objects.get(id=card_id, user=user)
+        except:
+            messages.error(request, "Invalid card selection.")
+            return redirect("account:delete-account")
+
+        card.balance += balance
+        card.save()
+
+        messages.info(
+            request, 
+            f"Your balance of {balance} has been transferred to your selected card ending with {card.card_id}."
+        )
+
+        user.delete()
+
+        messages.success(request, "Your account has been deleted successfully.")
+        return redirect("core:home")
