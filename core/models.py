@@ -101,6 +101,7 @@ class CreditCard(models.Model):
 
 class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True,verbose_name=_('user'))
+    sender = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sent_notifications',verbose_name=_('user')) 
     notification_type = models.CharField(_('notification type'),max_length=100, choices=NOTIFICATION_TYPE, default="none")
     amount = models.IntegerField(_('amount'),default=0)
     is_read = models.BooleanField(_('is read'),default=False)
