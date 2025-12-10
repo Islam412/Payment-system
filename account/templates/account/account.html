@@ -62,7 +62,7 @@
                                     <img src="{% static 'assets1/images/icon/logout.png' %}" alt="image">
                                     {% translate "Sign Out" %}
                                 </a>
-                                <a href="javascript:void(0)" class="delete">
+                                <a href="{% url 'account:delete-account' %}" class="delete">
                                     <img src="{% static 'assets1/images/icon/delete-2.png' %}" alt="image">
                                     {% translate "Delete Account" %}
                                 </a>

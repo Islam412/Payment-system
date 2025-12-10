@@ -127,7 +127,7 @@ class DeleteAccountView(LoginRequiredMixin, View):
             messages.error(request, "Invalid card selection.")
             return redirect("account:delete-account")
 
-        card.balance += balance
+        card.amount += balance
         card.save()
 
         messages.info(
