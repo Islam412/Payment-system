@@ -215,44 +215,51 @@
                                         <h5>Notifications</h5>
                                         <span class="mdr">{{ unread_count }}</span>
                                     </div>
-
-                                    <ul>
-                                        {% for n in notifications %}
-                                            <li>
-                                                <a href="javascript:void(0)" class="d-flex">
-                                                    <div class="img-area">
-                                                        <img src="{% if n.sender.kyc.image %}{{ n.sender.kyc.image.url }}{% else %}{% static 'assets1/images/user-1.png' %}{% endif %}" class="max-un" alt="image">
-                                                    </div>
-
-                                                    <div class="text-area">
-                                                        <p class="mdr">
-                                                            {% if n.notification_type == "Credit Alert" %}
-                                                                You received <b>${{ n.amount }}</b>.
-                                                            {% elif n.notification_type == "Debit Alert" %}
-                                                                You sent <b>${{ n.amount }}</b>.
-                                                            {% elif n.notification_type == "Recieved Payment Request" %}
-                                                                You received a payment request of <b>${{ n.amount }}</b>.
-                                                            {% elif n.notification_type == "Sent Payment Request" %}
-                                                                You sent a payment request of <b>${{ n.amount }}</b>.
-                                                            {% elif n.notification_type == "Withdrew Credit Card Funds" %}
-                                                                You withdrew <b>${{ n.amount }}</b> from your credit card.
-                                                            {% elif n.notification_type == "Deleted Credit Card" %}
-                                                                You deleted a credit card.
+                                        <!-- notifications.html -->
+                                        <ul>
+                                            {% for n in notifications %}
+                                                <li>
+                                                    <a href="javascript:void(0)" class="d-flex">
+                                                        <div class="img-area">
+                                                            {% if n.sender and n.sender.kyc and n.sender.kyc.image %}
+                                                                <img src="{{ n.sender.kyc.image.url }}" class="max-un" alt="image">
                                                             {% else %}
-                                                                {{ n.notification_type }} — ${{ n.amount }}
+                                                                <img src="{% static 'assets1/images/user-1.png' %}" class="max-un" alt="image">
                                                             {% endif %}
-                                                        </p>
+                                                        </div>
 
-                                                        <p class="mdr time-area">{{ n.date|timesince }} ago</p>
-                                                    </div>
-                                                </a>
+                                                        <div class="text-area">
+                                                            <p class="mdr">{{ n.user.sender.username }} 11111111111</p>
 
-                                                <i class="fa-solid fa-caret-right"></i>
-                                            </li>
+                                                            <p class="mdr">
+                                                                {% if n.notification_type == "Credit Alert" %}
+                                                                    You received <b>${{ n.amount }}</b>.
+                                                                {% elif n.notification_type == "Debit Alert" %}
+                                                                    You sent <b>${{ n.amount }}</b>.
+                                                                {% elif n.notification_type == "Recieved Payment Request" %}
+                                                                    You received a payment request of <b>${{ n.amount }}</b>.
+                                                                {% elif n.notification_type == "Sent Payment Request" %}
+                                                                    You sent a payment request of <b>${{ n.amount }}</b>.
+                                                                {% elif n.notification_type == "Withdrew Credit Card Funds" %}
+                                                                    You withdrew <b>${{ n.amount }}</b> from your credit card.
+                                                                {% elif n.notification_type == "Deleted Credit Card" %}
+                                                                    You deleted a credit card.
+                                                                {% else %}
+                                                                    {{ n.notification_type }} — ${{ n.amount }}
+                                                                {% endif %}
+                                                            </p>
+
+                                                            
+                                                            <p class="mdr time-area">{{ n.date|timesince }} ago</p>
+                                                        </div>
+                                                    </a>
+
+                                                    <i class="fa-solid fa-caret-right"></i>
+                                                </li>
                                             {% empty %}
-                                            <li><p class="text-center mdr">No Notifications</p></li>
-                                        {% endfor %}
-                                    </ul>
+                                                <li><p class="text-center mdr">No Notifications</p></li>
+                                            {% endfor %}
+                                        </ul>
                                 </div>
                             </div>
 
