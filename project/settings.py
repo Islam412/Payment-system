@@ -87,8 +87,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                # company data
+                # company data and notification
                 'core.company_contexet_processor.get_company_data',
+                'core.company_contexet_processor.notifications_processor',
             ],
         },
     },

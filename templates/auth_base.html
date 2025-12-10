@@ -201,72 +201,66 @@
 
 
                             </div>
+                            
+
+
+
                             <div class="single-item notifications-area">
                                 <div class="notifications-btn">
                                     <img src="{% static 'assets1/images/icon/bell.png' %}" class="bell-icon" alt="icon">
                                 </div>
+
                                 <div class="main-area notifications-content">
                                     <div class="head-area d-flex justify-content-between">
                                         <h5>Notifications</h5>
-                                        <span class="mdr">4</span>
+                                        <span class="mdr">{{ unread_count }}</span>
                                     </div>
+
                                     <ul>
+                                        {% for n in notifications %}
                                         <li>
                                             <a href="javascript:void(0)" class="d-flex">
                                                 <div class="img-area">
                                                     <img src="{% static 'assets1/images/user-1.png' %}" class="max-un" alt="image">
                                                 </div>
+
                                                 <div class="text-area">
-                                                    <p class="mdr">You received a payment of <b>$134.00</b> from <b>Anna
-                                                            Green</b></p>
-                                                    <p class="mdr time-area">09.39AM</p>
-                                                </div>
-                                            </a>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" class="d-flex">
-                                                <div class="img-area">
-                                                    <img src="{% static 'assets1/images/user-2.png' %}" class="max-un" alt="image">
-                                                </div>
-                                                <div class="text-area">
-                                                    <p class="mdr"><b>James Deed</b> requested a payment of
-                                                        <b>£890.00</b>
+                                                    <p class="mdr">
+                                                        {% if n.notification_type == "Credit Alert" %}
+                                                            You received <b>${{ n.amount }}</b>.
+                                                        {% elif n.notification_type == "Debit Alert" %}
+                                                            You sent <b>${{ n.amount }}</b>.
+                                                        {% elif n.notification_type == "Recieved Payment Request" %}
+                                                            You received a payment request of <b>${{ n.amount }}</b>.
+                                                        {% elif n.notification_type == "Sent Payment Request" %}
+                                                            You sent a payment request of <b>${{ n.amount }}</b>.
+                                                        {% elif n.notification_type == "Withdrew Credit Card Funds" %}
+                                                            You withdrew <b>${{ n.amount }}</b> from your credit card.
+                                                        {% elif n.notification_type == "Deleted Credit Card" %}
+                                                            You deleted a credit card.
+                                                        {% else %}
+                                                            {{ n.notification_type }} — ${{ n.amount }}
+                                                        {% endif %}
                                                     </p>
-                                                    <p class="mdr time-area">08.09AM</p>
+
+                                                    <p class="mdr time-area">{{ n.date|timesince }} ago</p>
                                                 </div>
                                             </a>
+
                                             <i class="fa-solid fa-caret-right"></i>
                                         </li>
-                                        <li>
-                                            <a href="javascript:void(0)" class="d-flex">
-                                                <div class="img-area">
-                                                    <img src="{% static 'assets1/images/master-card.png' %}" class="max-un" alt="image">
-                                                </div>
-                                                <div class="text-area">
-                                                    <p class="mdr">Your new payment method has beed added successfully
-                                                    </p>
-                                                    <p class="mdr time-area">09.39AM</p>
-                                                </div>
-                                            </a>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" class="d-flex">
-                                                <div class="img-area">
-                                                    <img src="{% static 'assets1/images/user-3.png' %}" class="max-un" alt="image">
-                                                </div>
-                                                <div class="text-area">
-                                                    <p class="mdr">You received a payment of <b>$250.00</b> from Goerge Michael
-                                                    </p>
-                                                    <p class="mdr time-area">Yesterday</p>
-                                                </div>
-                                            </a>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                        </li>
+                                        {% empty %}
+                                        <li><p class="text-center mdr">No Notifications</p></li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
+
+
+
+
+
+
                             <div class="single-item user-area">
                                 <div class="profile-area d-flex align-items-center">
                                     <span class="user-profile">
