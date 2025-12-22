@@ -167,3 +167,66 @@ class AddCardViewAPI(CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def delete_account_api(request):
+    user = request.user
+    if request.method == "GET":
+        cards = CreditCard.objects.filter(user=user).values(
+            "id", "card_id", "amount"
+        )
+
+        return Response(
+            {
+                "success": True,
+                "cards": cards,
+                "message": "Select a card to transfer your balance before deleting account"
+            },
+            status=status.HTTP_200_OK
+        )
+    serializer = DeleteAccountSerializer(data=request.data)
+    if not serializer.is_valid():
+        return Response(
+            {
+                "success": False,
+                "errors": serializer.errors
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    card_id = serializer.validated_data["card_id"]
+
+    try:
+        account = Account.objects.get(user=user)
+    except Account.DoesNotExist:
+        return Response(
+            {"success": False, "message": "Account not found"},
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+    try:
+        card = CreditCard.objects.get(id=card_id, user=user)
+    except CreditCard.DoesNotExist:
+        return Response(
+            {"success": False, "message": "Invalid card selection"},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    with transaction.atomic():
+        balance = account.account_balance
+
+        card.amount += balance
+        card.save()
+
+        user.delete()
+
+    return Response(
+        {
+            "success": True,
+            "message": f"Balance {balance} transferred to card ending with {card.card_id}. Account deleted successfully."
+        },
+        status=status.HTTP_200_OK
+    )

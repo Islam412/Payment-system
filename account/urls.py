@@ -17,6 +17,7 @@ urlpatterns = [
     path("api/account/", api.account_api, name="account_api"),
     path("api/kyc/", api.kyc_api , name='kyc_api'),
     path("api/dashboard/", api.dashboard_api, name="dashboard_api"),
+    path("api/account/delete/", api.delete_account_api, name="delete-account-api"),
 
     # api based view
     path("api/generic/account/", api.AccountViewAPI.as_view(), name="account-api"),
