@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from shortuuid.django_fields import ShortUUIDField
 
 from userauths.models import User
-from account.models import Account
+from account.models import Account , KYC
 
 
 
@@ -46,7 +46,6 @@ NOTIFICATION_TYPE = (
     ("Withdrew Credit Card Funds", "Withdrew Credit Card Funds"),
     ("Deleted Credit Card", "Deleted Credit Card"),
     ("Added Credit Card", "Added Credit Card"),
-
 )
 
 
@@ -99,6 +98,7 @@ class CreditCard(models.Model):
 
 
 
+
 class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True,verbose_name=_('user'))
     sender = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True,related_name='sent_notifications', verbose_name=_('user'))
@@ -107,13 +107,29 @@ class Notification(models.Model):
     is_read = models.BooleanField(_('is read'),default=False)
     date = models.DateTimeField(_('date'),auto_now_add=True)
     nid = ShortUUIDField(_('nid'),length=10, max_length=25, alphabet="abcdefghijklmnopqrstuvxyz")
-    
+
     class Meta:
         ordering = ["-date"]
         verbose_name_plural = "Notification"
 
     def __str__(self):
         return f"{self.user} - {self.notification_type}"
+
+    @property
+    def sender_full_name(self):
+        try:
+            return self.sender.kyc.full_name
+        except:
+            return "System"
+
+    @property
+    def sender_image_url(self):
+        try:
+            return self.sender.kyc.image.url
+        except:
+            return None
+
+
     
 
 

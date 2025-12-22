@@ -42,3 +42,7 @@ class CreditCardSerializer(serializers.ModelSerializer):
         model = CreditCard
         fields = "__all__"
         read_only_fields = ['user']
+
+
+class DeleteAccountSerializer(serializers.Serializer):
+    card_id = serializers.IntegerField()

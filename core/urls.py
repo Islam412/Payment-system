@@ -1,7 +1,7 @@
 from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
-from .views import HomeView , contatct_us , need_help , about_us
+from .views import HomeView , contatct_us , need_help , about_us , create_notification
 
 
 app_name = 'core'
@@ -13,6 +13,7 @@ urlpatterns = [
     path('contatct',contatct_us, name='contatct_us'),
     path('faq',need_help, name='faq'),
     path('about-us',about_us, name='about_us'),
+    path('create-notification/', create_notification, name='create_notification'),
 
     # transfer
     path('search-account/', transfer.search_users_account_number, name='search-account'),

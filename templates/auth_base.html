@@ -217,19 +217,17 @@
                                     </div>
                                         <!-- notifications.html -->
                                         <ul>
+
                                             {% for n in notifications %}
                                                 <li>
                                                     <a href="javascript:void(0)" class="d-flex">
                                                         <div class="img-area">
-                                                            {% if n.sender and n.sender.kyc and n.sender.kyc.image %}
-                                                                <img src="{{ n.sender.kyc.image.url }}" class="max-un" alt="image">
-                                                            {% else %}
-                                                                <img src="{% static 'assets1/images/user-1.png' %}" class="max-un" alt="image">
-                                                            {% endif %}
+                                                            <!-- <img src="{% static 'assets1/images/user-1.png' %}" class="max-un" alt="image"> -->
+                                                            <img src="{{ n.sender_image_url|default:'/static/assets1/images/user-1.png' }}" class="max-un" style="width: 40px; height: 40px;" alt="image">
                                                         </div>
 
                                                         <div class="text-area">
-                                                            <p class="mdr">{{ n.user.sender.username }} 11111111111</p>
+                                                            <p class="mdr">{{ n.sender_full_name|title }}</p>
 
                                                             <p class="mdr">
                                                                 {% if n.notification_type == "Credit Alert" %}
