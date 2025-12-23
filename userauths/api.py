@@ -14,11 +14,10 @@ class RegisterAPIView(APIView):
         if serializer.is_valid():
             user = serializer.save()
 
-            # Token (لو شغال بـ Token Auth)
             token, created = Token.objects.get_or_create(user=user)
 
             return Response({
-                "message": "تم إنشاء الحساب بنجاح",
+                "message": "The account creat success",
                 "user": {
                     "id": user.id,
                     "username": user.username,
