@@ -29,3 +29,13 @@ class FundCreditCardSerializer(serializers.Serializer):
         min_value=0.01
     )
 
+
+
+
+
+class WithdrawCreditCardSerializer(serializers.Serializer):
+    amount = serializers.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        min_value=0.01
+    )
