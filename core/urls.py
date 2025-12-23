@@ -2,7 +2,7 @@ from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView , contatct_us , need_help , about_us , create_notification
-from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView
+from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView
 
 app_name = 'core'
 
@@ -51,4 +51,5 @@ urlpatterns = [
     path("api/credit-cards/<str:card_id>/", CreditCardDetailAPIView.as_view(), name="credit-card-detail"),
     path("api/credit-cards/fund/<str:card_id>/", FundCreditCardAPIView.as_view(), name="fund-credit-card"),
     path("api/credit-cards/withdraw/<str:card_id>/", WithdrawCreditCardAPIView.as_view(), name="withdraw-credit-card"),
+    path("api/credit-cards/delete/<str:card_id>/", DeleteCreditCardAPIView.as_view(), name="delete-credit-card"),
 ]
