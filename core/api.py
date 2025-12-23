@@ -10,7 +10,7 @@ from core.models import CreditCard , Notification
 from account.models import Account
 
 
-
+# credit card
 class CreditCardDetailAPIView(APIView):
     permission_classes = [IsAuthenticated]
 

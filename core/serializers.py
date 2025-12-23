@@ -3,6 +3,7 @@ from rest_framework import serializers
 from core.models import CreditCard
 
 
+# credit card
 class CreditCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = CreditCard
