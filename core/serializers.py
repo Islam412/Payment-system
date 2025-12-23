@@ -18,3 +18,14 @@ class CreditCardSerializer(serializers.ModelSerializer):
             "date",
         ]
         read_only_fields = ["card_id", "amount", "date"]
+
+
+
+
+class FundCreditCardSerializer(serializers.Serializer):
+    amount = serializers.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        min_value=0.01
+    )
+
