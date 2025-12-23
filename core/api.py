@@ -3,10 +3,12 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
+from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer
 from core.models import CreditCard , Notification
 from account.models import Account
+
 
 
 class CreditCardDetailAPIView(APIView):
@@ -86,6 +88,65 @@ class FundCreditCardAPIView(APIView):
         return Response(
             {
                 "message": "Credit card funded successfully.",
+                "card_balance": credit_card.amount,
+                "account_balance": account.account_balance
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+
+
+class WithdrawCreditCardAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, card_id):
+        serializer = WithdrawCreditCardSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response(
+                {"detail": "Please enter a valid amount greater than zero."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        amount = serializer.validated_data["amount"]
+
+        try:
+            credit_card = CreditCard.objects.get(
+                card_id=card_id,
+                user=request.user
+            )
+        except CreditCard.DoesNotExist:
+            return Response(
+                {"detail": "Credit card not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        account = Account.objects.get(user=request.user)
+
+        if credit_card.amount < amount:
+            return Response(
+                {"detail": "Insufficient funds."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Update balances
+        credit_card.amount -= amount
+        credit_card.save()
+
+        account.account_balance += amount
+        account.save()
+
+        # Notification
+        Notification.objects.create(
+            user=request.user,
+            amount=amount,
+            notification_type="Withdrew Credit Card Funds"
+        )
+
+        return Response(
+            {
+                "message": "Withdrawal successful.",
                 "card_balance": credit_card.amount,
                 "account_balance": account.account_balance
             },
