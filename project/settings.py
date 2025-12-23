@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'rosetta', # django rosetta translate
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
