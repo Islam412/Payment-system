@@ -152,3 +152,40 @@ class WithdrawCreditCardAPIView(APIView):
             },
             status=status.HTTP_200_OK
         )
+
+
+
+class DeleteCreditCardAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request, card_id):
+        try:
+            credit_card = CreditCard.objects.get(
+                card_id=card_id,
+                user=request.user
+            )
+        except CreditCard.DoesNotExist:
+            return Response(
+                {"detail": "Credit card not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        account = Account.objects.get(user=request.user)
+
+        # Return remaining balance to account
+        if credit_card.amount > 0:
+            account.account_balance += credit_card.amount
+            account.save()
+
+        # Notification
+        Notification.objects.create(
+            user=request.user,
+            notification_type="Deleted Credit Card"
+        )
+
+        credit_card.delete()
+
+        return Response(
+            {"message": "Credit card deleted successfully."},
+            status=status.HTTP_200_OK
+        )
