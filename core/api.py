@@ -4,9 +4,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-from decimal import Decimal
+from decimal import Decimal , InvalidOperation
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -766,3 +766,52 @@ class AmountTransferAPIView(APIView):
 
         serializer = AccountDetailSerializer(account)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+
+
+class AmountTransferProcessAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, account_number):
+        serializer = AmountTransferProcessSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response({"detail": "Invalid data."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            receiver_account = Account.objects.get(account_number=account_number)
+        except Account.DoesNotExist:
+            return Response({"detail": "Receiver account not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        sender = request.user
+        receiver = receiver_account.user
+        sender_account = sender.account
+        amount = serializer.validated_data["amount_send"]
+        description = serializer.validated_data.get("description", "")
+
+        if sender_account.account_balance < amount:
+            return Response({"detail": "Insufficient funds."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Create transaction
+        transaction = Transaction.objects.create(
+            user=sender,
+            amount=amount,
+            description=description,
+            reciever=receiver,
+            sender=sender,
+            sender_account=sender_account,
+            reciever_account=receiver_account,
+            status="processing",
+            transaction_type="Transfer"
+        )
+
+        return Response(
+            {
+                "message": "Transaction created successfully.",
+                "transaction_id": transaction.transaction_id,
+                "amount": transaction.amount,
+                "sender_balance": sender_account.account_balance,
+            },
+            status=status.HTTP_201_CREATED
+        )
