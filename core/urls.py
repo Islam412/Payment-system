@@ -2,7 +2,7 @@ from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView , contatct_us , need_help , about_us , create_notification
-from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView
+from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView
 
 app_name = 'core'
 
@@ -66,5 +66,6 @@ urlpatterns = [
     path("api/settlement-completed/<str:account_number>/<str:transaction_id>/", SettlementCompletedAPIView.as_view(), name="settlement-completed-api"),
     path("api/delete-payment-request/<str:account_number>/<str:transaction_id>/", DeletePaymentRequestAPIView.as_view(), name="delete-payment-request-api"),
 
-    
+    # transaction api
+    path("api/transactions/", TransactionListAPIView.as_view(), name="transactions-api"),
 ]
