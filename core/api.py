@@ -647,3 +647,39 @@ class SettlementCompletedAPIView(APIView):
             },
             status=status.HTTP_200_OK
         )
+
+
+
+
+class DeletePaymentRequestAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request, account_number, transaction_id):
+        try:
+            account = Account.objects.get(account_number=account_number)
+        except Account.DoesNotExist:
+            return Response(
+                {"detail": "Account not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        try:
+            transaction = Transaction.objects.get(transaction_id=transaction_id)
+        except Transaction.DoesNotExist:
+            return Response(
+                {"detail": "Transaction not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # 🔐 Check if the requester is the creator of the payment request
+        if request.user != transaction.user:
+            return Response(
+                {"detail": "You are not authorized to delete this request."},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        transaction.delete()
+        return Response(
+            {"message": "Payment request deleted successfully."},
+            status=status.HTTP_200_OK
+        )
