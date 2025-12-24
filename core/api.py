@@ -937,7 +937,7 @@ class TransferCompletedAPIView(APIView):
 
 # home api
 class HomeAPIView(APIView):
-
+    
     def get(self, request):
         home = Home.objects.first()
         if not home:

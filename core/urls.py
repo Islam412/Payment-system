@@ -2,7 +2,7 @@ from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView , contatct_us , need_help , about_us , create_notification
-from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView , SearchUsersAccountNumberAPIView , AmountTransferAPIView , AmountTransferProcessAPIView , TransferConfirmationAPIView , TransferFinalProcessAPIView , TransferCompletedAPIView
+from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView , SearchUsersAccountNumberAPIView , AmountTransferAPIView , AmountTransferProcessAPIView , TransferConfirmationAPIView , TransferFinalProcessAPIView , TransferCompletedAPIView , HomeAPIView
 
 app_name = 'core'
 
@@ -77,4 +77,7 @@ urlpatterns = [
     path("api/transfer-confirmation/<str:account_number>/<str:transaction_id>/", TransferConfirmationAPIView.as_view(), name="transfer-confirmation-api"),
     path("api/transfer-final/<str:account_number>/<str:transaction_id>/", TransferFinalProcessAPIView.as_view(), name="transfer-final-api"),
     path("api/transfer-completed/<str:account_number>/<str:transaction_id>/", TransferCompletedAPIView.as_view(), name="transfer-completed-api"),
+
+    # home api
+    path("api/", HomeAPIView.as_view(), name="home-api"),
 ]
