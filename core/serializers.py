@@ -142,3 +142,9 @@ class AccountDetailSerializer(serializers.ModelSerializer):
 class AmountTransferProcessSerializer(serializers.Serializer):
     amount_send = serializers.DecimalField(max_digits=12, decimal_places=2)
     description = serializers.CharField(max_length=1000, allow_blank=True, required=False)
+
+
+
+class TransferFinalProcessSerializer(serializers.Serializer):
+    pin_number = serializers.CharField(max_length=10)
+
