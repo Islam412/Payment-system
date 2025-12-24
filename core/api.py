@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -683,3 +683,27 @@ class DeletePaymentRequestAPIView(APIView):
             {"message": "Payment request deleted successfully."},
             status=status.HTTP_200_OK
         )
+
+
+
+# transaction api
+class TransactionListAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        sender_transfer = Transaction.objects.filter(sender=request.user, transaction_type='Transfer').order_by('-id')
+        receiver_transfer = Transaction.objects.filter(reciever=request.user, transaction_type='Transfer').order_by('-id')
+
+        request_sender = Transaction.objects.filter(sender=request.user, transaction_type='request').order_by('-id')
+        request_receiver = Transaction.objects.filter(reciever=request.user, transaction_type='request').order_by('-id')
+
+        return Response({
+            "transfer": {
+                "sent": TransactionSerializer(sender_transfer, many=True).data,
+                "received": TransactionSerializer(receiver_transfer, many=True).data
+            },
+            "request": {
+                "sent": TransactionSerializer(request_sender, many=True).data,
+                "received": TransactionSerializer(request_receiver, many=True).data
+            }
+        })

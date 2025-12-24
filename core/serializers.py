@@ -70,7 +70,7 @@ class SettlementProcessSerializer(serializers.Serializer):
 
 
 
-# transaction
+# transaction api
 class TransactionSerializer(serializers.ModelSerializer):
     sender_full_name = serializers.SerializerMethodField()
     receiver_full_name = serializers.SerializerMethodField()
