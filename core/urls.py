@@ -56,5 +56,5 @@ urlpatterns = [
     # payment requist
     path("api/search-users/", SearchUsersRequestAPIView.as_view(), name="search-users-request-api"),
     path("api/amount-request/<str:account_number>/", AmountRequestAPIView.as_view(), name="amount-request-api"),
-    path("api/amount-request/<str:account_number>/", AmountRequestProcessAPIView.as_view(), name="amount-request-process-api"),
+    path("api/amount-request/process/<str:account_number>/", AmountRequestProcessAPIView.as_view(), name="amount-request-process-api"),
 ]
