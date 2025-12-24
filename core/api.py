@@ -6,8 +6,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal , InvalidOperation
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer
-from core.models import CreditCard , Notification , Transaction
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer
+from core.models import CreditCard , Notification , Transaction , Home
 from account.models import Account
 from userauths.models import User
 
@@ -932,3 +932,16 @@ class TransferCompletedAPIView(APIView):
             },
             "transaction": serializer.data
         }, status=status.HTTP_200_OK)
+
+
+
+# home api
+class HomeAPIView(APIView):
+
+    def get(self, request):
+        home = Home.objects.first()
+        if not home:
+            return Response({"detail": "Home data not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = HomeSerializer(home)
+        return Response(serializer.data, status=status.HTTP_200_OK)
