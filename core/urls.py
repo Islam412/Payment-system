@@ -78,7 +78,7 @@ urlpatterns = [
     path("api/transfer-final/<str:account_number>/<str:transaction_id>/", TransferFinalProcessAPIView.as_view(), name="transfer-final-api"),
     path("api/transfer-completed/<str:account_number>/<str:transaction_id>/", TransferCompletedAPIView.as_view(), name="transfer-completed-api"),
 
-    # home api & contact-us api & need help api 
+    # home api & contact us api & need help api & about us api
     path("api/", HomeAPIView.as_view(), name="home-api"),
     path("api/contact-us/", ContactUsAPIView.as_view(), name="contact-us-api"),
     path("api/need-help/", NeedHelpAPIView.as_view(), name="need-help-api"),
