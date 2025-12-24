@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import CreditCard
+from core.models import CreditCard , Transaction
 
 
 # credit card
@@ -67,3 +67,40 @@ class AmountRequestFinalSerializer(serializers.Serializer):
 
 class SettlementProcessSerializer(serializers.Serializer):
     pin_number = serializers.CharField(max_length=10)
+
+
+
+# transaction
+class TransactionSerializer(serializers.ModelSerializer):
+    sender_full_name = serializers.SerializerMethodField()
+    receiver_full_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Transaction
+        fields = [
+            "transaction_id",
+            "amount",
+            "description",
+            "status",
+            "transaction_type",
+            "sender",
+            "receiver",
+            "sender_account",
+            "reciever_account",
+            "date",
+            "updated",
+            "sender_full_name",
+            "receiver_full_name"
+        ]
+
+    def get_sender_full_name(self, obj):
+        try:
+            return obj.sender.kyc.full_name
+        except:
+            return None
+
+    def get_receiver_full_name(self, obj):
+        try:
+            return obj.reciever.kyc.full_name
+        except:
+            return None

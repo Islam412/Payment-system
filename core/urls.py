@@ -65,4 +65,6 @@ urlpatterns = [
     path("api/settlement-process/<str:account_number>/<str:transaction_id>/", SettlementProcessingAPIView.as_view(), name="settlement-process-api"),
     path("api/settlement-completed/<str:account_number>/<str:transaction_id>/", SettlementCompletedAPIView.as_view(), name="settlement-completed-api"),
     path("api/delete-payment-request/<str:account_number>/<str:transaction_id>/", DeletePaymentRequestAPIView.as_view(), name="delete-payment-request-api"),
+
+    
 ]
