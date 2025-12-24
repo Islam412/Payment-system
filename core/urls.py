@@ -81,4 +81,5 @@ urlpatterns = [
     # home api & contact-us api 
     path("api/", HomeAPIView.as_view(), name="home-api"),
     path("api/contact-us/", ContactUsAPIView.as_view(), name="contact-us-api"),
+    
 ]

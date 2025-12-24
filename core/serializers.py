@@ -182,3 +182,21 @@ class ContactUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = ['address', 'phone_number', 'support_mail', 'android_app', 'ios_app']
+
+
+# need help api
+class NeedHelpSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = [
+            'how_to_send_money_online',
+            'how_much_are_money_transfer_fees',
+            'what_is_the_fastest_way_to_send_money_abroad',
+            'how_to_use_app',
+            'how_does_Paylio_protect_your_money',
+            'are_money_transfer_apps_safe',
+            'how_much_money_can_i_send',
+            'which_currency_can_i_send',
+            'Cancel_transaction',
+            'Can_i_send_multiple_payments'
+        ]
