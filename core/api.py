@@ -227,3 +227,33 @@ class SearchUsersRequestAPIView(APIView):
             },
             status=status.HTTP_200_OK
         )
+
+
+
+class AmountRequestAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, account_number):
+        try:
+            account = Account.objects.get(account_number=account_number)
+        except Account.DoesNotExist:
+            return Response(
+                {"detail": "Account not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        return Response(
+            {
+                "account": {
+                    "account_id": account.account_id,
+                    "account_number": account.account_number,
+                    "user_id": account.user.id,
+                    "full_name": getattr(
+                        account.user.kyc,
+                        "full_name",
+                        account.user.username
+                    )
+                }
+            },
+            status=status.HTTP_200_OK
+        )
