@@ -1,13 +1,15 @@
+from django.db.models import Q
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-
 from decimal import Decimal
 
 from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer
 from core.models import CreditCard , Notification
 from account.models import Account
+from userauths.models import User
+
 
 
 # credit card
@@ -187,5 +189,41 @@ class DeleteCreditCardAPIView(APIView):
 
         return Response(
             {"message": "Credit card deleted successfully."},
+            status=status.HTTP_200_OK
+        )
+
+
+
+
+# payment requist
+class SearchUsersRequestAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        query = request.data.get("account_number")
+        accounts = Account.objects.all()
+
+        if query:
+            accounts = accounts.filter(
+                Q(account_number=query) |
+                Q(account_id=query)
+            ).distinct()
+
+        # Serialize minimal info
+        results = [
+            {
+                "account_id": acc.account_id,
+                "account_number": acc.account_number,
+                "user_id": acc.user.id,
+                "full_name": getattr(acc.user.kyc, "full_name", acc.user.username)
+            }
+            for acc in accounts
+        ]
+
+        return Response(
+            {
+                "query": query,
+                "results": results
+            },
             status=status.HTTP_200_OK
         )
