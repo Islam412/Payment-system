@@ -5,8 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer
-from core.models import CreditCard , Notification
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer
+from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
 
@@ -261,3 +261,57 @@ class AmountRequestAPIView(APIView):
 
 
 
+class AmountRequestProcessAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, account_number):
+        serializer = AmountRequestProcessSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response(
+                {"detail": "Invalid data provided."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            reciever_account = Account.objects.get(
+                account_number=account_number
+            )
+        except Account.DoesNotExist:
+            return Response(
+                {"detail": "Receiver account not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        sender = request.user
+        reciever = reciever_account.user
+
+        if sender == reciever:
+            return Response(
+                {"detail": "You cannot request money from yourself."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        transaction = Transaction.objects.create(
+            user=sender,
+            amount=serializer.validated_data["amount"],
+            description=serializer.validated_data.get("description", ""),
+
+            sender=sender,
+            reciever=reciever,
+
+            sender_account=sender.account,
+            reciever_account=reciever_account,
+
+            status="request_sent",
+            transaction_type="request",
+        )
+
+        return Response(
+            {
+                "message": "Payment request sent successfully.",
+                "transaction_id": transaction.transaction_id,
+                "receiver_account_number": reciever_account.account_number
+            },
+            status=status.HTTP_201_CREATED
+        )
