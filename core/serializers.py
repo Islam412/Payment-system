@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from core.models import CreditCard , Transaction
+from account.models import Account
 
 
 # credit card
@@ -104,3 +105,19 @@ class TransactionSerializer(serializers.ModelSerializer):
             return obj.reciever.kyc.full_name
         except:
             return None
+
+
+
+# transfer api
+class AccountSearchSerializer(serializers.ModelSerializer):
+    user_full_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Account
+        fields = ['account_id', 'account_number', 'user', 'user_full_name']
+
+    def get_user_full_name(self, obj):
+        try:
+            return obj.user.kyc.full_name
+        except:
+            return obj.user.username
