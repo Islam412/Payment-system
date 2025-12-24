@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal , InvalidOperation
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer , ContactUsSerializer , NeedHelpSerializer , AboutUsSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer , ContactUsSerializer , NeedHelpSerializer , AboutUsSerializer , AboutUsSerializer
 from core.models import CreditCard , Notification , Transaction , Home , Company
 from account.models import Account
 from userauths.models import User
@@ -971,5 +971,14 @@ class NeedHelpAPIView(APIView):
     
 
 
-# api
+# about us api
+class AboutUsAPIView(APIView):
+
+    def get(self, request):
+        company = Company.objects.first()
+        if not company:
+            return Response({"detail": "Company data not found."}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = AboutUsSerializer(company)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
