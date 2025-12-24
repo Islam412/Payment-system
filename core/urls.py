@@ -2,7 +2,7 @@ from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView , contatct_us , need_help , about_us , create_notification
-from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView
+from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView
 
 app_name = 'core'
 
@@ -48,12 +48,13 @@ urlpatterns = [
     path("delete_card/<card_id>/", credit_card.delete_card, name="delete_card"),
 
     # api credite card
-    path("api/credit-cards/<str:card_id>/", CreditCardDetailAPIView.as_view(), name="credit-card-detail"),
-    path("api/credit-cards/fund/<str:card_id>/", FundCreditCardAPIView.as_view(), name="fund-credit-card"),
-    path("api/credit-cards/withdraw/<str:card_id>/", WithdrawCreditCardAPIView.as_view(), name="withdraw-credit-card"),
-    path("api/credit-cards/delete/<str:card_id>/", DeleteCreditCardAPIView.as_view(), name="delete-credit-card"),
+    path("api/credit-cards/<str:card_id>/", CreditCardDetailAPIView.as_view(), name="credit-card-detail-api"),
+    path("api/credit-cards/fund/<str:card_id>/", FundCreditCardAPIView.as_view(), name="fund-credit-card-api"),
+    path("api/credit-cards/withdraw/<str:card_id>/", WithdrawCreditCardAPIView.as_view(), name="withdraw-credit-card-api"),
+    path("api/credit-cards/delete/<str:card_id>/", DeleteCreditCardAPIView.as_view(), name="delete-credit-card-api"),
 
     # payment requist
-    path("api/search-users/", SearchUsersRequestAPIView.as_view(), name="search-users-request"),
+    path("api/search-users/", SearchUsersRequestAPIView.as_view(), name="search-users-request-api"),
     path("api/amount-request/<str:account_number>/", AmountRequestAPIView.as_view(), name="amount-request-api"),
+    path("api/amount-request/<str:account_number>/", AmountRequestProcessAPIView.as_view(), name="amount-request-process-api"),
 ]
