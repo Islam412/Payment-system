@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal , InvalidOperation
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer , ContactUsSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer , ContactUsSerializer , NeedHelpSerializer
 from core.models import CreditCard , Notification , Transaction , Home , Company
 from account.models import Account
 from userauths.models import User
@@ -955,4 +955,16 @@ class ContactUsAPIView(APIView):
             return Response({"detail": "Company data not found."}, status=status.HTTP_404_NOT_FOUND)
         
         serializer = ContactUsSerializer(company)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+class NeedHelpAPIView(APIView):
+
+    def get(self, request):
+        company = Company.objects.first()
+        if not company:
+            return Response({"detail": "Company data not found."}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = NeedHelpSerializer(company)
         return Response(serializer.data, status=status.HTTP_200_OK)
