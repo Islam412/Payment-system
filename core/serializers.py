@@ -1,7 +1,8 @@
 from rest_framework import serializers
 
-from core.models import CreditCard , Transaction , Home
+from core.models import CreditCard , Transaction , Home , Company
 from account.models import Account
+
 
 
 # credit card
@@ -174,3 +175,10 @@ class HomeSerializer(serializers.ModelSerializer):
             "make_your_payment",
             "you_all_done",
         ]
+
+
+# Company api
+class ContactUsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = ['address', 'phone_number', 'support_mail', 'android_app', 'ios_app']
