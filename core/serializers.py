@@ -40,3 +40,19 @@ class WithdrawCreditCardSerializer(serializers.Serializer):
         decimal_places=2,
         min_value=0.01
     )
+
+
+
+
+# payment requist
+class AmountRequestProcessSerializer(serializers.Serializer):
+    amount = serializers.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        min_value=0.01
+    )
+    description = serializers.CharField(
+        max_length=1000,
+        required=False,
+        allow_blank=True
+    )
