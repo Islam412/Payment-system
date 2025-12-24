@@ -1,6 +1,5 @@
-# Paylio - Payment System<img width="1920" height="5290" alt="home" src="https://github.com/user-attachments/assets/a07a84dc-5e39-4160-8667-65cd111ef4ea" />
-0-92dd-4efb-8f08-379b78cd6057" />
-<img width="1920" height="961" alt="admin dashboard" src="https://github.com/user-attachments/assets/df21b470-ac0e-4c4e-88ba-9bbfa3fc0d72" />
+
+![Uploading home.png…]()
 
 
 ## Description
