@@ -815,3 +815,32 @@ class AmountTransferProcessAPIView(APIView):
             },
             status=status.HTTP_201_CREATED
         )
+
+
+
+
+class TransferConfirmationAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, account_number, transaction_id):
+        try:
+            account = Account.objects.get(account_number=account_number)
+            transaction = Transaction.objects.get(transaction_id=transaction_id)
+        except Account.DoesNotExist:
+            return Response({"detail": "Account does not exist."}, status=status.HTTP_404_NOT_FOUND)
+        except Transaction.DoesNotExist:
+            return Response({"detail": "Transaction does not exist."}, status=status.HTTP_404_NOT_FOUND)
+
+        if request.user not in [transaction.sender, transaction.reciever]:
+            return Response({"detail": "Unauthorized access."}, status=status.HTTP_403_FORBIDDEN)
+
+        serializer = TransactionSerializer(transaction)
+        return Response({
+            "account": {
+                "account_id": account.account_id,
+                "account_number": account.account_number,
+                "user_id": account.user.id,
+                "full_name": getattr(account.user.kyc, "full_name", account.user.username)
+            },
+            "transaction": serializer.data
+        }, status=status.HTTP_200_OK)
