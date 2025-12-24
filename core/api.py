@@ -1,11 +1,12 @@
 from django.db.models import Q
+from django.db import transaction as db_transaction
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -526,6 +527,74 @@ class SettlementConfirmationAPIView(APIView):
                     "receiver": transaction.reciever.id if transaction.reciever else None,
                     "date": transaction.date
                 }
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+
+
+
+class SettlementProcessingAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, account_number, transaction_id):
+        serializer = SettlementProcessSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response(
+                {"detail": "Invalid data."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            receiver_account = Account.objects.get(account_number=account_number)
+        except Account.DoesNotExist:
+            return Response(
+                {"detail": "Receiver account not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        try:
+            transaction = Transaction.objects.get(transaction_id=transaction_id)
+        except Transaction.DoesNotExist:
+            return Response(
+                {"detail": "Transaction not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        sender_account = request.user.account
+        pin_number = serializer.validated_data["pin_number"]
+
+        if pin_number != sender_account.pin_number:
+            return Response(
+                {"detail": "Incorrect PIN."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if sender_account.account_balance < transaction.amount:
+            return Response(
+                {"detail": "Insufficient funds."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        with db_transaction.atomic():
+            sender_account.account_balance -= transaction.amount
+            sender_account.save()
+
+            receiver_account.account_balance += transaction.amount
+            receiver_account.save()
+
+            transaction.status = "request_settled"
+            transaction.save()
+
+        return Response(
+            {
+                "message": "Settlement completed successfully.",
+                "transaction_id": transaction.transaction_id,
+                "amount": transaction.amount,
+                "sender_balance": sender_account.account_balance,
+                "receiver_balance": receiver_account.account_balance,
             },
             status=status.HTTP_200_OK
         )
