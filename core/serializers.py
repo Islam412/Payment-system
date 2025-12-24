@@ -62,3 +62,8 @@ class AmountRequestProcessSerializer(serializers.Serializer):
 
 class AmountRequestFinalSerializer(serializers.Serializer):
     pin_number = serializers.CharField(max_length=10)
+
+
+
+class SettlementProcessSerializer(serializers.Serializer):
+    pin_number = serializers.CharField(max_length=10)
