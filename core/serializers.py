@@ -56,3 +56,9 @@ class AmountRequestProcessSerializer(serializers.Serializer):
         required=False,
         allow_blank=True
     )
+
+
+
+
+class AmountRequestFinalSerializer(serializers.Serializer):
+    pin_number = serializers.CharField(max_length=10)
