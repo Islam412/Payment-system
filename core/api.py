@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -366,6 +366,68 @@ class AmountRequestConfirmationAPIView(APIView):
                     "receiver": transaction.reciever.id if transaction.reciever else None,
                     "date": transaction.date
                 }
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+
+
+class AmountRequestFinalProcessAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, account_number, transaction_id):
+        serializer = AmountRequestFinalSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response(
+                {"detail": "Invalid data provided."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            account = Account.objects.get(account_number=account_number)
+        except Account.DoesNotExist:
+            return Response(
+                {"detail": "Account not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        try:
+            transaction = Transaction.objects.get(transaction_id=transaction_id)
+        except Transaction.DoesNotExist:
+            return Response(
+                {"detail": "Transaction not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        pin_number = serializer.validated_data["pin_number"]
+
+        if pin_number != request.user.account.pin_number:
+            return Response(
+                {"detail": "Invalid PIN number."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        transaction.status = "request_sent"
+        transaction.save()
+
+        Notification.objects.create(
+            user=account.user,
+            notification_type="Recieved Payment Request",
+            amount=transaction.amount,
+        )
+
+        Notification.objects.create(
+            user=request.user,
+            notification_type="Sent Payment Request",
+            amount=transaction.amount,
+        )
+
+        return Response(
+            {
+                "message": "Payment request sent successfully.",
+                "transaction_id": transaction.transaction_id
             },
             status=status.HTTP_200_OK
         )
