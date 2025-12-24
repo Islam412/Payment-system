@@ -121,3 +121,18 @@ class AccountSearchSerializer(serializers.ModelSerializer):
             return obj.user.kyc.full_name
         except:
             return obj.user.username
+
+
+
+class AccountDetailSerializer(serializers.ModelSerializer):
+    user_full_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Account
+        fields = ['account_id', 'account_number', 'user', 'user_full_name']
+
+    def get_user_full_name(self, obj):
+        try:
+            return obj.user.kyc.full_name
+        except:
+            return obj.user.username
