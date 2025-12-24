@@ -72,5 +72,5 @@ urlpatterns = [
 
     # transfer
     path("api/search-users/", SearchUsersAccountNumberAPIView.as_view(), name="search-users-account-numbe-api"),
-    path("amount-transfer/<str:account_number>/", AmountTransferAPIView.as_view(), name="amount-transfer-api"),
+    path("api/amount-transfer/<str:account_number>/", AmountTransferAPIView.as_view(), name="amount-transfer-api"),
 ]
