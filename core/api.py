@@ -6,11 +6,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal , InvalidOperation
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer
-from core.models import CreditCard , Notification , Transaction , Home
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer , HomeSerializer , ContactUsSerializer
+from core.models import CreditCard , Notification , Transaction , Home , Company
 from account.models import Account
 from userauths.models import User
-
 
 
 # credit card
@@ -937,11 +936,23 @@ class TransferCompletedAPIView(APIView):
 
 # home api
 class HomeAPIView(APIView):
-    
+
     def get(self, request):
         home = Home.objects.first()
         if not home:
             return Response({"detail": "Home data not found."}, status=status.HTTP_404_NOT_FOUND)
 
         serializer = HomeSerializer(home)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+# contact us api
+class ContactUsAPIView(APIView):
+
+    def get(self, request):
+        company = Company.objects.first()  # نفترض عندك شركة واحدة
+        if not company:
+            return Response({"detail": "Company data not found."}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = ContactUsSerializer(company)
         return Response(serializer.data, status=status.HTTP_200_OK)
