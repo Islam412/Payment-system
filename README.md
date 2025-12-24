@@ -42,7 +42,7 @@ Follow these instructions to get the project up and running on your local machin
 
 1.  **Clone the Repository**
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/Islam412/Payment-system.git
     cd payment-system/src
     ```
 
