@@ -136,3 +136,9 @@ class AccountDetailSerializer(serializers.ModelSerializer):
             return obj.user.kyc.full_name
         except:
             return obj.user.username
+
+
+
+class AmountTransferProcessSerializer(serializers.Serializer):
+    amount_send = serializers.DecimalField(max_digits=12, decimal_places=2)
+    description = serializers.CharField(max_length=1000, allow_blank=True, required=False)
