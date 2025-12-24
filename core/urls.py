@@ -2,7 +2,7 @@ from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView , contatct_us , need_help , about_us , create_notification
-from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView , SearchUsersAccountNumberAPIView
+from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView , SearchUsersAccountNumberAPIView , AmountTransferAPIView
 
 app_name = 'core'
 
@@ -72,4 +72,5 @@ urlpatterns = [
 
     # transfer
     path("api/search-users/", SearchUsersAccountNumberAPIView.as_view(), name="search-users-account-numbe-api"),
+    path("amount-transfer/<str:account_number>/", AmountTransferAPIView.as_view(), name="amount-transfer-api"),
 ]

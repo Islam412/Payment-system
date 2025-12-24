@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -749,3 +749,20 @@ class SearchUsersAccountNumberAPIView(APIView):
         serializer = AccountSearchSerializer(accounts, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+
+
+class AmountTransferAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, account_number):
+        try:
+            account = Account.objects.get(account_number=account_number)
+        except Account.DoesNotExist:
+            return Response(
+                {"detail": "Account does not exist."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        serializer = AccountDetailSerializer(account)
+        return Response(serializer.data, status=status.HTTP_200_OK)
