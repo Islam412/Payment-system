@@ -2,7 +2,7 @@ from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
 from .views import HomeView , contatct_us , need_help , about_us , create_notification
-from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView
+from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView , SearchUsersAccountNumberAPIView
 
 app_name = 'core'
 
@@ -69,4 +69,7 @@ urlpatterns = [
     # transaction api
     path("api/transactions/", TransactionListAPIView.as_view(), name="transactions-api"),
     path("api/transactions/<str:transaction_id>/", TransactionDetailAPIView.as_view(), name="transactions-detail-api"),
+
+    # transfer
+    path("api/search-users/", SearchUsersAccountNumberAPIView.as_view(), name="search-users-account-numbe-api"),
 ]
