@@ -177,7 +177,7 @@ class HomeSerializer(serializers.ModelSerializer):
         ]
 
 
-# Company api
+# contact us api
 class ContactUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
