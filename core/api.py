@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal , InvalidOperation
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer , AccountSearchSerializer , AccountDetailSerializer , AmountTransferProcessSerializer , TransferFinalProcessSerializer
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -843,4 +843,62 @@ class TransferConfirmationAPIView(APIView):
                 "full_name": getattr(account.user.kyc, "full_name", account.user.username)
             },
             "transaction": serializer.data
+        }, status=status.HTTP_200_OK)
+
+
+
+
+class TransferFinalProcessAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, account_number, transaction_id):
+        serializer = TransferFinalProcessSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response({"detail": "Invalid data."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            receiver_account = Account.objects.get(account_number=account_number)
+            transaction = Transaction.objects.get(transaction_id=transaction_id)
+        except Account.DoesNotExist:
+            return Response({"detail": "Account does not exist."}, status=status.HTTP_404_NOT_FOUND)
+        except Transaction.DoesNotExist:
+            return Response({"detail": "Transaction does not exist."}, status=status.HTTP_404_NOT_FOUND)
+
+        sender = request.user
+        sender_account = sender.account
+        receiver = receiver_account.user
+        amount = transaction.amount
+        pin_number = serializer.validated_data['pin_number']
+
+        if pin_number != sender_account.pin_number:
+            return Response({"detail": "Incorrect PIN."}, status=status.HTTP_403_FORBIDDEN)
+
+        if sender_account.account_balance < amount:
+            return Response({"detail": "Insufficient funds."}, status=status.HTTP_400_BAD_REQUEST)
+
+        sender_account.account_balance -= amount
+        sender_account.save()
+
+        receiver_account.account_balance += amount
+        receiver_account.save()
+
+        transaction.status = 'completed'
+        transaction.save()
+
+        Notification.objects.create(
+            user=receiver,
+            amount=amount,
+            notification_type="Credit Alert"
+        )
+        Notification.objects.create(
+            user=sender,
+            amount=amount,
+            notification_type="Debit Alert"
+        )
+
+        return Response({
+            "message": "Transfer completed successfully.",
+            "transaction_id": transaction.transaction_id,
+            "sender_balance": sender_account.account_balance,
+            "receiver_balance": receiver_account.account_balance
         }, status=status.HTTP_200_OK)
