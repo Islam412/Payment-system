@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import CreditCard , Transaction
+from core.models import CreditCard , Transaction , Home
 from account.models import Account
 
 
@@ -148,3 +148,29 @@ class AmountTransferProcessSerializer(serializers.Serializer):
 class TransferFinalProcessSerializer(serializers.Serializer):
     pin_number = serializers.CharField(max_length=10)
 
+
+
+# home api
+class HomeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Home
+        fields = [
+            "image",
+            "supported_currencies",
+            "available_countries",
+            "payment_methods",
+            "support_team_day",
+            "support_team_hour",
+            "peace_of_mind",
+            "business_ready",
+            "transparent",
+            "international_network",
+            "payments",
+            "collections",
+            "conversions",
+            "global_account",
+            "register_for_free",
+            "set_up_your_transfer",
+            "make_your_payment",
+            "you_all_done",
+        ]
