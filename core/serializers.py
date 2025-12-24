@@ -200,3 +200,20 @@ class NeedHelpSerializer(serializers.ModelSerializer):
             'Cancel_transaction',
             'Can_i_send_multiple_payments'
         ]
+
+
+# about us api
+class AboutUsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = [
+            'secure_payments',
+            'fast_processing',
+            'global_coverage',
+            'our_mission',
+            'our_vision',
+            'active_users',
+            'transactions',
+            'system_uptime',
+            'countries_supported'
+        ]
