@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from decimal import Decimal
 
-from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer
+from .serializers import CreditCardSerializer , FundCreditCardSerializer , WithdrawCreditCardSerializer , AmountRequestProcessSerializer , AmountRequestFinalSerializer , SettlementProcessSerializer , TransactionSerializer 
 from core.models import CreditCard , Notification , Transaction
 from account.models import Account
 from userauths.models import User
@@ -707,3 +707,27 @@ class TransactionListAPIView(APIView):
                 "received": TransactionSerializer(request_receiver, many=True).data
             }
         })
+
+
+
+class TransactionDetailAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, transaction_id):
+        try:
+            transaction = Transaction.objects.get(transaction_id=transaction_id)
+        except Transaction.DoesNotExist:
+            return Response(
+                {"detail": "Transaction not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # 🔐 Check if the user is related to this transaction
+        if request.user not in [transaction.sender, transaction.reciever]:
+            return Response(
+                {"detail": "Unauthorized access."},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        serializer = TransactionSerializer(transaction)
+        return Response(serializer.data, status=status.HTTP_200_OK)
