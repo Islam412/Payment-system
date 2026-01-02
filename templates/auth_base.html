@@ -131,6 +131,136 @@
   background: linear-gradient(90deg, #4338ca, #2563eb);
   transform: translateY(-1px);
 }
+
+/* Dark Mode Overrides */
+    body.dark-mode .language-box {
+        background-color: var(--section-color);
+        border-color: var(--border-color);
+        color: var(--head-color);
+    }
+
+    /* Restored Dark Mode Variables */
+    body.dark-mode {
+        --body-color: #0f172a;
+        --primary-color: #6366f1;
+        --head-color: #f8fafc;
+        --para-color: #cbd5e1;
+        --section-primary-color: #1e293b;
+        --section-color: #1e293b;
+        --border-color: #334155;
+        --bs-white: #1e293b;
+
+        background-color: var(--body-color);
+        color: var(--para-color);
+    }
+
+    /* Specific Element Overrides */
+    body.dark-mode .head-area,
+    body.dark-mode .header-section,
+    body.dark-mode .sidebar-wrapper,
+    body.dark-mode .dashboard-nav .single-item .main-area,
+    body.dark-mode .form-control,
+    body.dark-mode input,
+    body.dark-mode select,
+    body.dark-mode textarea {
+        background-color: var(--section-primary-color) !important;
+        color: var(--para-color) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    /* Text Color Fixes */
+    body.dark-mode .profile-head h5,
+    body.dark-mode .sidebar-wrapper ul li a span {
+        color: var(--head-color);
+    }
+
+    body.dark-mode .profile-head p {
+        color: var(--para-color);
+    }
+
+    body.dark-mode .sidebar-wrapper ul li a:hover span,
+    body.dark-mode .sidebar-wrapper ul li a.active span {
+        color: var(--primary-color);
+    }
+
+    /* Theme Toggle Switch */
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .theme-switch {
+        display: inline-block;
+        height: 24px;
+        position: relative;
+        width: 48px;
+    }
+
+    .theme-switch input {
+        display: none;
+    }
+
+    .slider {
+        background-color: #cbd5e1;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        background-color: #fff;
+        bottom: 3px;
+        content: "";
+        height: 18px;
+        left: 4px;
+        position: absolute;
+        transition: .4s;
+        width: 18px;
+        border-radius: 50%;
+    }
+
+    input:checked+.slider {
+        background-color: #6366f1;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(24px);
+    }
+
+    .slider .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 10px;
+        color: white;
+        /* Adjusted for better visibility on color backgrounds */
+        z-index: 10;
+    }
+
+    /* Adjust icon colors/positions */
+    .slider .sun {
+        left: 6px;
+        color: #f59e0b;
+    }
+
+    input:checked+.slider .sun {
+        display: none;
+    }
+
+    .slider .moon {
+        right: 6px;
+        color: #fbbf24;
+        display: none;
+    }
+
+    input:checked+.slider .moon {
+        display: block;
+    }
 </style>
 <body>
     <!-- start preloader -->
@@ -196,6 +326,16 @@
                                                 ترجمة إلى العربية
                                             {% endif %}
                                         </button>
+
+                                        <div class="theme-switch-wrapper">
+                                            <label class="theme-switch" for="checkbox">
+                                                <input type="checkbox" id="checkbox" />
+                                                <div class="slider round">
+                                                    <i class="fas fa-sun icon sun"></i>
+                                                    <i class="fas fa-moon icon moon"></i>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
                                 </form>
 
@@ -460,6 +600,31 @@
     <script src="{% static 'assets1/js/plugin/wow.min.js' %}"></script>
     <script src="{% static 'assets1/js/plugin/plugin.js' %}"></script>
     <script src="{% static 'assets1/js/main.js' %}"></script>
+
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
 </body>
 
 </html>
