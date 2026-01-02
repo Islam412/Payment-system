@@ -3,7 +3,7 @@
 
 ## Description
 
-Paylio is a comprehensive full-stack payment system designed to facilitate secure and efficient financial transactions. Built on the robust Django framework, it offers a seamless experience for both users and administrators. The system features a user-centric dashboard for fund management, a secure authentication mechanism, and an intuitive back-office admin interface for complete control of operations. This project showcases the integration of modern web technologies to create a reliable financial platform.
+Welcome to Paylio is a comprehensive full-stack payment system designed to facilitate secure and efficient financial transactions. Built on the robust Django framework, it offers a seamless experience for both users and administrators. The system features a user-centric dashboard for fund management, a secure authentication mechanism, and an intuitive back-office admin interface for complete control of operations. This project showcases the integration of modern web technologies to create a reliable financial platform.
 
 ## Tech Stack
 
