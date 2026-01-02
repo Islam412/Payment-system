@@ -72,17 +72,17 @@ To set up the project on your local machine, follow these instructions:
     
     Open your browser and navigate to `http://127.0.0.1:8000/`.
 
+Project Video Demo
+[▶️ Watch Project Video](media/videos/video.mp4)
+
+Project Video Demo
+[▶️ Watch admin and credit card work Video](media/videos/admin%20and%20credit%20card%20work.mp4)
+
 Project Demo
 ![Home Image](media/reademe_photo/home.png)
 
 Project Demo AR
 ![Home Image AR](media/reademe_photo/home_ar.png)
-
-Project Video Demo
-[▶️ Watch Project Video](media/videos/video.mp4)
-
-Project Video Demo
-[▶️ Watch Project Video](media/videos/admin%20and%20credit%20card%20work.mp4)
 
 User Dashboard
 ![User Dashboard Image](media/reademe_photo/dashboard.png)
