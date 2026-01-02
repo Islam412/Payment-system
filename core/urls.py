@@ -1,7 +1,7 @@
 from django.urls import path
 
 from core import views , transfer , transaction , payment_request , credit_card 
-from .views import HomeView , contatct_us , need_help , about_us , create_notification
+from .views import HomeView , contatct_us , need_help , about_us , create_notification , api_buttons
 from .api import CreditCardDetailAPIView , FundCreditCardAPIView , WithdrawCreditCardAPIView , DeleteCreditCardAPIView , SearchUsersRequestAPIView , AmountRequestAPIView , AmountRequestProcessAPIView , AmountRequestConfirmationAPIView , AmountRequestFinalProcessAPIView , AmountRequestCompletedAPIView , SettlementConfirmationAPIView , SettlementProcessingAPIView , SettlementCompletedAPIView , DeletePaymentRequestAPIView , TransactionListAPIView , TransactionDetailAPIView , SearchUsersAccountNumberAPIView , AmountTransferAPIView , AmountTransferProcessAPIView , TransferConfirmationAPIView , TransferFinalProcessAPIView , TransferCompletedAPIView , HomeAPIView , ContactUsAPIView , NeedHelpAPIView , AboutUsAPIView
 
 app_name = 'core'
@@ -14,6 +14,8 @@ urlpatterns = [
     path('faq',need_help, name='faq'),
     path('about-us',about_us, name='about_us'),
     path('create-notification/', create_notification, name='create_notification'),
+    path('create-notification/', create_notification, name='create_notification'),
+    path('api-buttons/', create_notification, name='create_notification'),
 
     # transfer
     path('search-account/', transfer.search_users_account_number, name='search-account'),
