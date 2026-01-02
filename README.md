@@ -81,6 +81,9 @@ Project Demo AR
 Project Video Demo
 [▶️ Watch Project Video](media/videos/video.mp4)
 
+Project Video Demo
+[▶️ Watch Project Video](media/videos/admin%20and%20credit%20card%20work.mp4)
+
 User Dashboard
 ![User Dashboard Image](media/reademe_photo/dashboard.png)
 
