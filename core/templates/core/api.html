@@ -99,10 +99,14 @@
     <!-- CREDIT CARD -->
     <div class="section">
         <h2>💳 Credit Card APIs</h2>
-        <button class="btn" onclick="go('{% url 'core:credit-card-detail-api' card.card_id %}')">Card Details</button>
-        <button class="btn" onclick="go('{% url 'core:' %}')">Fund Card</button>
-        <button class="btn" onclick="go('{% url 'core:' %}')">Withdraw</button>
-        <button class="btn" onclick="go('{% url 'core:' %}')">Delete Card</button>
+        {% for card in cards %}
+            <button class="btn" onclick="go('{% url 'core:credit-card-detail-api' card.card_id %}')">
+                Card {{ card.name }} Details
+            </button>
+            <button class="btn" onclick="go('{% url 'core:fund-credit-card-api' card.card_id %}')">Fund Card</button>
+            <button class="btn" onclick="go('{% url 'core:withdraw-credit-card-api' card.card_id %}')">Withdraw</button>
+            <button class="btn" onclick="go('{% url 'core:delete-credit-card-api' card.card_id %}')">Delete Card</button>
+        {% endfor %}
     </div>
 
     <!-- TRANSFER -->
