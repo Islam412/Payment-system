@@ -74,6 +74,7 @@ To set up the project on your local machine, follow these instructions:
 
 Project Demo
 ![Home Image](media/reademe_photo/home.png)
+![Home Image AR](media/reademe_photo/home_ar.png)
 
 User Dashboard
 ![User Dashboard Image](media/reademe_photo/dashboard.png)
