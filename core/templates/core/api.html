@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>API Buttons</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 40px;
+            direction: rtl;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+        }
+
+        .section h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            background: #2ecc71;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📌 API Endpoints</h1>
+
+<!-- ACCOUNT -->
+<div class="section">
+    <h2>Account APIs</h2>
+    <button class="btn" onclick="go('/account/api/account/')">Account</button>
+    <button class="btn" onclick="go('/account/api/kyc/')">KYC</button>
+    <button class="btn" onclick="go('/account/api/dashboard/')">Dashboard</button>
+    <button class="btn" onclick="go('/account/api/account/delete/')">Delete Account</button>
+</div>
+
+<!-- AUTH -->
+<div class="section">
+    <h2>Auth APIs</h2>
+    <button class="btn" onclick="go('/user/api/register/')">Register</button>
+    <button class="btn" onclick="go('/user/api/login/')">Login</button>
+    <button class="btn" onclick="go('/user/api/logout/')">Logout</button>
+</div>
+
+<!-- CREDIT CARD -->
+<div class="section">
+    <h2>Credit Card APIs</h2>
+    <button class="btn" onclick="go('/api/credit-cards/123/')">Card Details</button>
+    <button class="btn" onclick="go('/api/credit-cards/fund/123/')">Fund Card</button>
+    <button class="btn" onclick="go('/api/credit-cards/withdraw/123/')">Withdraw</button>
+    <button class="btn" onclick="go('/api/credit-cards/delete/123/')">Delete Card</button>
+</div>
+
+<!-- TRANSFER -->
+<div class="section">
+    <h2>Transfer APIs</h2>
+    <button class="btn" onclick="go('/api/search-users/')">Search User</button>
+    <button class="btn" onclick="go('/api/amount-transfer/12345/')">Transfer Amount</button>
+    <button class="btn" onclick="go('/api/transfer-confirmation/12345/999/')">Confirm Transfer</button>
+</div>
+
+<!-- GENERAL -->
+<div class="section">
+    <h2>General APIs</h2>
+    <button class="btn" onclick="go('/api/')">Home API</button>
+    <button class="btn" onclick="go('/api/contact-us/')">Contact Us</button>
+    <button class="btn" onclick="go('/api/need-help/')">Need Help</button>
+    <button class="btn" onclick="go('/api/about-us/')">About Us</button>
+</div>
+
+<script>
+    function go(url) {
+        window.open(url, "_blank");
+    }
+</script>
+
+</body>
+</html>
