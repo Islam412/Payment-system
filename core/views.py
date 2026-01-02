@@ -59,3 +59,7 @@ def create_notification(request):
         "amount": notif.amount,
         "notification_type": notif.notification_type
     })
+
+
+def api_buttons(request):
+    return render(request, "api.html")
