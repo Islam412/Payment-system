@@ -62,4 +62,4 @@ def create_notification(request):
 
 
 def api_buttons(request):
-    return render(request, "api.html")
+    return render(request, "core/api.html")

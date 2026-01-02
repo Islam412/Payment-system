@@ -15,7 +15,7 @@ urlpatterns = [
     path('about-us',about_us, name='about_us'),
     path('create-notification/', create_notification, name='create_notification'),
     path('create-notification/', create_notification, name='create_notification'),
-    path('api-buttons/', create_notification, name='create_notification'),
+    path('api-buttons/', api_buttons, name='api-buttons'),
 
     # transfer
     path('search-account/', transfer.search_users_account_number, name='search-account'),

@@ -77,7 +77,7 @@
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">{% translate "Control Panel" %}</a>
                                         <ul class="dropdown-menu main-menu shadow">
                                             <li><a class="nav-link" href="/admin/">{% translate "Admin Banal" %}</a></li>
-                                            <li><a class="nav-link" href="help-center-category.html">{% translate "API" %}</a></li>
+                                            <li><a class="nav-link" href="{% url 'core:api-buttons' %}">{% translate "API" %}</a></li>
                                         </ul>
                                     </li>
                                     {% endif %}
