@@ -78,6 +78,9 @@ Project Demo
 Project Demo AR
 ![Home Image AR](media/reademe_photo/home_ar.png)
 
+Project Video Demo
+[▶️ Watch Project Video](media/videos/video.mp4)
+
 User Dashboard
 ![User Dashboard Image](media/reademe_photo/dashboard.png)
 
