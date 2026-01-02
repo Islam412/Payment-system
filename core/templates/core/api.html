@@ -30,28 +30,56 @@
     }
 
     /* ===== RESET & BASE ===== */
-    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
-    body { background: var(--bg-color); color: var(--text-color); padding: 40px 20px; transition: background 0.3s, color 0.3s; }
+    * {
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background 0.4s, color 0.4s, box-shadow 0.4s, transform 0.3s;
+    }
+
+    body {
+        background: var(--bg-color);
+        color: var(--text-color);
+        padding: 40px 20px;
+        transition: background 0.4s, color 0.4s;
+    }
 
     /* Heading */
-    h1 { text-align: center; color: var(--heading-color); font-size: 2.4rem; margin-bottom: 50px; letter-spacing: 1px; }
+    h1 {
+        text-align: center;
+        color: var(--heading-color);
+        font-size: 2.4rem;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        transition: color 0.4s;
+    }
 
     /* Toggle Button */
     .toggle-btn {
         position: fixed;
         top: 20px;
         right: 20px;
-        padding: 10px 16px;
+        width: 50px;
+        height: 50px;
         border: none;
-        border-radius: 8px;
+        border-radius: 50%;
         cursor: pointer;
         background: linear-gradient(135deg, #fbbf24, #f97316);
         color: #fff;
-        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        transition: 0.3s;
+        z-index: 1000;
+        transition: transform 0.3s, box-shadow 0.3s, background 0.4s, rotate 0.5s;
     }
-    .toggle-btn:hover { transform: scale(1.05); }
+    .toggle-btn:hover { transform: scale(1.1) rotate(10deg); }
+    .toggle-btn span {
+        display: inline-block;
+        transition: transform 0.5s ease, rotate 0.5s ease;
+    }
 
     /* Grid container */
     .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -62,7 +90,7 @@
         padding: 25px 20px;
         border-radius: 16px;
         box-shadow: 0 12px 25px var(--section-shadow);
-        transition: all 0.3s;
+        transition: all 0.4s;
     }
     .section:hover {
         transform: translateY(-6px);
@@ -76,6 +104,7 @@
         color: var(--heading-color);
         border-bottom: 2px solid var(--section-border);
         padding-bottom: 10px;
+        transition: color 0.4s, border-color 0.4s;
     }
 
     /* Buttons */
@@ -90,8 +119,8 @@
         cursor: pointer;
         background: linear-gradient(135deg, var(--btn-bg-start), var(--btn-bg-end));
         color: var(--btn-text);
-        transition: all 0.3s ease;
         box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        transition: all 0.4s ease;
     }
     .btn:hover {
         transform: translateY(-2px) scale(1.03);
@@ -109,7 +138,10 @@
 </head>
 <body>
 
-<button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+<!-- Toggle Dark/Light Mode Button -->
+<button class="toggle-btn" onclick="toggleMode()">
+    <span>🌙</span>
+</button>
 
 <h1>🚀 API Dashboard</h1>
 
@@ -154,6 +186,10 @@
             <button class="btn" onclick="go('{% url 'core:amount-request-confirmation-api' acc.account_number 'TX123' %}')">Confirm Request</button>
             <button class="btn" onclick="go('{% url 'core:amount-request-final-api' acc.account_number 'TX123' %}')">Final Request</button>
             <button class="btn" onclick="go('{% url 'core:amount-request-completed-api' acc.account_number 'TX123' %}')">Completed Request</button>
+            <button class="btn" onclick="go('{% url 'core:settlement-confirmation-api' acc.account_number 'TX123' %}')">Settlement Confirmation</button>
+            <button class="btn" onclick="go('{% url 'core:settlement-process-api' acc.account_number 'TX123' %}')">Settlement Processing</button>
+            <button class="btn" onclick="go('{% url 'core:settlement-completed-api' acc.account_number 'TX123' %}')">Settlement Completed</button>
+            <button class="btn" onclick="go('{% url 'core:delete-payment-request-api' acc.account_number 'TX123' %}')">Delete Payment Request</button>
         {% endfor %}
     </div>
 
@@ -188,23 +224,61 @@
         <button class="btn" onclick="go('{% url 'core:about-us-api' %}')">About Us</button>
     </div>
 
+    <!-- Home -->
+    <div class="section">
+        <h2>🏠 Home </h2>
+        <button class="btn" onclick="go('{% url 'core:home' %}')">Home</button>
+    </div>
+
 </div>
 
 <script>
+/* ===== Open URL in new tab ===== */
 function go(url){
     window.open(url, "_blank");
 }
 
-// Toggle Dark/Light Mode
+/* ===== Toggle Dark/Light Mode & Animate Icon ===== */
 function toggleMode() {
-    document.body.classList.toggle('dark');
-    const btn = document.querySelector('.toggle-btn');
-    if(document.body.classList.contains('dark')){
-        btn.textContent = '☀️ Light Mode';
+    const body = document.body;
+    const icon = document.querySelector('.toggle-btn span');
+
+    body.classList.toggle('dark');
+
+    if(body.classList.contains('dark')){
+        localStorage.setItem('theme', 'dark');
+        icon.textContent = '☀️';
+        icon.style.transform = 'rotate(360deg)';
     } else {
-        btn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+        icon.textContent = '🌙';
+        icon.style.transform = 'rotate(-360deg)';
     }
 }
+
+/* ===== Apply saved theme or system preference on page load ===== */
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const icon = document.querySelector('.toggle-btn span');
+
+    if(savedTheme === 'dark'){
+        body.classList.add('dark');
+        icon.textContent = '☀️';
+    } else if(savedTheme === 'light'){
+        body.classList.remove('dark');
+        icon.textContent = '🌙';
+    } else {
+        // Follow system preference if no saved choice
+        if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+            body.classList.add('dark');
+            icon.textContent = '☀️';
+        } else {
+            body.classList.remove('dark');
+            icon.textContent = '🌙';
+        }
+    }
+});
 </script>
 
 </body>
