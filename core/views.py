@@ -62,4 +62,5 @@ def create_notification(request):
 
 
 def api_buttons(request):
-    return render(request, "core/api.html")
+    cards = CreditCard.objects.filter(user=request.user)
+    return render(request, "core/api.html", {'cards': cards})
