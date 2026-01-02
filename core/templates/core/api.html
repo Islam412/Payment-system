@@ -91,9 +91,9 @@
     <!-- AUTH -->
     <div class="section">
         <h2>🔐 Authentication APIs</h2>
-        <button class="btn" onclick="go('/user/api/register/')">Register</button>
-        <button class="btn" onclick="go('/user/api/login/')">Login</button>
-        <button class="btn" onclick="go('/user/api/logout/')">Logout</button>
+        <button class="btn" onclick="go('{% url 'userauths:api-register' %}')">Register</button>
+        <button class="btn" onclick="go('{% url 'userauths:api-login' %}')">Login</button>
+        <button class="btn" onclick="go('{% url 'userauths:api-logout' %}')">Logout</button>
     </div>
 
     <!-- CREDIT CARD -->
