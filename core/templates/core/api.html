@@ -3,74 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>API Dashboard</title>
-
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: "Arial", sans-serif;
-        }
-
-        body {
-            background: #f4f6f9;
-            margin: 0;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 40px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .section {
-            background: #fff;
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: 0 8px 20px rgba(0,0,0,.08);
-            transition: 0.3s;
-        }
-
-        .section:hover {
-            transform: translateY(-4px);
-        }
-
-        .section h2 {
-            margin-bottom: 15px;
-            color: #007bff;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 8px;
-            font-size: 18px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            color: #fff;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 10px;
-            }
-        }
+        * { box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f4f6f9; margin: 0; padding: 40px 20px; }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 40px; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .section { background: #fff; padding: 20px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,.08); transition: 0.3s; }
+        .section:hover { transform: translateY(-4px); }
+        .section h2 { margin-bottom: 15px; color: #007bff; border-bottom: 2px solid #eee; padding-bottom: 8px; font-size: 18px; }
+        .btn { width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 8px; background: linear-gradient(135deg, #2ecc71, #27ae60); color: #fff; font-size: 15px; cursor: pointer; transition: 0.3s; }
+        .btn:hover { opacity: 0.9; transform: scale(1.02); }
+        @media (max-width: 600px) { body { padding: 20px 10px; } }
     </style>
 </head>
 <body>
@@ -79,16 +22,17 @@
 
 <div class="container">
 
-    <!-- ACCOUNT -->
+    <!-- ACCOUNT APIs -->
     <div class="section">
         <h2>👤 Account APIs</h2>
         <button class="btn" onclick="go('{% url 'account:account-api' %}')">Account Info</button>
         <button class="btn" onclick="go('{% url 'account:kyc-api' %}')">KYC</button>
         <button class="btn" onclick="go('{% url 'account:dashboard-api' %}')">Dashboard</button>
         <button class="btn" onclick="go('{% url 'account:delete-account-api' %}')">Delete Account</button>
+        <button class="btn" onclick="go('{% url 'account:add-card-api' %}')">Add Card</button>
     </div>
 
-    <!-- AUTH -->
+    <!-- AUTH APIs -->
     <div class="section">
         <h2>🔐 Authentication APIs</h2>
         <button class="btn" onclick="go('{% url 'userauths:api-register' %}')">Register</button>
@@ -96,42 +40,73 @@
         <button class="btn" onclick="go('{% url 'userauths:api-logout' %}')">Logout</button>
     </div>
 
-    <!-- CREDIT CARD -->
+    <!-- CREDIT CARD APIs -->
     <div class="section">
         <h2>💳 Credit Card APIs</h2>
         {% for card in cards %}
-            <button class="btn" onclick="go('{% url 'core:credit-card-detail-api' card.card_id %}')">
-                Card {{ card.name }} Details
-            </button>
+            <button class="btn" onclick="go('{% url 'core:credit-card-detail-api' card.card_id %}')">Card {{ card.name }} Details</button>
             <button class="btn" onclick="go('{% url 'core:fund-credit-card-api' card.card_id %}')">Fund Card</button>
             <button class="btn" onclick="go('{% url 'core:withdraw-credit-card-api' card.card_id %}')">Withdraw</button>
             <button class="btn" onclick="go('{% url 'core:delete-credit-card-api' card.card_id %}')">Delete Card</button>
         {% endfor %}
     </div>
 
-    <!-- TRANSFER -->
+    <!-- PAYMENT REQUEST APIs -->
     <div class="section">
-        <h2>🔁 Transfer APIs</h2>
-        <button class="btn" onclick="go('/api/search-users/')">Search User</button>
-        <button class="btn" onclick="go('/api/amount-transfer/12345/')">Transfer Amount</button>
-        <button class="btn" onclick="go('/api/transfer-confirmation/12345/999/')">Confirm Transfer</button>
+        <h2>💰 Payment Request APIs</h2>
+        <button class="btn" onclick="go('{% url 'core:search-users-request-api' %}')">Search User Request</button>
+        {% for acc in user_accounts %}
+            <button class="btn" onclick="go('{% url 'core:amount-request-api' acc.account_number %}')">Amount Request</button>
+            <button class="btn" onclick="go('{% url 'core:amount-request-process-api' acc.account_number %}')">Process Request</button>
+            <button class="btn" onclick="go('{% url 'core:amount-request-confirmation-api' acc.account_number 'TX123' %}')">Confirm Request</button>
+            <button class="btn" onclick="go('{% url 'core:amount-request-final-api' acc.account_number 'TX123' %}')">Final Request</button>
+            <button class="btn" onclick="go('{% url 'core:amount-request-completed-api' acc.account_number 'TX123' %}')">Completed Request</button>
+        {% endfor %}
+        {% for acc in user_accounts %}
+            <button class="btn" onclick="go('{% url 'core:settlement-confirmation-api' acc.account_number 'TX123' %}')">Settlement Confirmation</button>
+            <button class="btn" onclick="go('{% url 'core:settlement-process-api' acc.account_number 'TX123' %}')">Settlement Processing</button>
+            <button class="btn" onclick="go('{% url 'core:settlement-completed-api' acc.account_number 'TX123' %}')">Settlement Completed</button>
+            <button class="btn" onclick="go('{% url 'core:delete-payment-request-api' acc.account_number 'TX123' %}')">Delete Payment Request</button>
+        {% endfor %}
     </div>
 
-    <!-- GENERAL -->
+    <!-- TRANSFER APIs -->
+    <div class="section">
+        <h2>🔁 Transfer APIs</h2>
+        <button class="btn" onclick="go('{% url 'core:search-users-account-numbe-api' %}')">Search Users by Account Number</button>
+        {% for acc in user_accounts %}
+            <button class="btn" onclick="go('{% url 'core:amount-transfer-api' acc.account_number %}')">Amount Transfer</button>
+            <button class="btn" onclick="go('{% url 'core:amount-transfer-process-api' acc.account_number %}')">Transfer Process</button>
+            <button class="btn" onclick="go('{% url 'core:transfer-confirmation-api' acc.account_number 'TX123' %}')">Transfer Confirmation</button>
+            <button class="btn" onclick="go('{% url 'core:transfer-final-api' acc.account_number 'TX123' %}')">Transfer Final</button>
+            <button class="btn" onclick="go('{% url 'core:transfer-completed-api' acc.account_number 'TX123' %}')">Transfer Completed</button>
+        {% endfor %}
+    </div>
+
+    <!-- TRANSACTIONS APIs -->
+    <div class="section">
+        <h2>📄 Transactions APIs</h2>
+        <button class="btn" onclick="go('{% url 'core:transactions-api' %}')">Transactions List</button>
+        {% for txn in transactions %}
+            <button class="btn" onclick="go('{% url 'core:transactions-detail-api' txn.transaction_id %}')">Transaction Detail</button>
+        {% endfor %}
+    </div>
+
+    <!-- GENERAL APIs -->
     <div class="section">
         <h2>🌐 General APIs</h2>
-        <button class="btn" onclick="go('/api/')">Home API</button>
-        <button class="btn" onclick="go('/api/contact-us/')">Contact Us</button>
-        <button class="btn" onclick="go('/api/need-help/')">Need Help</button>
-        <button class="btn" onclick="go('/api/about-us/')">About Us</button>
+        <button class="btn" onclick="go('{% url 'core:home-api' %}')">Home API</button>
+        <button class="btn" onclick="go('{% url 'core:contact-us-api' %}')">Contact Us</button>
+        <button class="btn" onclick="go('{% url 'core:need-help-api' %}')">Need Help</button>
+        <button class="btn" onclick="go('{% url 'core:about-us-api' %}')">About Us</button>
     </div>
 
 </div>
 
 <script>
-    function go(url) {
-        window.open(url, "_blank");
-    }
+function go(url){
+    window.open(url, "_blank");
+}
 </script>
 
 </body>
