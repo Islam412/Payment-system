@@ -75,7 +75,7 @@ To set up the project on your local machine, follow these instructions:
 Project Video Demo
 [▶️ Watch Project Video](media/videos/video.mp4)
 
-Project Video Demo
+Admin and Credit Card Video Demo
 [▶️ Watch admin and credit card work Video](media/videos/admin%20and%20credit%20card%20work.mp4)
 
 Project Demo
