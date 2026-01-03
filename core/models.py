@@ -162,6 +162,7 @@ class Home(models.Model):
 class Company(models.Model):
     name = models.CharField(_('name'),max_length=255)
     logo = models.ImageField(_('logo'),upload_to='company_logos')
+    icons = models.ImageField(_('icons'),upload_to='company_icons')
     see_how_it_Works = models.FileField(_('See How it Works'),upload_to='videos')
     address = models.CharField(_('address'),max_length=255)
     support_mail = models.EmailField(_('Support Mail'),max_length=200, null=True, blank=True)
