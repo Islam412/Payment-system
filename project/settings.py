@@ -185,7 +185,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'w1q1y8keJk9xPV7QZ4MqSWsG3vY',
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # JAZZMIN settings
