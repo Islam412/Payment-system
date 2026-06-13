@@ -250,3 +250,11 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success"
     }
 }
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
