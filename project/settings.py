@@ -14,6 +14,8 @@ from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 import os
+import cloudinary
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -62,6 +64,8 @@ INSTALLED_APPS = [
     'rosetta', # django rosetta translate
     'rest_framework',
     'rest_framework.authtoken',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -172,6 +176,16 @@ MEDIA_ROOT=BASE_DIR / "media"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dqtujze5z',
+    'API_KEY': '977589583694539',
+    'API_SECRET': 'w1q1y8keJk9xPV7QZ4MqSWsG3vY',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # JAZZMIN settings
