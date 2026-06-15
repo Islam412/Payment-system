@@ -41,7 +41,7 @@ To set up the project on your local machine, follow these instructions:
 2. **Set Up Virtual Environment**:
     ```bash
     # For Linux/mac:
-    python3 -m venv venv
+    python -m venv venv
     source venv/bin/activate
 
     # For Windows:
