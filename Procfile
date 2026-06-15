@@ -1,1 +1,1 @@
-web: gunicorn project.wsgi --log-file - --timeout 300 --workers 2
+web: gunicorn project.wsgi --worker-class gevent --workers 2 --worker-connections 1000 --timeout 300 --log-file -
