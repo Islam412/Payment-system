@@ -26,7 +26,7 @@ To set up the project on your local machine, follow these instructions:
 
 ### Prerequisites
 
-- **Python**: Version 3.8 or higher
+- **Python**: Version 3.14
 - **pip**: Python package installer
 - **Git**: Version control system
 
